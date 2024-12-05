@@ -1,0 +1,334 @@
+<div class="h-screen overflow-x-hidden bg-[#F3F4F6]">
+    <div class="sticky top-0 z-30">
+        <app-common-header></app-common-header>
+        <div class="">
+            <div class="flex w-full px-4 -mt-12">
+                <!-- routerLink="/jobs"  -->
+                <div (click)="goBack()" class="mt-2">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                        <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="w-full mx-4">
+                    <!-- <input type="text" [(ngModel)]="searchSaved" (keyup)="JobSearch($event)"
+                class="text-xs h-11 pl-8 font-medium w-full rounded-lg focus:outline-none outnline-none border-none bg-white"
+                placeholder="Search job, eg: Accountant"> -->
+                    <input type="search"
+                        class="text-xs h-11 pl-8 font-medium w-full rounded-lg focus:outline-none outnline-none border-none bg-white"
+                        placeholder="Search job, eg: Accountant" (input)="appliedJobSearch()"
+                        [(ngModel)]="queryJobRole">
+                    <div class="-mt-8 ml-2">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
+                                stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17.5 17.5L13.875 13.875" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div routerLink="/dashboard/profile">
+                    <app-profile-image></app-profile-image>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white block md:hidden">
+            <div class="mt-2  px-5 pt-5 flex justify-between">
+                <div class="text-[#1D2939] font-semibold text-md rubik">Jobs</div>
+                <div (click)="showFilter()" class="flex hidden">
+                    <div class="text-[#0175A2] text-xs font-medium">Apply Filter</div>
+                    <div class="mt-1 ml-2">
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="showFilters" class="bg-white block md:hidden">
+                <div x-data="app" class="">
+                    <div class="-m-2 flex flex-wrap">
+                        <div class="m-1">
+                            <input type="radio" name="filter" id="All" class="peer hidden" value="All" />
+                            <label for="All"
+                                class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-3 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                                All</label>
+                        </div>
+                        <div class="m-1">
+                            <input type="radio" name="filter" id="Recently Saved " class="peer hidden"
+                                value="Recently Saved " />
+                            <label for="Recently Saved "
+                                class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2.5 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                                Recently Saved</label>
+                        </div>
+                        <div class="m-1">
+                            <input type="radio" name="filter" id="Last 7 days" class="peer hidden"
+                                value="Last 7 days" />
+                            <label for="Last 7 days"
+                                class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2.5 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                                Last 7 days</label>
+                        </div>
+                        <div class="m-1">
+                            <input type="radio" name="filter" id="Last Month" class="peer hidden" value="Last Month" />
+                            <label for="Last Month"
+                                class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                                Last Month</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pl-3 block md:hidden">
+                <div x-data="app" class="flex flex-nowrap ">
+                    <div class=" flex flex-nowrap overflow-x-auto">
+                        <div class="m-1">
+                            <input type="radio" name="applied" id="Applied Jobs" class="peer hidden"
+                                value="Applied Jobs" />
+                            <label for="Applied Jobs"
+                                class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                                Applied Jobs {{appliedJobscount}}</label>
+                        </div>
+                        <!-- <div class="m-1">
+                        <input type="radio" name="applied" id="Shortlisted Jobs" class="peer hidden"
+                            value="Shortlisted Jobs" />
+                        <label for="Shortlisted Jobs" routerLink="/jobs/shortlisted-jobs"
+                            class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                            Shortlisted Jobs (8)</label>
+                    </div> -->
+                        <!-- <div class="m-1">
+                        <input type="radio" name="applied" id="Selected Jobs" class="peer hidden"
+                            value="Selected Jobs" />
+                        <label for="Selected Jobs" routerLink="/jobs/selected-jobs"
+                            class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                            Selected Jobs (5)</label>
+                    </div> -->
+                        <!-- <div class="m-1">
+                        <input type="radio" name="applied" id="Offered Jobs" class="peer hidden" value="Offered Jobs" />
+                        <label for="Offered Jobs" routerLink="/jobs/offered-jobs"
+                            class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-3 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                            Offered Jobs (8)</label>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="p-5">
+    <div class="flex flex-nowrap overflow-x-auto gap-4">
+        <div class="whitespace-nowrap">Applied Jobs</div>
+        <div class="whitespace-nowrap">Shortlisted Jobs</div>
+        <div class="whitespace-nowrap">Selected Jobs</div>
+        <div class="whitespace-nowrap">Offered Jobs</div>
+    </div>
+    </div> -->
+    <div class="mx-0 md:mx-44 pt-0 md:py-10">
+        <div class="flex gap-5 ">
+            <div class="w-1/4 hidden md:block">
+                <app-web-filter></app-web-filter>
+            </div>
+            <div class="w-full md:w-2/4">
+                <div class="py-5 md:py-0 pb-16">
+                    <div *ngIf="nodata">
+                        <div *ngFor="let applied of searchAppledJob" class="border rounded-lg p-4 bg-[white] mb-4">
+                            <div routerLink="/jobs/jobStatus" [queryParams]="{requirementId:applied.requirementId}"
+                                class="flex justify-between">
+                                <div class=" flex">
+                                    <div class="">
+                                        <img src="assets/images/pic1.png" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="text-[#252525] font-semibold text-md text-[1.125rem]">
+                                            {{applied.jobTitle}}
+                                        </div>
+                                        <div class="text-gray-500 font text-xs font-medium">{{applied.companyname}}
+                                        </div>
+                                        <div class="flex mt-1">
+                                            <div class="mt-0.5">
+                                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                                        stroke="#475467" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                                        stroke="#475467" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <div class="ml-2 text-gray-500 text-sm font font-medium">
+                                                {{applied.location[0]}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="ml-10 mt-2 mb-2">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="h-0.5 my-3 bg-[#EAECF0]">
+                            <div>
+                                <div class="text-[#21A14B] text-xs font-semibold">Application sent
+                                    {{applied.applicationDate | dateAgo}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="!nodata">
+                        <div class="w-full">
+                            <div class="flex justify-center mt-14">
+                                <div class="">
+                                    <img src="assets/images/rafiki10.png" alt=" " />
+                                    <p class="text-lg text-center">You Have Not Applied To Any Jobs Yet ! </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mt-14 pb-28 p-5">
+                            <button type="save" class="green_button">Explore Jobs For You
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/4 hidden md:block">
+                <div class="shadow-lg rounded-lg p-3 bg-white">
+                    <div class="flex justify-between  h-full">
+                        <div class="flex">
+                            <div> <img src="/assets/images/pic1.png" alt=""></div>
+                            <div class="ml-3">
+                                <div class="text-[#344054] text-sm font-medium whitespace-nowrap">RRR Technologies</div>
+                                <div class="text-[#475467] text-xs font-normal whitespace-nowrap">Android Developer
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="text-base text-[#000000] font-semibold">Your Application Status</div>
+                    <div class="flex grid-col-2 gp-9 mt-4">
+                        <div>
+                            <div class="relative">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="bg-green-600 h-[4rem] w-[0.1rem]  ml-[0.7rem]"></div>
+                            <div class="relative ">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="bg-green-600 h-[4rem] w-[0.1rem]  ml-[0.7rem]"></div>
+                            <div class="relative">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="h-[4rem] w-[0.1rem] border-dashed border-l-2 border-gray-600 ml-[0.7rem]"></div>
+                            <div class="relative">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+                                </svg>
+
+                            </div>
+                        </div>
+                        <div>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939]">Applied</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">12 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3rem]">Shortlisted</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">14 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3.5rem]">Selected</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">16 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3.5rem]">Offered</p>
+                        </div>
+                    </div>
+                    <div class="text-xs text-[#0175A2] font-semibold mt-3">Show More</div>
+                </div>
+                <div class="shadow-lg rounded-lg mt-5 p-3 bg-white">
+                    <div class="grid place-content-center">
+                        <svg width="81" height="95" viewBox="0 0 81 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M40.5 0.5L0.5 17.5909V43.2273C0.5 66.9409 17.5667 89.1164 40.5 94.5C63.4333 89.1164 80.5 66.9409 80.5 43.2273V17.5909L40.5 0.5ZM40.5 47.4573H71.6111C69.2556 65.0609 57.0333 80.7418 40.5 85.6555V47.5H9.38889V23.1455L40.5 9.85727V47.4573Z"
+                                fill="#6941C6" />
+                        </svg>
+                    </div>
+                    <div class="text-center text-[#1D2939] text-sm font-semibold py-3">JobCheck Security Center</div>
+                    <p class="text-justify text-xs font-medium text-[#475467] px- leading-5">We are dedicated to
+                        ensuring that your job search is secure and free of any fraudulent
+                        activities. Nonetheless, we advise you to exercise caution when receiving suspicious emails or
+                        phone calls.</p>
+                    <div class="text-xs text-[#0175A2] font-semibold mt-3">Know More</div>
+                </div>
+                <!-- <div class="fixed bottom-5 right-28">
+                    <div class="bg-[#0175A2] rounded-full w-16 h-16 px-3.5 py-4">
+                        <svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.5 3.41337V22.1869C3.68727 28.5882 10.339 30.1793 20.8708 29.9845C32.2341 29.7744 35.0056 26.8815 37.5 22.1869V3.41337H35.9757V9.92979C32.539 0.992897 27.1067 -6.74249e-05 19.3464 0C7.29026 0.000104759 3.5025 6.1544 2.02434 9.92979V3.41337H0.5Z"
+                                fill="white" />
+                            <rect x="4.65723" y="12.2969" width="29.3783" height="5.89581" rx="2.94791"
+                                fill="url(#paint0_linear_7367_35521)" />
+                            <ellipse cx="9.36898" cy="15.0904" rx="1.66292" ry="1.86184" fill="white" />
+                            <ellipse cx="29.8778" cy="15.0904" rx="1.66292" ry="1.86184" fill="white" />
+                            <defs>
+                                <linearGradient id="paint0_linear_7367_35521" x1="4.65723" y1="12.2969" x2="4.96215"
+                                    y2="19.4347" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#00A2E0" />
+                                    <stop offset="1" stop-color="#30728C" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

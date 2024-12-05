@@ -1,0 +1,23 @@
+::ng-deep .each_input {
+    border:'2px solid #D0D5DD';
+    justify-content: space-between;
+    /* display: flex; */
+    text-align: center;
+    margin: 1rem 2rem 1rem 6rem;
+    /* margin-left: 10px; */
+    font-weight: 700;
+}
+
+@media screen and (min-width: 360px),
+(max-width: 765px) {
+    ::ng-deep .each_input {
+        margin: 0rem 1rem 0rem 1.125rem;
+
+    }
+}
+
+@media screen and (min-width: 766px) {
+    ::ng-deep .each_input {
+        margin: 1rem 1rem 1rem 3.7rem;
+    }
+}

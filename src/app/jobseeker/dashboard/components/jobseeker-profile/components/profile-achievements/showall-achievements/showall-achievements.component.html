@@ -1,0 +1,61 @@
+<div class="sticky z-30 top-0">
+    <div class="sticky top-0 z-50">
+        <div>
+            <app-common-header></app-common-header>
+        </div>
+        <div class="flex justify-between w-full px-4 -mt-11">
+            <div class="mt-2">
+                <!--  (click)="goBack()" -->
+                <svg routerLink="/dashboard/profile" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                    <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div routerLink="/dashboard/profile">
+                <app-profile-image></app-profile-image>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mx-4 mt-10">
+    <div class="flex">
+        <div class="mt-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9C6 10.5913 6.63214 12.1174 7.75736 13.2426C8.88258 14.3679 10.4087 15 12 15C13.5913 15 15.1174 14.3679 16.2426 13.2426C17.3679 12.1174 18 10.5913 18 9C18 7.4087 17.3679 5.88258 16.2426 4.75736C15.1174 3.63214 13.5913 3 12 3C10.4087 3 8.88258 3.63214 7.75736 4.75736C6.63214 5.88258 6 7.4087 6 9Z" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.0003 15L15.4003 20.89L16.9983 17.657L20.5963 17.889L17.1963 12M6.80234 12L3.40234 17.89L7.00034 17.657L8.59834 20.889L11.9983 15" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+        </div>
+        <div class="ml-3">
+            <div class="text-[#1D2939] text-base font-semibold rubik">Edit  Achievement</div>
+            <div class="text-[#475467] text-xs font-normal">Choose the below achievement to edit.</div>
+        </div>
+    </div>
+
+
+    <div *ngFor="let i of data" class="flex justify-between">
+        <div class="flex my-3">
+            <div class="bg-[#EAECF0] rounded-lg h-10">
+                <div class="px-3 py-2 text-[#344054] text-base font-bold ">{{i.achievementName.slice (0,1) | uppercase }}</div>
+            </div>
+            <div class="ml-3 text-sm text-[#1D2939] font-medium">
+                <div>{{i.achievementName}}</div>
+                <div>{{i.achievementCategory}}, {{i.achievementLevel}}<span class="text-[#475467]"></span></div>
+                <div>{{i.award+',' }}{{i.achievementOrganization}} </div>
+                <div>{{i.date | date: 'MMM yyyy'}}</div>
+            </div>
+        </div>
+        <div routerLink="/dashboard/profile/achievements/edit-achievement" [queryParams]="{achievementId:i.achievementId}">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+        </div>
+    </div>
+
+    
+
+
+</div>

@@ -1,0 +1,991 @@
+<div class="sticky z-30 top-0">
+  <app-common-header></app-common-header>
+  <div class="sticky top-0 z-50">
+    <div class="flex px-4 -mt-11 justify-between">
+      <!-- routerLink="/dashboard/profile" -->
+      <div (click)="goBack()" class="mt-2">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+          <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <div class="mt-1 mr-2" routerLink="/dashboard/profile">
+        <app-profile-image></app-profile-image>
+      </div>
+    </div>
+  </div>
+  <div class="pt-7 mx-4 bg-white mt-2" *ngIf="!showEditPage">
+    <div class="flex bg-white">
+      <div>
+        <svg class="h-8 w-8" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_3204_11486)">
+            <path
+              d="M18.3708 22.7298C21.3623 22.7298 23.7874 20.3047 23.7874 17.3132C23.7874 14.3216 21.3623 11.8965 18.3708 11.8965C15.3792 11.8965 12.9541 14.3216 12.9541 17.3132C12.9541 20.3047 15.3792 22.7298 18.3708 22.7298Z"
+              stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18.3711 14.0625V17.3125L20.5378 18.3958" stroke="#21A14B" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+          <path
+            d="M22.12 9.63246V6.81641C22.12 5.71184 21.2246 4.81641 20.12 4.81641H3C1.89543 4.81641 1 5.71184 1 6.81641V18.2278C1 19.3323 1.89543 20.2278 3 20.2278H10.12"
+            stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+          <rect x="7.25977" y="0.5" width="8.6" height="3.81605" rx="0.5" stroke="#21A14B" />
+          <defs>
+            <clipPath id="clip0_3204_11486">
+              <rect width="13" height="13" fill="white" transform="translate(11.8711 10.8125)" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="mx-3">
+        <div class="mt-[0.4rem] text-[#1D2939] text-lg font-semibold rubik">
+          Edit Work Experience
+        </div>
+        <div class="text-[#667085] text-sm font-medium">
+          Choose the below work experience to edit.
+        </div>
+      </div>
+    </div>
+    <!-- <div class="flex justify-between mt-6">
+            <div class="flex ">
+                <div>
+                    <img class="h-10 w-10" src="assets/images/Group 895.svg" alt="Image">
+                </div>
+                <div class="ml-3">
+                    <div class="mt-1 text-[#1D2939] font-bold text-sm">Android Developer</div>
+                    <div class="mt-2 text-[#475467] text-sm font-medium">Fourbrick Technologies</div>
+                    <div class="mt-1 text-[#475467] text-sm font-medium">IT & consultancy</div>
+                    <div class="mt-1 text-[#475467] text-sm font-medium">Oct 2020 - Apr 2020    4 Months  </div>
+                </div>
+            </div>
+            <div class="ml-3">
+                <div>
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div> -->
+  </div>
+</div>
+
+<div class="mx-4 mt-5" *ngIf="!showEditPage">
+  <div class="flex justify-between"></div>
+  <div class="flex" *ngFor="let Experience of workExperience">
+    <div>
+      <!-- <img class="h-16 w-16 mt-1" src="assets/images/Group 895.svg" alt="Image"> -->
+      <div style="
+          width: 40px;
+          height: 40px;
+          background-color: #eaecf0;
+          border-radius: 5px;
+          font-weight: 600;
+        ">
+        <p class="grid place-content-center justify-center h-full">
+          {{ Experience.condition }}
+        </p>
+      </div>
+    </div>
+    <div class="ml-2 mt-1 w-full">
+      <div class="flex justify-between">
+        <div class="my-1 text-[#1D2939] font-bold text-sm">
+          {{ Experience.jobTitle }}
+        </div>
+        <!-- <div class="my-1 text-[#1D2939] font-bold text-sm">sdghjtnh</div> -->
+        <div class="mt-1" (click)="EditWork(Experience.workExperienceId)">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+              stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="my-1 text-[#475467] text-sm font-medium">
+        {{ Experience.companyName }}
+      </div>
+      <!-- <div class="my-1 text-[#475467] text-sm font-medium">sdgxhbxf</div> -->
+      <div class="my-1 text-[#475467] text-sm font-medium">
+        {{ Experience.department }}
+      </div>
+      <!-- <div class="my-1 text-[#475467] text-sm font-medium">gffcjky</div> -->
+      <div class="my-1 text-[#475467] text-sm font-medium" *ngIf="Experience.currentlyWorking == true">
+        {{ Experience.startDate | date : "MMM yyyy" }}
+      </div>
+      <div class="my-1 text-[#475467] text-sm font-medium" *ngIf="Experience.currentlyWorking == false">
+        {{ Experience.startDate | date : "MMM yyyy" }} -
+        {{ Experience.endDate | date : "MMM yyyy" }}
+      </div>
+      <!-- <div class="my-1 text-[#475467] text-sm font-medium">cgykykykuyk -hvkdyhyhyhyhyhyhyhyhyhyhs
+            </div> -->
+
+      <div class="my-1 text-[#475467] text-sm font-medium">
+        {{ Experience.location }}
+      </div>
+
+      <div class="my-4 text-[#475467] text-sm font-medium">
+        {{ Experience.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex pt-10 mx-4 bg-white" *ngIf="showEditPage">
+  <div class="flex bg-white">
+    <div class="mt-2">
+      <svg class="h-8 w-8" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_3204_11486)">
+          <path
+            d="M18.3708 22.7298C21.3623 22.7298 23.7874 20.3047 23.7874 17.3132C23.7874 14.3216 21.3623 11.8965 18.3708 11.8965C15.3792 11.8965 12.9541 14.3216 12.9541 17.3132C12.9541 20.3047 15.3792 22.7298 18.3708 22.7298Z"
+            stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M18.3711 14.0625V17.3125L20.5378 18.3958" stroke="#21A14B" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </g>
+        <path
+          d="M22.12 9.63246V6.81641C22.12 5.71184 21.2246 4.81641 20.12 4.81641H3C1.89543 4.81641 1 5.71184 1 6.81641V18.2278C1 19.3323 1.89543 20.2278 3 20.2278H10.12"
+          stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+        <rect x="7.25977" y="0.5" width="8.6" height="3.81605" rx="0.5" stroke="#21A14B" />
+        <defs>
+          <clipPath id="clip0_3204_11486">
+            <rect width="13" height="13" fill="white" transform="translate(11.8711 10.8125)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="mx-3">
+    <div class="mt-[0.4rem] text-[#1D2939] text-lg font-semibold rubik">
+      Edit Work Experience
+    </div>
+    <div class="text-[#667085] text-sm font-medium">
+      Edit your existing work experience.
+    </div>
+  </div>
+</div>
+<!-- <div class="flex justify-between mt-6">
+        <div class="flex ">
+            <div>
+                <img class="h-10 w-10" src="assets/images/Group 895.svg" alt="Image">
+            </div>
+            <div class="ml-3">
+                <div class="mt-1 text-[#1D2939] font-bold text-sm">Android Developer</div>
+                <div class="mt-2 text-[#475467] text-sm font-medium">Fourbrick Technologies</div>
+                <div class="mt-1 text-[#475467] text-sm font-medium">IT & consultancy</div>
+                <div class="mt-1 text-[#475467] text-sm font-medium">Oct 2020 - Apr 2020    4 Months  </div>
+            </div>
+        </div>
+        <div class="ml-3">
+            <div>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                        stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div> -->
+<div class="mx-4" *ngIf="showEditPage">
+  <form [formGroup]="workExperienceById" novalidate >
+    <div class="mt-6">
+      <label class="block mb-2 text-base font-medium text-[#475467]">Company Name</label>
+      <input type="text" formControlName="companyName" [(ngModel)]="companyName"
+        class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+        placeholder="Fourbrick Technologies" />
+    </div>
+
+    <div class="error text-red-800">
+      <small *ngIf="isSubmitted && workExperience.controls['companyName'].errors?.['required']">
+        Please enter your current company name
+      </small>
+    </div>
+
+    <div class="mt-5 font-semibold">Add Position</div>
+    <div class="mt-5">
+      <label class="block mb-2 text-base font-medium text-[#475467]">Job Role</label>
+      <input (click)="togglePopupjobRole()" formControlName="jobRole" [value]="jobs" [(ngModel)]="SelectedJobRoles"
+        (blur)="jobRoleCheck()"
+        class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+        placeholder="Android Developer" readonly />
+      <!-- <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="Android Developer" name="jobTitle" ngModel="{{workExprienceData?.jobTitle}}"> -->
+      <div class="absolute right-8 -mt-6">
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <small class="error text-red-800" *ngIf="isSubmitted && workExperience.controls['jobRole'].errors?.['required']">
+        Please select your job title
+      </small>
+    </div>
+
+    <div class="mt-5">
+      <label class="block mb-2 text-base font-medium text-[#475467]">Department</label>
+      <input type="text" formControlName="department" [value]="department" [(ngModel)]="department"
+        class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+        placeholder="HR" />
+      <!-- <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="HR" name="department" ngModel="{{workExprienceData?.department}}"> -->
+      <!-- <div class="absolute right-8 -mt-6">
+            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div> -->
+    </div>
+
+    <div>
+      <small class="error text-red-800"
+        *ngIf="isSubmitted && workExperience.controls['department'].errors?.['required']">
+        Please select your department
+      </small>
+    </div>
+
+    <div class="mt-5">
+      <label class="block mb-2 text-base font-medium text-[#475467]">Industry Type</label>
+      <input (click)="togglePopupIndustry()" formControlName="industryType" (blur)="industryCheck()"
+        [(ngModel)]="SelectedIndustry"
+        class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+        placeholder="IT & consultancy" readonly />
+      <!-- <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="IT & consultancy" name="industryType" ngModel="{{workExprienceData?.industryType}}"> -->
+      <div class="absolute right-8 -mt-6">
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <small class="error text-red-800"
+        *ngIf="isSubmitted && workExperience.controls['industryType'].errors?.['required']">
+        Please select your industry type
+      </small>
+    </div>
+
+    <div class="mt-5">
+      <label class="block mb-2 text-base font-medium text-[#475467]">Location</label>
+      <input (click)="togglePopupLocation()" formControlName="jobLocation" (blur)="locationCheck()" [value]="locData"
+        [ngModel]="selectedLocation"
+        class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+        placeholder="New Delhi" readonly />
+      <!-- <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="IT & consultancy" name="industryType" ngModel="{{workExprienceData?.industryType}}"> -->
+      <div class="absolute right-8 -mt-6">
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <small class="error text-red-800"
+        *ngIf="isSubmitted && workExperience.controls['jobLocation'].errors?.['required']">
+        Please select your location
+      </small>
+    </div>
+
+    <div class="flex mt-5">
+      <div class="round">
+        <input type="checkbox" id="checkbox" formControlName="currentlyWorking" (change)="checkbox()"
+          [ngModel]="currentlyWorking" />
+        <label for="checkbox"></label>
+      </div>
+
+      <div class="pl-4">
+        <p class="text-sm font-normal text-black">Currently Working Here</p>
+      </div>
+    </div>
+
+    <div class="text-[#475467] mt-3 body-font relative">
+      <div class="mt-5">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="name" class="global_label">Start Date</label>
+
+              <input  id="name"  name="name" [value]="setdata.startDate" [(ngModel)]="selectDate"
+                type="date" (input)="selectStartDate($event)" formControlName="startDate"
+                class="global_input text-left capitalize h-11 font-medium text-gray-900 text-base"
+                placeholder="eg: jan/2020"/>
+              <!-- <div (blur)="checkduration()" readonly (click)="togglePopup1()" class="absolute inset-y-0 flex items-center pl-3 mt-8 pointer-events-none right-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3 10H21" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div> -->
+            </div>
+
+            <div (click)="togglePopup1()" *ngIf="isPopupVisible1" class="w-full top-0 bg-black bg-opacity-25 z-30">
+            </div>
+          </div>
+
+          <div class="p-2 w-1/2 {{ displayForm2 }}">
+            <div class="relative">
+              <label for="name" class="global_label">End Date</label>
+              <input formControlName="endDate" (input)="selectedEndDate($event)" id="name" name="name" [value]="seletedEndYear"
+                type="date"  [(ngModel)]="seletedEndYear"
+                class="global_input text-left capitalize h-11 font-medium text-gray-900 text-base"
+                placeholder="eg: jan/2022"/>
+              <!-- <div readonly (blur)="checkduration1()" (click)="togglePopup2()" class="absolute inset-y-0 flex items-center pl-3 mt-8 pointer-events-none right-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3 10H21" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div> -->
+            </div>
+
+            <div (click)="togglePopup2()" *ngIf="isPopupVisible2"
+              class="fixed w-full top-0 bg-black bg-opacity-25 z-30"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between">
+      <div>
+        <small class="error text-red-800"
+          *ngIf="isSubmitted && workExperience.controls['startDate'].errors?.['required']">
+          Please select your start date
+        </small>
+      </div>
+
+      <div>
+        <small class="error text-red-800"
+          *ngIf="isSubmitted && workExperience.controls['endDate'].errors?.['required']">
+          Please select your end date
+        </small>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <label for="noticeperiod" class="block mb-2 text-base font-medium text-[#475467]">Notice Period</label>
+
+      <div class="bg-white-200 mb-5 mt-2" x-data="app">
+        <div class="flex flex-wrap gap-4 text-[0.875rem]">
+          <div class="">
+            <input type="radio" name="noticePeriod" id="nonoticeperiod" class="peer hidden" value="NA"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="nonoticeperiod"
+              class="block cursor-pointer border border-gray-700 select-none rounded-full px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">No
+              Notice Period</label>
+          </div>
+
+          <div class="">
+            <input type="radio" name="noticePeriod" id="15" class="peer hidden" value="15"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="15"
+              class="block cursor-pointer border border-gray-700 select-none rounded-full px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">15
+              Days</label>
+          </div>
+
+          <div class="">
+            <input type="radio" name="noticePeriod" id="30" class="peer hidden" value="30"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="30"
+              class="block cursor-pointer border border-gray-700 select-none rounded-full px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">30
+              Days</label>
+          </div>
+
+          <div class="">
+            <input type="radio" name="noticePeriod" id="45" class="peer hidden" value="45"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="45"
+              class="block cursor-pointer border border-gray-700 select-none rounded-full px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">45
+              Days</label>
+          </div>
+
+          <div class="">
+            <input type="radio" name="noticePeriod" id="60" class="peer hidden" value="60"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="60"
+              class="block cursor-pointer border border-gray-700 select-none rounded-full px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">60
+              Days</label>
+          </div>
+
+          <div class="">
+            <input type="radio" name="noticePeriod" id="90" class="peer hidden" value="90"
+              formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+            <label for="90"
+              class="block cursor-pointer rounded-full border border-gray-700 select-none px-2 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">90
+              Days</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white-200 mt-4" x-data="app">
+        <div class="-m-3">
+          <!-- <div class="m-1 inline-flex" *ngFor="let option of noticePeriodOptions">
+                    <input type="radio" name="noticePeriod" [id]="option.id" class="peer hidden "
+                        [value]="option.id" formControlName="noticePeriod" [(ngModel)]="noticePeriod" />
+                    <label [for]="option.id"
+                        class="block cursor-pointer border  border-gray-300 select-none rounded-full  px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">{{ option.label }}</label>
+                </div> -->
+          <!-- <div class="m-1">
+                    <input type="radio" name="noticePeriod" [id]="No Notice Period" class="peer hidden"
+                        [value]="No Notice Period" formControlName="noticePeriod"/>
+                    <label [for]="No Notice Period"
+                        class="block cursor-pointer border  border-gray-300 select-none rounded-full  px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">No Notice Period</label>
+                </div> -->
+          <!-- <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="15days" class="peer hidden" value="15days" />
+                    <label for="15days"
+                        class="block cursor-pointer border border-gray-300 select-none rounded-full  px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">15
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="30days" class="peer hidden" value="30days" />
+                    <label for="30days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">30
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="45days" class="peer hidden" value="45days" />
+                    <label for="45days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">45
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="60days" class="peer hidden" value="60days" />
+                    <label for="60days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">60
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="90days" class="peer hidden" value="90days" />
+                    <label for="90days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">90
+                        Days</label>
+                </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <small class="error text-red-800"
+        *ngIf="isSubmitted && workExperience.controls['noticePeriod'].errors?.['required']">
+        Please select your notice period
+      </small>
+    </div>
+
+    <div class="mt-5">
+      <div class="flex justify-between mt-6">
+        <div class="block mb-2 text-base font-medium text-[#475467]">
+          Description
+        </div>
+        <!-- <div class="text-[#475467] text-sm font-medium">
+          {{ description.length }}/200
+        </div> -->
+      </div>
+      <div class=" ">
+        <textarea id="message" rows="9" maxlength="200" [(ngModel)]="description" name="personSummary"
+          class="block p-2 bg-[#FCFCFD] w-full text-sm text-gray-90 rounded-lg outline-none border-2 border-[#D0D5DD] focus:border-[#D0D5DD]"
+          formControlName="description" placeholder="write your summary hear"></textarea>
+      </div>
+    </div>
+
+    <div>
+      <small class="error text-red-800"
+        *ngIf="isSubmitted && workExperience.controls['description'].errors?.['required']">
+        Please enter your job description
+      </small>
+    </div>
+
+    <div class="mt-5 pb-2 sticky bottom-0 bg-white">
+      <button type="submit" [ngStyle]="{
+          'background-color': workExperienceById.invalid
+            ? 'grey'
+            : 'rgb(22 163 74)'
+        }" class="w-full rounded-lg text-white text-xl font-medium py-4" (click)="skillSubmit1()" style="
+          box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+            0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+        ">
+        Save
+      </button>
+
+      <p class="text-center w-full text-sm text-[#0175A2] font-semibold mt-4" (click)="togglePopup3()">
+        Delete Work Experience
+      </p>
+    </div>
+  </form>
+  <!-- <div class="mt-5">
+        <label class="block mb-2 text-base font-medium text-[#475467]">Company Name</label>
+        <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="Fourbrick Technologies">
+    </div>
+    <div class="mt-5">
+        <label class="block mb-2 text-base font-medium text-[#475467]">Job Role</label>
+        <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="Android Developer">
+        <div class="absolute right-8 -mt-6">
+            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <div class="mt-5">
+        <label class="block mb-2 text-base font-medium text-[#475467]">Department</label>
+        <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="HR">
+        <div class="absolute right-8 -mt-6">
+            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <div class="mt-5">
+        <label class="block mb-2 text-base font-medium text-[#475467]">Industry Type</label>
+        <input type="text"
+            class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+            placeholder="IT & consultancy">
+        <div class="absolute right-8 -mt-6">
+            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <div class="flex items-center mt-5">
+        <input type="checkbox" value="" class="w-6 h-6 bg-gray-100 border-gray-300 rounded-xl">
+        <label class="ml-2 text-sm font-medium text-gray-900 ">Default checkbox</label>
+    </div>
+    <div class="mt-5">
+        <div class="flex justify-between pt-6">
+            <div class="w-1/2 pr-3">
+                <div class="text-[#475467] text-base mb-2 font-medium">Start Date</div>
+                <div>
+                    <input type="month" placeholder="june, 2018"
+                        class="bg-[#FCFCFD] w-full h-11 font-medium outline-none border border-gray-300 text-gray-900 text-base rounded-lg p-2.5 ">
+                </div>
+            </div>
+            <div class="w-1/2">
+                <div class="text-[#475467] text-base mb-2 font-medium">End Date</div>
+                <div>
+                    <input type="month" placeholder="june, 2018"
+                        class="bg-[#FCFCFD] w-full h-11 font-medium outline-none border border-gray-300 text-gray-900 text-base rounded-lg p-2.5 ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-[#F5FEFF]">
+        <div class="mx-4 py-4">
+            <div class="mt-5">
+                <label class="block mb-2 text-base font-medium text-[#475467]">Job Role</label>
+                <input type="text"
+                    class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+                    placeholder="Android Developer">
+                <div class="absolute right-12 -mt-6">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="mt-5">
+                <label class="block mb-2 text-base font-medium text-[#475467]">Department</label>
+                <input type="text"
+                    class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+                    placeholder="HR">
+                <div class="absolute right-12 -mt-6">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="mt-5">
+                <label class="block mb-2 text-base font-medium text-[#475467]">Industry Type</label>
+                <input type="text"
+                    class="bg-[#FCFCFD] border border-gray-300 capitalize text-[#1D2939] text-base font-medium rounded-lg w-full p-2.5 outline-none"
+                    placeholder="IT & consultancy">
+                <div class="absolute right-12 -mt-6">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="flex justify-between">
+                    <div class="w-1/2 pr-3">
+                        <div class="text-[#475467] text-base mb-2 font-medium">Start Date</div>
+                        <div>
+                            <input type="month" placeholder="june, 2018"
+                                class="bg-[#FCFCFD] w-full h-11 font-medium outline-none border border-gray-300 text-gray-900 text-base rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#D0D5DD] dark:focus:border-[#D0D5DD]">
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="text-[#475467] text-base mb-2 font-medium">End Date</div>
+                        <div>
+                            <input type="month" placeholder="june, 2018"
+                                class="bg-[#FCFCFD] w-full h-11 font-medium outline-none border border-gray-300 text-gray-900 text-base rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#D0D5DD] dark:focus:border-[#D0D5DD]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <label for="noticeperiod" class="block mb-2 text-base font-medium text-[#475467]">Notice
+            Period</label>
+        <div class="bg-white-200 " x-data="app">
+            <div class="-m-2 flex flex-wrap">
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="nonoticeperiod" class="peer hidden"
+                        value="nonoticeperiod" />
+                    <label for="nonoticeperiod"
+                        class="block cursor-pointer border  border-gray-300 select-none rounded-full  px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">No
+                        Notice Period</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="15days" class="peer hidden" value="15days" />
+                    <label for="15days"
+                        class="block cursor-pointer border border-gray-300 select-none rounded-full  px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">15
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="30days" class="peer hidden" value="30days" />
+                    <label for="30days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">30
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="45days" class="peer hidden" value="45days" />
+                    <label for="45days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">45
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="60days" class="peer hidden" value="60days" />
+                    <label for="60days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">60
+                        Days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="noticePeriod" id="90days" class="peer hidden" value="90days" />
+                    <label for="90days"
+                        class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">90
+                        Days</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div (click)="editWorkExp()" class="mt-5 pb-10">
+        <button class="w-full rounded-lg bg-[#21A14B] text-white text-xl font-medium py-4"
+            style="box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);">Save</button>
+    </div> -->
+</div>
+
+<!--start date pop up  -->
+<div
+  class="rounded-t-2xl z-50 popup-container-date fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ active: isPopupVisible1 }">
+  <div class="grid place-items-end">
+    <div class="max-w-md bg-white shadow-lg">
+      <div class="absolute inset-x-0 top-0">
+        <div class="p-6">
+          <div class="flex justify-between w-full">
+            <div>
+              <p class="offcanvas-title leading-normal text-[#252525] text-[1.125rem] font-medium">
+                <b class="rubik">Select Your Duration</b>
+                <br />
+                <span>Start Date</span>
+              </p>
+            </div>
+            <div (click)="togglePopup1()" class="text-[#0175A2] text-base font-medium">
+              Confirm
+            </div>
+          </div>
+
+          <input type="button" id="name" name="name" [value]="startYear | date : 'MM/yyyy'" data-te-offcanvas-toggle
+            data-te-target="#offcanvasBottom3" display="bottom" aria-controls="offcanvasBottom" data-te-ripple-init
+            data-te-ripple-color="light"
+            class="w-full bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border-none text-base outline-none text-gray-700 leading-8 transition-colors mt-1 ease-in-out flex-none order-1 flex-grow-0 text-left" />
+        </div>
+        <div class="flex justify-center w-full">
+          <ion-datetime [preferWheel]="true" presentation="month-year" (ionChange)="dob($event)"></ion-datetime>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopup1()" *ngIf="isPopupVisible1" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+
+<!-- end date popp up -->
+
+<div
+  class="rounded-t-2xl z-50 popup-container-date fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ active: isPopupVisible2 }">
+  <div class="grid place-items-end">
+    <div class="max-w-md bg-white shadow-lg">
+      <div class="absolute inset-x-0 top-0">
+        <div class="p-6">
+          <div class="flex justify-between w-full">
+            <div>
+              <p class="offcanvas-title leading-normal text-[#252525] text-[1.125rem] font-medium">
+                <b class="rubik">Select Your Duration</b>
+                <br />
+                <span>End Date</span>
+              </p>
+            </div>
+            <div (click)="togglePopup2()" class="text-[#0175A2] text-base font-medium">
+              Confirm
+            </div>
+          </div>
+          <input type="button" id="name" name="name" [value]="endYear | date : 'MM/yyyy'" data-te-offcanvas-toggle
+            data-te-target="#offcanvasBottom3" display="bottom" aria-controls="offcanvasBottom" data-te-ripple-init
+            data-te-ripple-color="light"
+            class="w-full bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border-none text-base outline-none text-gray-700 leading-8 transition-colors mt-1 ease-in-out flex-none order-1 flex-grow-0 text-left" />
+        </div>
+        <div class="flex justify-center w-full">
+          <ion-datetime [preferWheel]="true" presentation="month-year" (ionChange)="dob1($event)"></ion-datetime>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopup2()" *ngIf="isPopupVisible2" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+
+<div (click)="togglePopupjobRole()" *ngIf="isPopupVisiblejobRole"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30"></div>
+
+<div
+  class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ active: isPopupVisiblejobRole }">
+  <div class="grid place-items-end">
+    <div class="max-w-md bg-white overflow-auto shadow-lg h-full">
+      <div class="absolute inset-x-0 top-0">
+        <div class=" ">
+          <div class="sticky top-0 z-30 bg-white p-4">
+            <p class="global_offcanvas_title">Choose Your Job Roles</p>
+
+            <div class="relative mt-6">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="search" id="default-search"
+                class="Jost w-full p-4 pl-16 text-md text-[#475467] border-1 bg-[#F9FAFB] outline-none border-2 border-gray-200 rounded-xl focus:outline-none"
+                placeholder="eg : Painting/Web Development" (input)="filterRole($event.target)" />
+            </div>
+          </div>
+          <div class="overflow-y-scroll h-[40rem] mt-4 mb-20 px-4">
+            <div *ngFor="let job of jobRoles" class="flex w-full py-2 rounded overflow-hidden shadow-none relative">
+              <p class="text-[#475467] Jost text-base font-semibold pr-12" #jobRoles>
+                {{ job }}
+              </p>
+              <label class="absolute right-0 mx-2 cursor-pointer">
+                <input type="radio" class="peer sr-only" name="educationtype" (click)="send(jobRoles)"
+                  (click)="onClickJobRoles(job)" value="job" (click)="togglePopupjobRole()" />
+                <div
+                  class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
+                      <div class="h-3 w-3 rounded-sm bg-white"></div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+              <img class="img" [src]="errorMsgOfRole" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopupIndustry()" *ngIf="isPopupVisibleIndustry"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30"></div>
+
+<div
+  class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ active: isPopupVisibleIndustry }">
+  <div class="grid place-items-end">
+    <div class="max-w-md bg-white overflow-auto shadow-lg h-full">
+      <div class="absolute inset-x-0 top-0">
+        <div class=" ">
+          <div class="sticky top-0 z-30 bg-white p-4">
+            <p class="global_offcanvas_title">Choose Your Industry Type</p>
+
+            <div class="relative mt-6">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="search" id="default-search"
+                class="Jost w-full p-4 pl-16 text-md text-[#475467] border-1 bg-[#F9FAFB] outline-none border-2 border-gray-200 rounded-xl focus:outline-none"
+                placeholder="Search for industry" (input)="searchIndustry($event.target)" />
+            </div>
+          </div>
+          <div class="overflow-y-scroll h-[40rem] mt-4 mb-20 px-4">
+            <div *ngFor="let indusrty of industries"
+              class="flex w-full py-2 rounded overflow-hidden shadow-none relative">
+              <p class="text-[#475467] Jost text-base font-semibold pr-12" #industry>
+                {{ indusrty }}
+              </p>
+              <label class="absolute right-0 mx-2 cursor-pointer">
+                <input type="radio" class="peer sr-only" name="educationtype" value="indusrty"
+                  (click)="onClickIndustry(indusrty)" (click)="sendValue(industry)" (click)="togglePopupIndustry()" />
+                <div
+                  class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
+                      <div class="h-3 w-3 rounded-sm bg-white"></div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+              <img class="img" [src]="errorMsgOfIndustry" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopupLocation()" *ngIf="isPopupVisibleLocation"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30"></div>
+
+<div
+  class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ active: isPopupVisibleLocation }">
+  <div class="grid place-items-end">
+    <div class="max-w-md bg-white overflow-auto shadow-lg h-full">
+      <div class="absolute inset-x-0 top-0">
+        <div class=" ">
+          <div class="sticky top-0 z-30 bg-white p-4">
+            <p class="global_offcanvas_title">Choose Your Location</p>
+
+            <div class="relative mt-6">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="search" id="default-search" (input)="searchLocation($event.target)"
+                class="Jost w-full p-4 pl-16 text-md text-[#475467] border-1 bg-[#F9FAFB] outline-none border-2 border-gray-200 rounded-xl focus:outline-none"
+                placeholder="eg : city name" />
+            </div>
+          </div>
+          <div class="overflow-y-scroll h-[40rem] mt-4 mb-20 px-4">
+            <div *ngFor="let location of locations"
+              class="flex w-full py-2 rounded overflow-hidden shadow-none relative">
+              <p class="text-[#475467] Jost text-base font-semibold pr-12" #locations>
+                {{ location }}
+              </p>
+
+              <label class="absolute right-0 mx-2 cursor-pointer">
+                <input type="radio" class="peer sr-only" name="educationtype" value="location"
+                  (click)="onClickLocation(location)" (click)="sendLoc(locations)" (click)="togglePopupLocation()" />
+                <div
+                  class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
+                      <div class="h-3 w-3 rounded-sm bg-white"></div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+              <img class="img" [src]="errorMsgOfIndustry" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------Delete popup--------->
+
+<div class="w-full place-items-center h-1/2 mx-4">
+  <div
+    class="rounded-2xl z-50 popup-container1 fixed overflow-hidden left-[0%] right-[0%] top-[40%] h-full w-0 drop-shadow-lg blur-50"
+    [ngClass]="{ active: isPopupVisible3 }">
+    <div class="flex justify-between">
+      <div
+        class="pointer-events-auto relative flex w-full h-full px-5 flex-col rounded-2xl border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+        <div class="rounded-lg">
+          <div class="flex justify-center w-full">
+            <img class="h-20" src="assets/images/delete.gif" alt="" />
+          </div>
+          <div class="text-sm font-medium text-gray-800 text-center mt-2">
+            <h2>Work Experience Removed !</h2>
+          </div>
+          <p class="text-gray-500 text-center mt-2 text-xs">
+            Yor have removed this Work Experience details
+          </p>
+        </div>
+        <div class="flex w-full items-center border-t-2">
+          <div class="border-r-2 w-1/2">
+            <div class="mt-2" (click)="DeleteEdu()">
+              <button type="button"
+                class="ml-3 p-4 inline-block whitespace-nowrap bg-primary-100 text-[#0175A2] w-1/2 text-center">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div (click)="togglePopup3()" class="mt-2 w-1/2">
+            <button type="button" class="p-4 ml-5 inline-block bg-primary-100 text-[#D92D20] w-1/2 text-center">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopup3()" *ngIf="isPopupVisible3" class="fixed w-full top-0 h-screen bg-black bg-opacity-25"></div>

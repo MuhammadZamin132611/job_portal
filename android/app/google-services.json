@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "1064882293623",
+    "project_id": "jobcheck-5a444",
+    "storage_bucket": "jobcheck-5a444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064882293623:android:a24b6a081f0b109f43ef72",
+        "android_client_info": {
+          "package_name": "com.devdactic.devpush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6iUtVZNUKlmRRKtyPbHAyrIbD7xSW7FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064882293623:android:c2209a0226ac030243ef72",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6iUtVZNUKlmRRKtyPbHAyrIbD7xSW7FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064882293623:android:4bd57d93e1f2c5d543ef72",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6iUtVZNUKlmRRKtyPbHAyrIbD7xSW7FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064882293623:android:224c3ed0842151e643ef72",
+        "android_client_info": {
+          "package_name": "com.pratian.jobseeker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6iUtVZNUKlmRRKtyPbHAyrIbD7xSW7FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064882293623-872n6keursnjds8dtrbs3i5a0crepebf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

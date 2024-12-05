@@ -1,0 +1,734 @@
+<div class="sticky z-30 top-0">
+    <div class="sticky top-0 z-50">
+        <div>
+            <app-common-header></app-common-header>
+        </div>
+        <div class="flex justify-between w-full px-4 -mt-11">
+            <div class="mt-2">
+                <!-- routerLink="/dashboard/profile"  -->
+                <svg (click)="goBack()" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                    <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div routerLink="/dashboard/profile">
+                <app-profile-image></app-profile-image>
+            </div>
+        </div>
+    </div>
+</div>
+<form [formGroup]="projectForm" (ngSubmit)="vadidation()">
+
+    <div class="mx-4 mt-10">
+        <div class="flex">
+            <div class="mt-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.80039 2.80034C7.88479 2.80034 7.03039 3.05594 6.30199 3.50114C6.22671 3.09844 6.08948 2.70983 5.89519 2.34914C6.80874 1.84358 7.83841 1.58517 8.88243 1.59945C9.92644 1.61372 10.9487 1.90019 11.8481 2.43054C12.7474 2.96089 13.4929 3.71676 14.0106 4.62344C14.5284 5.53012 14.8006 6.55623 14.8004 7.60034H17.8016C18.2788 7.60066 18.7363 7.79044 19.0736 8.12797C19.4109 8.4655 19.6004 8.92316 19.6004 9.40034V16.6003C19.6004 17.0777 19.4107 17.5356 19.0732 17.8731C18.7356 18.2107 18.2778 18.4003 17.8004 18.4003H10.6004C10.123 18.4003 9.66516 18.2107 9.3276 17.8731C8.99003 17.5356 8.80039 17.0777 8.80039 16.6003V13.6003C7.96565 13.6014 7.13994 13.4277 6.37639 13.0903C6.39199 12.6823 6.40039 12.2539 6.40039 11.8003V11.7583C7.10599 12.1663 7.92559 12.4003 8.80039 12.4003V9.40034C8.80039 8.92295 8.99003 8.46512 9.3276 8.12755C9.66516 7.78998 10.123 7.60034 10.6004 7.60034H13.6004C13.6004 6.3273 13.0947 5.1064 12.1945 4.20623C11.2943 3.30605 10.0734 2.80034 8.80039 2.80034ZM14.6804 8.80034C14.4444 9.95302 13.875 11.011 13.043 11.843C12.2111 12.675 11.1531 13.2443 10.0004 13.4803V16.6003C10.0004 16.7595 10.0636 16.9121 10.1761 17.0246C10.2886 17.1371 10.4413 17.2003 10.6004 17.2003H17.8004C17.9595 17.2003 18.1121 17.1371 18.2247 17.0246C18.3372 16.9121 18.4004 16.7595 18.4004 16.6003V9.40034C18.4004 9.24121 18.3372 9.0886 18.2247 8.97608C18.1121 8.86355 17.9595 8.80034 17.8004 8.80034H14.6804ZM13.4492 8.80034H10.6004C10.4413 8.80034 10.2886 8.86355 10.1761 8.97608C10.0636 9.0886 10.0004 9.24121 10.0004 9.40034V12.2491C10.8306 12.0341 11.5881 11.6009 12.1945 10.9945C12.8009 10.3881 13.2341 9.63052 13.4492 8.80034ZM3.49759 0.550342C3.59719 0.637465 3.6652 0.755071 3.69103 0.884857C3.71686 1.01464 3.69905 1.14933 3.64039 1.26794C3.63023 1.30305 3.62498 1.3394 3.62479 1.37594C3.62479 1.45154 3.64399 1.59554 3.82519 1.77554C3.91279 1.86314 3.97999 1.92554 4.05319 1.99394C4.11319 2.04914 4.17679 2.10674 4.25719 2.18594C4.41319 2.33474 4.57759 2.50994 4.72519 2.72954C5.03119 3.18914 5.20039 3.76394 5.20039 4.60034C5.20039 5.62394 4.82119 6.49634 4.22959 7.03154L4.30639 7.12034C4.64239 7.53314 4.83799 8.06834 4.96039 8.59634C5.20039 9.64034 5.20039 10.8955 5.20039 11.7703V11.8003C5.20039 15.1447 4.74559 17.0419 4.24519 18.1267C3.99319 18.6727 3.72559 19.0207 3.49399 19.2391C3.39983 19.3295 3.29601 19.4092 3.18439 19.4767C3.13329 19.5075 3.07993 19.5344 3.02479 19.5571C3.02479 19.5571 2.88919 19.6003 2.80039 19.6003C2.71159 19.6003 2.57599 19.5571 2.57599 19.5571C2.52025 19.5357 2.46678 19.5088 2.41639 19.4767C2.30478 19.4092 2.20095 19.3295 2.10679 19.2391C1.87519 19.0195 1.60759 18.6727 1.35559 18.1267C0.855191 17.0419 0.400391 15.1447 0.400391 11.8003V11.7703C0.400391 10.8943 0.400391 9.64034 0.640391 8.59634C0.762791 8.06834 0.95839 7.53314 1.29439 7.12034C1.31839 7.09034 1.34479 7.06034 1.37119 7.03154C0.779591 6.49634 0.400391 5.62394 0.400391 4.60034C0.400391 4.20914 0.504791 3.74234 0.648791 3.31154C0.792791 2.87954 0.994391 2.43314 1.22719 2.07314C1.50439 1.60514 1.89439 1.21274 2.19679 0.948742C2.36258 0.802938 2.5356 0.665565 2.71519 0.537143L2.75119 0.513143L2.76199 0.504742L2.76559 0.502343L2.76799 0.501143C2.87803 0.427795 3.00921 0.392853 3.14115 0.401751C3.27309 0.410648 3.3984 0.462885 3.49759 0.550342ZM2.80039 6.40034C3.26479 6.39914 4.00039 5.88434 4.00039 4.60034C4.00039 3.93674 3.86959 3.61154 3.72559 3.39554C3.63804 3.26938 3.53705 3.1531 3.42439 3.04874L3.27559 2.90954C3.17839 2.81834 3.06439 2.71274 2.97559 2.62514C2.84435 2.49526 2.73168 2.34787 2.64079 2.18714C2.48804 2.34775 2.35362 2.52484 2.23999 2.71514C2.07199 2.97314 1.90879 3.32714 1.78759 3.69194C1.66279 4.06394 1.60039 4.39274 1.60039 4.60034C1.60039 5.88674 2.33839 6.40034 2.80039 6.40034ZM2.22439 7.87874C2.05399 8.08634 1.91239 8.41754 1.80919 8.86634C1.60279 9.76394 1.60039 10.8919 1.60039 11.8003C1.60039 15.0559 2.04559 16.7587 2.44519 17.6239C2.57719 17.9083 2.70079 18.0979 2.80039 18.2239C2.94217 18.0387 3.06141 17.8373 3.15559 17.6239C3.55519 16.7587 4.00039 15.0559 4.00039 11.8003C4.00039 10.8919 3.99799 9.76394 3.79039 8.86634C3.68719 8.41754 3.54559 8.08634 3.37639 7.87874C3.3102 7.78906 3.22317 7.71684 3.12281 7.66833C3.02245 7.61983 2.91179 7.59649 2.80039 7.60034H2.79799C2.68698 7.59678 2.57676 7.62026 2.47684 7.66876C2.37691 7.71726 2.29028 7.78932 2.22439 7.87874Z"
+                        fill="#21A14B" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <div class="text-[#1D2939] text-base font-medium">Add Projects</div>
+                <div class="text-[#475467] text-xs font-normal">Add your project details</div>
+            </div>
+        </div>
+        <div class="flex mt-3">
+            <div>
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12.5 16V12" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M12.5 8H12.51" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="ml-3 mt-0.5 text-sm font-medium text-[#1D2939]">Project Details</div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Project name</label>
+            <input id="first_name" formControlName="projectName"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : Jobcheck mobile app">
+            <div class="text-sm text-red-800" *ngIf="submitted && validator['projectName'].errors">Please enter your
+                project name</div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Associated With</label>
+            <input id="first_name" formControlName="associatedWith"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : jobcheck Company">
+            <div class="text-sm text-red-800" *ngIf="submitted && validator['associatedWith'].errors">Please enter
+                company name</div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Client</label>
+            <input id="first_name" formControlName="client"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : jobcheck Company">
+            <div class="text-sm text-red-800" *ngIf="submitted && validator['client'].errors">Please enter your client
+                name</div>
+        </div>
+        <div class="container flex pt-6">
+            <div class="round">
+                <input type="checkbox" id="checkbox" formControlName="currentlyWorking" class="accent-[#0388BC]"
+                    (click)="Ischeck($event)" />
+                <label for="checkbox"></label>
+            </div>
+
+            <div class="mx-4">
+                <p class="text-sm font-medium text-[#1D2939]">
+                    Currently Working On This Project</p>
+            </div>
+            <!-- <div class="text-sm text-red-800" *ngIf="submitted && validator['currentlyWorking'].errors">Please select </div> -->
+        </div>
+        <div class="grid grid-cols-2 items-center">
+            <div class="mr-3">
+                <label for="name" class="leading-6 text-[1rem] font-medium  text-[#475467]">Start Date</label>
+                <div class="relative">
+                    <div class="flex">
+                        <input #startDateInput type="date" id="name" formControlName="startDate" name="name"
+                            [value]="DOBB" display="bottom"
+                            class="w-full mt-2.5 bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border gap-2.5 border-gray-300 text-base outline-none text-gray-700 py-2.5 px-2.5 leading-8 transition-colors duration-200 ease-in-out flex-none order-1 flex-grow-0 text-left capitalize h-11 font-medium text-gray-900 text-base"
+                            [placeholder]="plcaholderDate" (click)="printStartDate(startDateInput.value)"
+                            (onchange)="checkDifferenceStartdateAndEnddate()" (change)="dob($event)" />
+                        <!-- <div class="absolute inset-y-0 flex items-center pl-3 mt-3 pointer-events-none right-3">
+                            <svg (click)="togglePopup1()" (blur)="checkduration()" readonly width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M8 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 10H21" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- <div class="relative">
+                    <label for="name" class="leading-6 text-[1rem] font-medium  text-[#475467]">Start DateNEW</label>
+
+                    <input readonly id="name" formControlName="startDate" name="name" [value]="DOBB | date : 'MMM/yyyy'"
+                        display="bottom"
+                        class="w-full mt-2.5 bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border gap-2.5 border-gray-300 text-base outline-none text-gray-700 py-2.5 px-2.5 leading-8 transition-colors duration-200 ease-in-out flex-none order-1 flex-grow-0 text-left capitalize h-11 font-medium text-gray-900 text-base"
+                        placeholder="eg: 10/2020" />
+
+                    <div class="absolute inset-y-0 flex items-center pl-3 mt-8 pointer-events-none right-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                                stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 10H21" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div> -->
+                <div (click)="togglePopup1()" *ngIf=" isPopupVisible1"
+                    class=" w-full top-0  bg-black bg-opacity-25 z-30">
+                </div>
+            </div>
+            <div class="ml-3" *ngIf="showEndDate" [hidden]="isDiv">
+                <p class="leading-6 text-[1rem] font-medium  text-[#475467]">End Date</p>
+                <div class="relative">
+                    <input #endDateInput type="date" id="name" name="name" formControlName="endDate" [value]="DOBB1"
+                        (click)="printEndDate(endDateInput.value)" (change)="end($event)"
+                        (onchange)="checkDifferenceStartdateAndEnddate()"
+                        class="w-full mt-2.5 bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border gap-2.5 border-gray-300 text-base outline-none text-gray-700 py-2.5 px-2.5 leading-8 transition-colors duration-200 ease-in-out flex-none order-1 flex-grow-0 text-left capitalize h-11 font-medium text-gray-900 text-base"
+                        placeholder="eg: 10/2020" />
+                    <!-- <div (click)="togglePopup2()" (blur)="checkduration1()" readonly class="absolute inset-y-0 flex items-center pl-3 mt-3 pointer-events-none right-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                                stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 2V6" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 10H21" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div> -->
+                </div>
+                <div (click)="togglePopup2()" *ngIf=" isPopupVisible2"
+                    class="fixed w-full top-0  bg-black bg-opacity-25 z-30">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="flex justify-between"> -->
+        <div class="grid grid-cols-2">
+            <div>
+                <!-- <button (click)="dob1($event)">csdvsf</button> -->
+                <small class="error  text-red-800" *ngIf="submitted && validator['startDate'].errors">
+                    Please select your start date
+                </small>
+            </div>
+            <!-- <small class="error  text-red-800"
+            *ngIf="submitted && projectForm.controls['endDate'].errors?.['required']">
+            Please select your end date
+            </small> -->
+            <div class="ml-3" *ngIf="showEndDate" [hidden]="isDiv">
+                <small class="error  text-red-800" *ngIf="submitted && validator['endDate'].errors">
+                    Please select your end date
+                </small>
+            </div>
+        </div>
+        <div *ngIf="differenceinyears">
+            <small class="error  text-red-800">
+                {{alerts99}}
+            </small>
+        </div>
+        <div class="mt-4 w-full">
+            <div class="flex justify-between text-sm tex-[#475467] font-medium">
+                <div>Project Description</div>
+                <div>{{ProjectDescription.length}}/250</div>
+            </div>
+            <div class="my-3">
+                <textarea formControlName="projectDescription" [(ngModel)]="ProjectDescription" maxlength="250"
+                    class="border-2 border-[#D0D5D] w-full outline-none focus:outline-none p-2 rounded-lg" rows="5"
+                    placeholder="eg : describe your project "></textarea>
+                <div class="text-sm text-red-800" *ngIf="submitted && validator['projectDescription'].errors">Please
+                    enter your project description</div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Project Url/Link
+                (Optional)</label>
+            <input id="first_name" formControlName="projectUrl"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : describe your project">
+            <!-- <div class="text-sm text-red-800" *ngIf="submitted && validator['projectDescription'].errors">Please enter your project description</div> -->
+
+        </div>
+    </div>
+    <hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.2)" />
+    <div class="mx-4">
+        <div class="flex">
+            <div><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.5 5.17383H3.5C2.39543 5.17383 1.5 6.10819 1.5 7.26078V17.6956C1.5 18.8482 2.39543 19.7825 3.5 19.7825H19.5C20.6046 19.7825 21.5 18.8482 21.5 17.6956V7.26078C21.5 6.10819 20.6046 5.17383 19.5 5.17383Z"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M15.5 19.7826V3.08696C15.5 2.53346 15.2893 2.00264 14.9142 1.61126C14.5391 1.21988 14.0304 1 13.5 1H9.5C8.96957 1 8.46086 1.21988 8.08579 1.61126C7.71071 2.00264 7.5 2.53346 7.5 3.08696V19.7826"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <ellipse cx="17.5" cy="16.6525" rx="8" ry="8.34783" fill="white" />
+                    <g clip-path="url(#clip0_11034_39379)">
+                        <path
+                            d="M22 15.6097C22 19.2619 17.5 22.3923 17.5 22.3923C17.5 22.3923 13 19.2619 13 15.6097C13 14.3644 13.4741 13.17 14.318 12.2894C15.1619 11.4088 16.3065 10.9141 17.5 10.9141C18.6935 10.9141 19.8381 11.4088 20.682 12.2894C21.5259 13.17 22 14.3644 22 15.6097Z"
+                            stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M17.5 17.1754C18.3284 17.1754 19 16.4746 19 15.6101C19 14.7457 18.3284 14.0449 17.5 14.0449C16.6716 14.0449 16 14.7457 16 15.6101C16 16.4746 16.6716 17.1754 17.5 17.1754Z"
+                            stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_11034_39379">
+                            <rect width="12" height="12.5217" fill="white" transform="translate(11.5 10.3926)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="ml-3 mt-0.5 text-[#1D2939] text-sm font-medium">Location & Employment</div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Project Location</label>
+            <input id="first_name" (click)="togglePopupLocation()" [value]="selecetNewLocation"
+                formControlName="location"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : Delhi" readonly>
+
+
+            <div class="absolute right-10 -mt-6">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#1D2939" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="text-sm text-red-800" *ngIf="submitted  && selecetNewLocation.length<=0">Please select
+                your project location</div>
+        </div>
+        <div class="text-[#475467] text-sm font-normal pt-3 pb-2">Project Site</div>
+        <div class="w-full">
+            <div class="relative">
+                <div class="flex flex-wrap">
+                    <div class="flex mr-3">
+                        <label class="mt-2 cursor-pointer">
+                            <input type="radio" class="sr-only peer" formControlName="projectSite" name="Project Site"
+                                value="OFFSITE" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467] ">
+                            Off Site
+                        </p>
+                        <label class="mt-2 ml-3 cursor-pointer">
+                            <input type="radio" class="mt-2 ml-1 sr-only peer" formControlName="projectSite"
+                                name="Project Site" value="ONSITE" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467]">
+                            On Site
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <label class="mt-2 cursor-pointer">
+                            <input type="radio" class="mt-2 sr-only peer" formControlName="projectSite"
+                                name="Project Site" value="HYBRID" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467]">
+                            Hybrid
+                        </p>
+                    </div>
+                    <div class="text-sm text-red-800" *ngIf="submitted && validator['projectSite'].errors">Please enter
+                        your project site</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-[#475467] text-sm font-normal pt-3 pb-2">Employment Type
+        </div>
+        <div class="w-full">
+            <div class="relative">
+                <div class="flex flex-wrap">
+                    <div class="flex mr-3">
+                        <label class="mt-2 cursor-pointer">
+                            <input type="radio" class="sr-only peer" formControlName="empType" name="Employment"
+                                value="FULLTIME" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467] ">
+                            Full Time
+                        </p>
+                        <label class="mt-2 ml-3 cursor-pointer">
+                            <input type="radio" class="mt-2 ml-1 sr-only peer" formControlName="empType"
+                                name="Employment" value="PARTTIME" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467]">
+                            Part Time
+                        </p>
+                    </div>
+                    <div class="text-sm text-red-800" *ngIf="submitted && validator['empType'].errors">Please select
+                        your
+                        employee type</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.2)" />
+    <div class="mx-4">
+        <div class="flex">
+            <div>
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.5 21V19C17.5 17.9391 17.0786 16.9217 16.3284 16.1716C15.5783 15.4214 14.5609 15 13.5 15H5.5C4.43913 15 3.42172 15.4214 2.67157 16.1716C1.92143 16.9217 1.5 17.9391 1.5 19V21"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M9.5 11C11.7091 11 13.5 9.20914 13.5 7C13.5 4.79086 11.7091 3 9.5 3C7.29086 3 5.5 4.79086 5.5 7C5.5 9.20914 7.29086 11 9.5 11Z"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M23.5 21.0009V19.0009C23.4993 18.1146 23.2044 17.2536 22.6614 16.5532C22.1184 15.8527 21.3581 15.3524 20.5 15.1309"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M16.5 3.13086C17.3604 3.35116 18.123 3.85156 18.6676 4.55317C19.2122 5.25478 19.5078 6.11769 19.5078 7.00586C19.5078 7.89403 19.2122 8.75694 18.6676 9.45855C18.123 10.1602 17.3604 10.6606 16.5 10.8809"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="ml-3 mt-1 text-[#1D2939] text-sm font-medium">Team & Role</div>
+        </div>
+        <div class="text-[#475467] text-sm font-normal pt-3 pb-2">Work Type
+        </div>
+        <div class="w-full">
+            <div class="relative">
+                <div class="flex flex-wrap">
+                    <div class="flex mr-3">
+                        <label class="mt-2 cursor-pointer">
+                            <input type="radio" class="sr-only peer" formControlName="workType" name="Worktype"
+                                value="INDIVIDUAL" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467] ">
+                            Individually
+                        </p>
+                        <label class="mt-2 ml-3 cursor-pointer">
+                            <input type="radio" class="mt-2 ml-1 sr-only peer" formControlName="workType"
+                                name="Worktype" value="WITHTEAM" />
+                            <div
+                                class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-3 h-3 bg-white rounded-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="m-2 font-medium Jost text-[1rem] not-italic leading-6 mt-3 text-[#475467]">
+                            With Team
+                        </p>
+                    </div>
+                    <div class="text-sm text-red-800" *ngIf="submitted && validator['workType'].errors">Please select
+                        your work type</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Role</label>
+            <input id="first_name" formControlName="role" (click)="togglePopupJobs()" [name]="selecetNewJobRoles"
+                [value]="selecetNewJobRoles"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg : FullStack/ Java Developer" readonly>
+
+            <div class="absolute right-10 -mt-6">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#1D2939" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="text-sm text-red-800" *ngIf="submitted  && selecetNewJobRoles.length<=0">Please select
+                your role</div>
+        </div>
+        <div class="mt-4 w-full">
+            <div class="flex justify-between text-sm tex-[#475467] font-medium">
+                <div>Role Description</div>
+                <div>{{RoleDescription.length}}/250</div>
+            </div>
+            <div class="my-3">
+                <textarea formControlName="roleDescription" [(ngModel)]="RoleDescription" maxlength="500"
+                    class="border-2 border-[#D0D5D] w-full outline-none focus:outline-none p-2 rounded-lg" rows="5"
+                    placeholder="eg : describe your role into the project"></textarea>
+                <div class="text-sm text-red-800" *ngIf="submitted && validator['roleDescription'].errors">Please enter
+                    your role description</div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-[#475467]">Skills Used</label>
+            <input id="first_name" (click)="togglePopupSkills()" formControlName="skillsUsed"
+                class="bg-[#FCFCFD] border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5 "
+                placeholder="eg :Java" readonly>
+
+            <div class="absolute right-10 -mt-6">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#1D2939" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <!-- <div class="text-sm text-red-800" *ngIf="submitted && !validator['skillsUsed'].errors">Please select your
+                skills</div> -->
+            <!-- <div class="text-sm text-red-800" *ngIf="submitted && selecetNewSkills.length>0">Please select your
+                skills</div> -->
+            <div class="text-sm text-red-800" *ngIf="submitted  && selecetNewSkills.length<=0">Please select your
+                skills</div>
+            <div class="py-2">
+                <button *ngFor="let lang1 of selecetNewSkills"
+                    class="text-[#475467] rounded-lg mr-2 mb-2 px-4 py-1.5 bg-[#F2F4F7]">
+                    <div class="flex space-x-2 text-sm">
+                        <span class="font-normal" formControlName="skillsUsed">{{ lang1 }}</span>
+                        <svg (click)="removeSkills(lang1)" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 5L5 15" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M5 5L15 15" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="p-4 w-full">
+        <button [ngStyle]="{'background-color': projectForm.invalid ? 'grey' : 'rgb(22 163 74)'}"
+            class="w-full bg-[#21A14B] text-white rounded-xl shadow-lg py-3">Save</button>
+    </div>
+</form>
+
+
+<div (click)="togglePopupJobs()" *ngIf=" isPopupVisibleJobs"
+    class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+<div class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisibleJobs }">
+    <div class="grid place-items-end">
+        <div class="max-w-md bg-white shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-4">
+                    <p class="leading-normal text-[#252525] text-[1.125rem] font-semibold rubik">Choose Your Role At
+                        Project</p>
+                    <div class="relative mt-6 mb-6">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" [(ngModel)]="queryJobs" class="global_offcanvas_input"
+                            placeholder="eg : FullStack/ Java Developer" (input)="jobsSearch()" />
+                    </div>
+                    <div class=" overflow-y-auto bg-white h-[30rem]">
+                        <div class="overflow-full">
+                            <div *ngFor="let job of searchJobRoles ; let i= index"
+                                class="flex w-full pb-3.5 rounded overflow-hidden shadow-none relative">
+                                <p class="text-[#475467] Jost text-base font-semibold pl-2 pt-2.5">
+                                    {{ job }}
+                                </p>
+                                <label class="absolute right-0 mx-2 mt-2 cursor-pointer">
+                                    <input id="checkbox-item-{{i}}" type="checkbox" class="peer sr-only" [name]="job"
+                                        (change)="OnSelectJobRole($event)" (click)="togglePopupJobs()" />
+                                    <div
+                                        class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center justify-between">
+                                                <div class="h-3 w-3 rounded-sm bg-white"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+                            <img class="img" [src]="errorMsgOfJobrole" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div (click)="togglePopupLocation()" *ngIf=" isPopupVisibleLocation"
+    class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+<div class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisibleLocation }">
+    <div class="grid place-items-end">
+        <div class="max-w-md bg-white shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-4">
+                    <p class="leading-normal text-[#252525] text-[1.125rem] font-semibold rubik">Project Location</p>
+                    <div class="relative mt-6 mb-6">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" [(ngModel)]="queryLocation"
+                            class="global_offcanvas_input" placeholder="eg: Delhi" (input)="locationSearch()" />
+                    </div>
+                    <div class=" overflow-y-auto bg-white h-[30rem]">
+                        <div class="overflow-full">
+                            <div *ngFor="let loc of searchLocation ; let i= index"
+                                class="flex w-full pb-3.5 rounded overflow-hidden shadow-none relative">
+                                <p class="text-[#475467] Jost text-base font-semibold pl-2 pt-2.5">
+                                    {{ loc }}
+                                </p>
+                                <label class="absolute right-0 mx-2 mt-2 cursor-pointer">
+                                    <input id="checkbox-item-{{i}}" type="checkbox" class="peer sr-only" [name]="loc"
+                                        (change)="OnSelectLocation($event)" (click)="togglePopupLocation()" />
+                                    <div
+                                        class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center justify-between">
+                                                <div class="h-3 w-3 rounded-sm bg-white"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+                            <img class="img" [src]="errorMsgOfLocation" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div (click)="togglePopupSkills()" *ngIf=" isPopupVisibleSkills"
+    class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+<div class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisibleSkills }">
+    <div class="grid place-items-end">
+        <div class="max-w-md bg-white shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-4">
+                    <p class="leading-normal text-[#252525] text-[1.125rem] font-semibold rubik">Choose Your Skills Used
+                        In Project</p>
+                    <div class="relative mt-6 mb-6">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" [(ngModel)]="querySkills"
+                            class="global_offcanvas_input" placeholder="eg: Java, Physics" (input)="skillsSearch()" />
+                    </div>
+                    <div class=" overflow-y-auto bg-white h-[40rem]">
+                        <div class="overflow-full">
+                            <div *ngFor="let skill of searchSkillsss ; let i= index"
+                                class="flex w-full pb-3.5 rounded overflow-hidden shadow-none relative">
+                                <p class="text-[#475467] Jost text-base font-semibold pl-2 pt-2.5">
+                                    {{ skill }}
+                                </p>
+                                <label class="absolute right-0 mx-2 mt-2 cursor-pointer">
+                                    <input id="checkbox-item-{{i}}" type="checkbox" class="peer sr-only"
+                                        value="{{skill}}" name="educationtype" (change)="OnSelectSkills($event)"
+                                        [checked]="userSelectedSkill[i]" />
+                                    <div
+                                        class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center justify-between">
+                                                <div class="h-3 w-3 rounded-sm bg-white"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+                            <img class="img" [src]="errorMsgOfskills" alt="" />
+                        </div>
+                        <div class="block inset-x-0 bottom-0 bg-white fixed">
+                            <div class="flex w-full p-4 rounded h-24 overflow-hidden shadow-none relative">
+                                <button (click)="togglePopupSkills()"
+                                    class=" btn btn-primary mt-4 mb-6 ml-2 mr-2 text-base font-medium text-white w-full rounded-lg h-14"
+                                    [ngClass]="selecetNewSkills.length>0?'bg-[#21A14B] font-medium text-white':'bg-[#98A2B3]'">
+                                    Choose
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--start date pop up  -->
+<div class="rounded-t-2xl z-50 popup-container-date fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisible1 }">
+    <div class="grid place-items-end">
+        <div class="max-w-md bg-white  shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="offcanvas-title leading-normal text-[#252525] text-[1.125rem] font-medium rubik">
+                                <b>Select Your Start Date</b>
+                                <br>
+                                <span>Start Date</span>
+                            </p>
+                        </div>
+                        <div (click)="togglePopup1()" class="text-[#0175A2] text-base font-medium">Confirm</div>
+                    </div>
+                    <input type="button" id="name" name="name" [value]="DOBB|date:'MM/yyyy'" data-te-offcanvas-toggle
+                        data-te-target="#offcanvasBottom3" display="bottom" aria-controls="offcanvasBottom"
+                        data-te-ripple-init data-te-ripple-color="light"
+                        class="w-full  bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border-none   text-base outline-none text-gray-700  leading-8 transition-colors mt-1 ease-in-out flex-none order-1 flex-grow-0 text-left " />
+                </div>
+                <ion-datetime [preferWheel]="true" presentation="month-year" (ionChange)="dob($event)"
+                    (ionChange)="click1()"></ion-datetime>
+            </div>
+        </div>
+    </div>
+</div>
+<div (click)="togglePopup1()" *ngIf=" isPopupVisible1" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+
+<!-- end date popp up -->
+<div class="rounded-t-2xl z-50 popup-container-date fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisible2 }">
+    <div class="grid place-items-end">
+        <div class="max-w-md bg-white  shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-6">
+                    <div class="flex justify-between w-full">
+                        <div>
+                            <p class="offcanvas-title leading-normal text-[#252525] text-[1.125rem] font-medium">
+                                <b class="rubik">Select Your Duration</b>
+                                <br>
+                                <span>End Date</span>
+                            </p>
+                        </div>
+                        <div (click)="togglePopup2()" class="text-[#0175A2] text-base font-medium">Confirm</div>
+                    </div>
+                    <input type="button" id="name" name="name" [value]="DOBB1|date:'MM/yyyy'" data-te-offcanvas-toggle
+                        data-te-target="#offcanvasBottom3" display="bottom" aria-controls="offcanvasBottom"
+                        data-te-ripple-init data-te-ripple-color="light"
+                        class="w-full  bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border-none   text-base outline-none text-gray-700  leading-8 transition-colors mt-1 ease-in-out flex-none order-1 flex-grow-0 text-left " />
+                </div>
+                <!-- <div class="flex justify-center w-full">
+                    <ion-datetime [preferWheel]="true" presentation="month-year" (ionChange)="dob1($event)"
+                        (ionChange)="click()"></ion-datetime>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div (click)="togglePopup2()" *ngIf=" isPopupVisible2" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>

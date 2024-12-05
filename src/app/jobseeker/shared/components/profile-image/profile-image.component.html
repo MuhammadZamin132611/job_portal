@@ -1,0 +1,10 @@
+<div class="bg-white h-9 w-9 rounded-full">
+    <div *ngIf="!IsShow"
+        class="rounded-full bg-blue-50 h-10 w-10 text-2xl text-[#1D2939] font-medium ">
+        <p class="grid place-content-center justify-center h-full">{{letter}}</p>
+    </div>
+    <div *ngIf="IsShow"
+        class="shadow-lg border-none rounded-full bg-blue-50 h-10 w-10 flex place-content-center text-gray-600 p-1 font-medium ">
+        <img class="rounded-full" [src]="imagePath" alt="">
+    </div>
+</div>

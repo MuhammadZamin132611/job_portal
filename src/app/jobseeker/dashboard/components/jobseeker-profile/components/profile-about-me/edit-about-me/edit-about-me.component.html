@@ -1,0 +1,64 @@
+<div class="sticky z-30 top-0">
+  <app-common-header></app-common-header>
+  <div class="sticky top-0 z-50">
+    <div class="flex px-7 -mt-11 justify-between">
+      <!-- routerLink="/dashboard/profile" -->
+      <div (click)="goBack()"  class="mt-2">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+          <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="">
+        <app-profile-image></app-profile-image>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-6 mt-10">
+    <div class="flex">
+      <div>
+        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.9021 4.89023C15.9021 7.06872 13.7855 9.03046 10.913 9.03046C8.04046 9.03046 5.92383 7.06872 5.92383 4.89023C5.92383 2.71174 8.04046 0.75 10.913 0.75C13.7855 0.75 15.9021 2.71174 15.9021 4.89023Z"
+            stroke="#21A14B" stroke-width="1.5" />
+          <path
+            d="M17.6957 12H6.8931C6.79061 12 6.68901 12.0074 6.58799 12.0247C4.63201 12.3596 1 13.5751 1 16.0001V18.8892C1 19.9937 1.89543 20.8892 3 20.8892H11.9565"
+            stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+          <g clip-path="url(#clip0_3156_10267)">
+            <path
+              d="M17.4998 23.0827C20.0311 23.0827 22.0832 21.0307 22.0832 18.4993C22.0832 15.968 20.0311 13.916 17.4998 13.916C14.9685 13.916 12.9165 15.968 12.9165 18.4993C12.9165 21.0307 14.9685 23.0827 17.4998 23.0827Z"
+              stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17.5 20.3333V18.5" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17.5 16.666H17.505" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_3156_10267">
+              <rect width="11" height="11" fill="white" transform="translate(12 13)" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="ml-3">
+        <div class="text-lg font-semibold text-[#1D2939]">About Me</div>
+        <div class="text-sm font-medium text-[#667085]">Write a summary about you</div>
+      </div>
+    </div>
+    <div class="flex justify-between mt-5 ml-1">
+      <div class="text-[#475467] text-sm font-medium">Summary</div>
+      <div class="text-[#475467] text-sm font-medium">{{text.length}}/500</div>
+    </div>
+    <div class="mt-4">
+      <textarea id="message" rows="14" maxlength="500" name="personSummary" [(ngModel)]="text"
+        class="block p-2.5 bg-[#FCFCFD] w-full text-sm text-gray-90 rounded-lg outline-none border-2 border-[#D0D5DD]"
+        placeholder="write your summary hear"></textarea>
+    </div>
+    <div class="w-full my-5">
+      <!-- <button class="bg-[#21A14B] py-3 rounded-lg text-white w-full" (click)="saveSummary() " routerLink="/profile" -->
+      <button class="py-3 rounded-lg w-full"
+        style="box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);" (click)="adding()" routerLink="/dashboard/profile"  [ngClass]="text.length>0?'bg-[#21A14B] font-medium text-white':'bg-[#98A2B3]'">Save</button>
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+.online {
+  background-color: green;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  /* height: 100%; */
+  width: 100%;
+  margin-top: 180px;
+}
+
+.offline {
+  background-color: red;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  /* height: 100%; */
+  width: 100%;
+  margin-top: 100px;
+}
+
+.ss {
+  border: 2px solid #D0D5DD;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 12s linear infinite;
+  width: 140%;
+}
+
+
+

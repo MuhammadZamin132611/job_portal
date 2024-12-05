@@ -1,0 +1,13 @@
+hr{
+    background-color: rgba(180, 191, 233, 0.2);
+}
+ol{
+    list-style-type: decimal;
+}
+h6{
+   
+    background: linear-gradient(133.75deg, #3DA2FE 7.09%, #1C8FF9 100%);
+
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }

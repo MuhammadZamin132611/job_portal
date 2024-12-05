@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">JobCheck</string>
+    <string name="title_activity_main">JobCheck</string>
+    <string name="package_name">com.example.app</string>
+    <string name="custom_url_scheme">com.example.app</string>
+    <string name="server_client_id">731942592049-b1gtipk1ni8do3cn3dl7p6sbns45i376.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">494324079582441</string>
+ <string name="facebook_client_token">5a5351be8cad39f4b9f01f6deda9fc2c</string>
+</resources>

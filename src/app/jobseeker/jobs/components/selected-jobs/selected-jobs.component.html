@@ -1,0 +1,48 @@
+
+    <div class="border rounded-lg p-4 mb-4 bg-white mx-4" *ngFor="let data of shortlistedJobs">
+        <div class="flex justify-between" >
+            <div class=" flex">
+                <div class="">
+                    <img src="assets/images/pic2.png" alt="">
+                </div>
+                <div class="ml-2">
+                    <div class="text-[#252525] font-semibold text-md text-[1.125rem]">
+                        {{data.jobTitle}}
+                    </div>
+                    <div class="text-gray-500 font text-xs font-medium">{{data.companyname}}</div>
+                    <div class="flex mt-1">
+                        <div class="mt-0.5">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="ml-1 text-gray-500 text-sm font font-medium ">
+                            {{data.location[0]}}
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] pt-2 text-xs font-semibold">Application sent 3 week ago</div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="ml-10 mt-2 mb-2">
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <hr class="h-0.5 my-3 bg-[#EAECF0]">
+        <div class="flex justify-between">
+            <div class="text-[#98A2B3] text-sm font-semibold">Recruiter actioned 1 week ago</div>
+            <div class="text-[#F79009] text-xs font-medium bg-[#FFFAEB] px-3 py-1 rounded-xl ">Shortlisted</div>
+        </div>
+    </div>
+   

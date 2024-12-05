@@ -1,0 +1,36 @@
+.data{
+    padding: 10px;
+gap: 10px;
+
+width: 98px;
+height: 40px;
+
+/* Gray/100 */
+
+background: #F2F4F7;
+border-radius: 8px;
+}
+.data1{
+    padding: 10px;
+gap: 10px;
+
+width: 93px;
+height: 40px;
+
+/* Gray/100 */
+
+background: #F2F4F7;
+border-radius: 8px;
+}
+.data2{
+    padding: 10px;
+gap: 10px;
+
+width: 121px;
+height: 40px;
+
+/* Gray/100 */
+
+background: #F2F4F7;
+border-radius: 8px;
+}

@@ -1,0 +1,121 @@
+
+
+<div class="absolute z-0 h-screen w-screen">
+<div class="sticky z-30 top-0">
+  <div>
+    <app-header></app-header>
+  </div>
+  <div class="flex justify-between px-5 -mt-14">
+    <div routerLink="/dashboard" class="mt-2">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+        <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div routerLink="/dashboard/profile">
+      <app-profile-image></app-profile-image>
+    </div>
+  </div>
+</div>
+<div class="mx-5 -mt-12">
+  <div class="py-4 pl-12 inset-x-0 bottom-0">
+    <div class="">
+      <input type="text"
+        class="bg-white h-10 pl-8 text-xs w-2/3 px-2 rounded-lg focus:outline-none hover:cursor-pointer"
+        placeholder="Search job, eg: Accountant" />
+      <div class="-mt-7 ml-2">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
+            stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 17.5L13.875 13.875" stroke="#475467" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mx-4" >
+  <div class="block -mt-12"></div>
+  <div class="mt-16 mx-3">
+    <h1 class="font-semibold text-[1.125rem] h-7 text-black rubik">
+      Notifications
+    </h1>
+  </div>
+  <!-- bg color -->
+  <div class="bg-[#F8F9FC] -mx-[1rem] px-4">
+    <div class="mt-3 px-1.5 flex gap-3"*ngFor="let data of notificationlist.values">
+      <img src="/assets/icons/ICON.svg" alt="" style="height: 26px; width: 27px" />
+      <div class="w-full">
+        <P class="text-[#344054] text-[0.875rem] h-10 font-medium">{{data}}</P>
+        <div class="flex justify-between py-1.5 mt-1">
+          <p class="font-normal text-[0.625rem] text-[#344054]">
+            Based on your area of Interest
+          </p>
+          <p class="font-normal text-[0.625rem] text-[#344054]">3 Days Ago</p>
+        </div>
+      </div>
+    </div>
+    <!-- profile -->
+    <div class="mt-4 flex gap-3">
+      <!-- <img src="/assets/icons/Profile.svg" alt="" style="height: 36px; width: 37px" /> -->
+
+      <!-- <div class="w-full">
+        <p class="text-[#344054] text-[0.875rem] h-10 font-medium">
+          A Recruiter has recently shown interest in your profile
+        </p>
+        <div class="flex justify-between py-1.5 mt-1">
+          <p class="font-normal text-[0.625rem] text-[#344054]">
+            Based on your profile score
+          </p>
+          <p class="font-normal text-[0.625rem] text-[#344054]">3 Days Ago</p>
+        </div>
+      </div> -->
+    </div>
+    <!-- profile -->
+    <!-- <div class="mt-4 flex gap-3">
+      <img src="/assets/icons/Profile.svg" alt="" style="height: 36px; width: 37px" />
+
+      <div class="w-full">
+        <p class="text-[#344054] text-[0.875rem] h-10 font-medium">
+          A Recruiter has recently shown interest in your profile
+        </p>
+        <div class="flex justify-between py-1.5 mt-1">
+          <p class="font-normal text-[0.625rem] text-[#344054]">
+            Based on your profile score
+          </p>
+          <p class="font-normal text-[0.625rem] text-[#344054]">3 Days Ago</p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <!-- profile-->
+  <!-- <div class="mt-4 flex gap-3">
+    <img src="/assets/icons/Profile.svg" alt="" style="height: 36px; width: 37px" />
+
+    <div class="w-full">
+      <p class="text-[#344054] text-[0.875rem] h-10 font-medium">
+        A Recruiter has recently shown interest in your profile
+      </p>
+      <div class="flex justify-between py-1.5 mt-1">
+        <p class="font-normal text-[0.625rem] text-[#344054]">
+          Based on your profile score
+        </p>
+        <p class="font-normal text-[0.625rem] text-[#344054]">3 Days Ago</p>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+</div>
+
+<div *ngIf="connectionStatus === 'offline'" class="fixed h-full">
+
+  <app-no-internet></app-no-internet>
+</div>
+<div *ngIf="connectionStatus === 'online'" class="online fixed bottom-0">
+  <span class="">{{ connectionStatusMessage }}</span>
+</div>

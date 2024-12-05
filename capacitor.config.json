@@ -1,0 +1,34 @@
+
+{
+  "appId": "com.jobcheck.app",
+  "appName": "Capacitor JobCheck",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "GoogleAuth": {
+  "scopes": ["profile","email"],
+  "serverClientId": "731942592049-b1gtipk1ni8do3cn3dl7p6sbns45i376.apps.googleusercontent.com"
+  }
+},
+  "SplashScreen": {
+    "launchAutoHide": true,
+    "splashFullScreen": true,
+    "showSpinner": false,
+    "splashImmersive": false,
+    "backgroundColor": "#ffffff",
+    "splash": {
+      "imagePath": "assets/splash.png",
+      "resize": "cover",
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "facebookLogin": {
+    "permissions": ["public_profile", "email"],
+    "appId": "com.jobcheck.app",
+    "cookie": true,
+    "logInBehavior": "web_view_only",
+    "fetchUserProfile": true
+ }
+
+}
+

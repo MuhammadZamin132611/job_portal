@@ -1,0 +1,153 @@
+.vertical {
+    border-left: 2px solid #667085;
+    height: 216px;
+    position:absolute;
+    left: 27%;
+  }
+  .popup-container.active {
+
+    height: 35%;
+  
+  }
+  
+  .popup-container5.active {
+  
+    height: 35%;
+  
+  }
+  
+  .popup-container1.active {
+  
+    height: 85%;
+  
+  }
+  
+  .popup-container-jobcity.active {
+    height: 85%;
+  }
+  
+  .online {
+    background-color: green;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    /* height: 100%; */
+    width: 100%;
+    margin-top: 180px;
+  }
+  
+  .offline {
+    background-color: red;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    /* height: 100%; */
+    width: 100%;
+    margin-top: 100px;
+  }
+  
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    visibility: hidden;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+  
+  
+  /* .button-color-green {
+      background-color: white;
+    }
+    
+    .button-color-red {
+      background-color: red;
+    } */
+  
+  
+  .popup-container-date.active {
+    height: 50%;
+  }
+  
+  
+  .popup-container1 {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    overflow: hidden;
+    width: 0;
+    /* background-color: #83cd23; */
+    /* transition: width 1s ease-out; */
+    z-index: 999;
+  }
+  
+  .popup-container1.active {
+    /* position: fixed; */
+    height: 200px;
+    width: 90%;
+    left: auto;
+    right: auto;
+  }
+  
+  ```css
+  /* svg-popup.component.css */
+  
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .white {
+    color: white;
+  }
+  
+  .popup-container.active {
+  
+    height: 35%;
+  
+  }
+  
+  .popup-container5.active {
+  
+    height: 35%;
+  
+  }
+  
+  .popup-containerjobrole.active {
+  
+    height: 85%;
+  
+  }
+  
+  .popup-container-jobcity.active {
+    height: 85%;
+  }

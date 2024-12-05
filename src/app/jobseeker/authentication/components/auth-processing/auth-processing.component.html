@@ -1,0 +1,80 @@
+<div *ngIf="busy | async" class="grid place-items-center h-screen">
+  <div class="max-w-sm rounded overflow-hidden" @fade>
+    <div>
+      <div class="grid place-items-center">
+        <div class="relative">
+          <div class="absolute">
+            <img src="assets/images/Jobcheck.svg" alt="JobCheckLogo" class="w-[5rem] h-[5rem] ml-14 mt-14" />
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none"
+            color="#02A0DD">
+            <defs>
+              <linearGradient id="spinner-secondHalf">
+                <stop offset="0%" stop-opacity="0" stop-color="currentColor" />
+                <stop offset="100%" stop-opacity="0.5" stop-color="#02A0DD" />
+              </linearGradient>
+              <linearGradient id="spinner-firstHalf">
+                <stop offset="0%" stop-opacity="1" stop-color="currentColor" />
+                <stop offset="100%" stop-opacity="0.5" stop-color="#21A14B" />
+              </linearGradient>
+            </defs>
+
+            <g stroke-width="8">
+              <path stroke="url(#spinner-secondHalf)" d="M 4 100 A 96 96 0 0 1 196 100" />
+              <path stroke="url(#spinner-firstHalf)" d="M 196 100 A 96 96 0 0 1 4 100" />
+
+              <path stroke="currentColor" stroke-linecap="round" d="M 4 100 A 96 96 0 0 1 4 98" />
+            </g>
+
+            <animateTransform from="0 0 0" to="360 0 0" attributeName="transform" type="rotate" repeatCount="indefinite"
+              dur="1300ms" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid place-items-center mt-2">
+        <h3 class="text-xl font-semibold text-gray-800 rubik">Please Wait</h3>
+        <h4 class="text-gray-600 mt-4">We are Onboarding you</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- verified email and phone number -->
+<div *ngIf="!(busy | async)" class="grid h-screen place-items-center w-full">
+  <div class="w-full">
+    <div class="flex justify-center w-full">
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M45.4646 11.9758C47.0462 7.79966 52.9538 7.79966 54.5354 11.9758C55.7634 15.2184 59.8986 16.1622 62.4118 13.7736C65.6487 10.6972 70.9714 13.2604 70.5843 17.7093C70.2838 21.1635 73.6 23.808 76.9007 22.7464C81.1519 21.3791 84.8352 25.9979 82.5563 29.8382C80.7868 32.82 82.6271 36.6415 86.0616 37.1171C90.485 37.7298 91.7996 43.4893 88.08 45.9605C85.1921 47.8792 85.1921 52.1208 88.08 54.0395C91.7996 56.5107 90.485 62.2702 86.0616 62.8829C82.6271 63.3585 80.7868 67.18 82.5563 70.1618C84.8352 74.0021 81.1519 78.6209 76.9007 77.2536C73.6 76.192 70.2838 78.8365 70.5843 82.2907C70.9714 86.7396 65.6487 89.3028 62.4118 86.2264C59.8986 83.8378 55.7634 84.7816 54.5354 88.0242C52.9538 92.2003 47.0462 92.2003 45.4646 88.0242C44.2366 84.7816 40.1014 83.8378 37.5882 86.2264C34.3513 89.3028 29.0287 86.7396 29.4157 82.2907C29.7162 78.8365 26.4 76.192 23.0993 77.2536C18.8481 78.6209 15.1648 74.0021 17.4437 70.1618C19.2132 67.18 17.3729 63.3585 13.9384 62.8829C9.515 62.2702 8.20042 56.5107 11.92 54.0395C14.8079 52.1208 14.8079 47.8792 11.92 45.9605C8.20042 43.4893 9.515 37.7298 13.9384 37.1171C17.3729 36.6415 19.2132 32.82 17.4437 29.8382C15.1648 25.9979 18.8481 21.3791 23.0993 22.7464C26.4 23.808 29.7162 21.1635 29.4157 17.7093C29.0287 13.2604 34.3513 10.6972 37.5882 13.7736C40.1014 16.1622 44.2366 15.2184 45.4646 11.9758Z"
+          fill="url(#paint0_linear_956_1716)" />
+        <path d="M63 41L45.125 58L37 50.2727" stroke="white" stroke-width="5" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <defs>
+          <linearGradient id="paint0_linear_956_1716" x1="2.63751e-07" y1="10" x2="88.5" y2="88.5"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D983B" />
+            <stop offset="1" stop-color="#5DA775" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="text-center my-6">
+      <p class="text-[#21A14B] text-[1.5rem] font-bold rubik">Verified</p>
+    </div>
+    <div class="text-center">
+      <p class="text-[#475467] text-[1rem] font-semibold" *ngIf="EmailVerify">
+        Your Email ID is Verified
+      </p>
+    </div>
+    <div class="text-center">
+      <p class="text-[#475467] text-[1rem] font-semibold" *ngIf="PhoneNumberverify">
+        Your Mobile Number is Verified
+      </p>
+    </div>
+
+    <div class="text-center">
+      <p class="text-[#475467] text-[1rem] font-semibold">Successfully</p>
+    </div>
+  </div>
+</div>

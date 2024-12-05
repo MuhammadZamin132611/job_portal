@@ -1,0 +1,101 @@
+<div class="sticky top-0 z-30">
+    <app-common-header></app-common-header>
+    <div class="flex px-5 -mt-14 justify-between">
+        <div (click)="goBack()" class="mt-2">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div routerLink="/dashboard/profile">
+            <app-profile-image></app-profile-image>
+        </div>
+    </div>
+</div>
+
+<div class="flex mt-10 px-5">
+    <div class="mt-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14 2V8H20" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 13H8" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 17H8" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 9H9H8" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </div>
+    <div class="ml-3">
+        <div class="text-[#000000] text-lg font-semibold">Create Resume</div>
+        <div class="text-[#667085] text-base font-medium">Crate resume for your profile </div>
+    </div>
+</div>
+
+<div class="px-5 mt-4">
+    <div class="flex justify-between bg-[#fffaeb] p-5 rounded-lg shadow-md">
+        <div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="#FEF0C7" />
+                <g clip-path="url(#clip0_3204_14150)">
+                    <path
+                        d="M17.85 17.25H6.15C5.9025 17.25 5.7 17.4469 5.7 17.6875V18.5625C5.7 18.8031 5.9025 19 6.15 19H17.85C18.0975 19 18.3 18.8031 18.3 18.5625V17.6875C18.3 17.4469 18.0975 17.25 17.85 17.25ZM19.65 8.5C18.9047 8.5 18.3 9.08789 18.3 9.8125C18.3 10.0066 18.345 10.1871 18.4238 10.3539L16.3875 11.5406C15.9544 11.7922 15.3947 11.65 15.1444 11.2234L12.8522 7.32422C13.1531 7.08359 13.35 6.72266 13.35 6.3125C13.35 5.58789 12.7453 5 12 5C11.2547 5 10.65 5.58789 10.65 6.3125C10.65 6.72266 10.8469 7.08359 11.1478 7.32422L8.85562 11.2234C8.60531 11.65 8.04281 11.7922 7.6125 11.5406L5.57906 10.3539C5.655 10.1898 5.70281 10.0066 5.70281 9.8125C5.70281 9.08789 5.09812 8.5 4.35281 8.5C3.6075 8.5 3 9.08789 3 9.8125C3 10.5371 3.60469 11.125 4.35 11.125C4.42312 11.125 4.49625 11.1141 4.56656 11.1031L6.6 16.375H17.4L19.4334 11.1031C19.5037 11.1141 19.5769 11.125 19.65 11.125C20.3953 11.125 21 10.5371 21 9.8125C21 9.08789 20.3953 8.5 19.65 8.5Z"
+                        fill="url(#paint0_linear_3204_14150)" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_3204_14150" x1="4.09091" y1="5.97674" x2="16.7196" y2="22.5031"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFB13C" />
+                        <stop offset="1" stop-color="#E48F0F" />
+                    </linearGradient>
+                    <clipPath id="clip0_3204_14150">
+                        <rect width="18" height="14" fill="white" transform="translate(3 5)" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="text-[#1D2939] text-sm font-medium">Upgrade to Premium</div>
+            <div class="text-[#667085] text-xs font-normal">Create your customise professional resume with experts
+                advices.</div>
+        </div>
+        <div class="mt-0.5"><svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 11L6.5 6L1.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="text-[#667085] text-base font-medium px-5 pt-4">Choose Your Resume Templet</div>
+<div class="px-5 pt-4">
+    <div class="grid grid-cols-3 gap-4 overflow-y-auto">
+        <div routerLink="/onBoarding/uploadResume" class="grid place-items-center bg-white h-40 shadow-lg rounded-lg">
+            <!-- <div class="grid place-items-center h-20"> -->
+            <div class="grid place-items-center">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.666 15V19C21.666 19.5304 21.4553 20.0391 21.0802 20.4142C20.7052 20.7893 20.1964 21 19.666 21H5.66602C5.13558 21 4.62687 20.7893 4.2518 20.4142C3.87673 20.0391 3.66602 19.5304 3.66602 19V15"
+                        stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.666 8L12.666 3L7.66602 8" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M12.666 3V15" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <div class="text-center text-[#667085] text-[0.5rem] font-semibold pt-2">Upload From Files</div>
+            </div>
+            <!-- </div> -->
+        </div>
+        
+        <div routerLink="/services/resumes/resume-template1" class="grid place-items-center bg-white h-40 shadow-lg rounded-lg">
+            <div><img src="/assets/images/resume-temp2.png" alt=""></div>
+        </div>
+        <div routerLink="/services/resumes/resume-template2" class="grid place-items-center bg-white h-40 shadow-lg rounded-lg">
+            <div><img src="/assets/images/resume-temp3.png" alt=""></div>
+        </div>
+        <div routerLink="/services/resumes/resume-template" class="grid place-items-center bg-white h-40 shadow-lg rounded-lg">
+            <div><img src="/assets/images/resume-temp1.png" alt=""></div>
+        </div>
+    </div>
+</div>

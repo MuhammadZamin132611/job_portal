@@ -1,0 +1,64 @@
+{
+  "personalBios": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullname": "Sunny Kumar",
+      "email": "sunny.kumar@skillassure.com",
+      "gender": "Male",
+      "dob": "2002-02-21",
+      "city": "",
+      "id": 2
+    },
+    {
+      "fullname": "Sunny Kumar",
+      "email": "sunny.kumar@skillassure.com",
+      "gender": "Male",
+      "dob": "2002-02-21",
+      "city": "BENGALURU",
+      "id": 3
+    },
+    {
+      "fullname": "Sunny Kumar",
+      "email": "sunny.kumar@skillassure.com",
+      "gender": "Male",
+      "dob": "2002-02-21",
+      "city": " ",
+      "id": 4
+    },
+    {
+      "fullname": "Sunny Kumar",
+      "email": "sunny.kumar@skillassure.com",
+      "gender": "Male",
+      "dob": "2002-02-21",
+      "city": "MUMBAI",
+      "id": 5
+    },
+    {
+      "fullname": "Sunny Kumar",
+      "email": "sunny.kumar@skillassure.com",
+      "gender": "Male",
+      "dob": "2002-02-21",
+      "city": " ",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

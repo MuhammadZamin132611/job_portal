@@ -1,0 +1,71 @@
+<div class="grid place-items-center h-screen">
+  <div class="max-w-sm rounded overflow-hidden" @fade>
+    <div>
+      <div class="grid place-items-center">
+        <div class="relative">
+          <div class="absolute">
+            <img
+              src="assets/images/Jobcheck.svg"
+              alt="JobCheckLogo"
+              class="w-[5rem] h-[5rem] ml-14 mt-14"
+            />
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            fill="none"
+            color="#02A0DD"
+          >
+            <defs>
+              <linearGradient id="spinner-secondHalf">
+                <stop offset="0%" stop-opacity="0" stop-color="currentColor" />
+                <stop offset="100%" stop-opacity="0.5" stop-color="#02A0DD" />
+              </linearGradient>
+              <linearGradient id="spinner-firstHalf">
+                <stop offset="0%" stop-opacity="1" stop-color="currentColor" />
+                <stop offset="100%" stop-opacity="0.5" stop-color="#21A14B" />
+              </linearGradient>
+            </defs>
+
+            <g stroke-width="8">
+              <path
+                stroke="url(#spinner-secondHalf)"
+                d="M 4 100 A 96 96 0 0 1 196 100"
+              />
+              <path
+                stroke="url(#spinner-firstHalf)"
+                d="M 196 100 A 96 96 0 0 1 4 100"
+              />
+
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                d="M 4 100 A 96 96 0 0 1 4 98"
+              />
+            </g>
+
+            <animateTransform
+              from="0 0 0"
+              to="360 0 0"
+              attributeName="transform"
+              type="rotate"
+              repeatCount="indefinite"
+              dur="1300ms"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid place-items-center mt-2">
+        <h3 class="text-xl font-semibold text-gray-800" (click)="workExp()">
+          Please Wait
+        </h3>
+        <h4 class="text-gray-600 mt-4" (click)="aoi()">
+          We are Onboarding you
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

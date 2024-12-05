@@ -1,0 +1,356 @@
+<div class="bg-[#F3F4F6] h-screen overflow-x-hidden">
+
+    <div class="sticky z-30 top-0">
+        <app-common-header></app-common-header>
+        <div class="">
+            <div class="flex px-4 -mt-12">
+                <!-- routerLink="/jobs" -->
+                <div (click)="goBack()" class="mt-2">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                        <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="w-full mx-4">
+                    <!-- <input type="text" [(ngModel)]="searchSaved" (keyup)="JobSearch($event)"
+                class="text-xs h-11 pl-8 font-medium w-full rounded-lg focus:outline-none outnline-none border-none bg-white"
+                placeholder="Search job, eg: Accountant"> -->
+                    <input type="text"
+                        class="text-xs h-11 pl-8 font-medium w-full rounded-lg focus:outline-none outnline-none border-none bg-white"
+                        placeholder="Search job, eg: Accountant">
+                    <div class="-mt-8 ml-2">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
+                                stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17.5 17.5L13.875 13.875" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div routerLink="/dashboard/profile">
+                    <app-profile-image></app-profile-image>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white p-4 block md:hidden">
+            <div class="text-[#1D2939] text-base font-semibold mt-3 rubik">Profile Matching Jobs</div>
+            <div class="text-[#667085] text-xs font normal mt-2">{{matchingJobsCount > 100 ? '99+'
+                :matchingJobsCount}} jobs are matching to your
+                profile.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mx-0 md:mx-44 pt-0 md:py-10">
+        <div class="flex gap-5 ">
+            <div class="w-1/4 hidden md:block">
+                <app-web-filter></app-web-filter>
+            </div>
+            <div class="w-full md:w-2/4">
+                <div class="md:bg-white px-4 py-1 rounded-md shadow-md ">
+                    <div class="hidden md:block">
+                        <div class="text-[#1D2939] text-base font-semibold mt-3 rubik">Profile Matching Jobs</div>
+                        <div class="text-[#667085] text-xs font normal py-2">{{matchingJobsCount > 100 ? '99+'
+                            :matchingJobsCount}} jobs are matching to your
+                            profile.
+                        </div>
+                    </div>
+                    <div class="pb-12 md:pb-3">
+                        <div class="py-3 md:py-0" *ngIf="nodata">
+                            <div *ngFor="let Matchjob of Matchingjobs">
+                                <div class="shadow-sm border-[1px] border-gray-200 rounded-lg mb-2 px-4 pt-4 pb-2 bg-[white] "
+                                    routerLink="/jobs/job-description"
+                                    [queryParams]="{ requirementId: Matchjob.requirementId }">
+                                    <div class="flex justify-between">
+                                        <div class=" flex">
+                                            <div class="h-8 w-8">
+                                                <img class="h-full w-full" src="assets/images/pic2.png">
+                                            </div>
+                                            <div class="ml-2">
+                                                <div class="text-[#252525] font-bold text-md text-sm">{{Matchjob.title}}
+                                                </div>
+                                                <div class="font text-xs font-medium text-[#667085] ">
+                                                    {{Matchjob.companyname}}
+                                                </div>
+                                                <div class="flex mt-1">
+                                                    <div class="mt-0.5">
+                                                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                                                stroke="#475467" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                                                stroke="#475467" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="ml-3 text-sm font font-medium text-[#475467]">
+                                                        {{Matchjob.location[0]}}
+                                                    </div>
+                                                </div>
+                                                <div class="flex mt-2">
+                                                    <div>
+                                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="1.5" y="0.5" width="14" height="6" rx="1.5"
+                                                                stroke="#475467" />
+                                                            <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                                                            <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+
+                                                        {{Matchjob.salarydto.minAnnualCTC |lpaCtc}} -
+
+                                                        {{Matchjob.salarydto.maxAnnualCTC |lpaCtc}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex font-semibold">
+                                                    <div class="">
+                                                        <button
+                                                            class="whitespace-nowrap text-[0.5rem] px-1 rounded-lg text-[#1D2939]">
+                                                            {{Matchjob.empType | titlecase}}
+                                                        </button>
+                                                    </div>
+                                                    <div class="">
+                                                        <button
+                                                            class="whitespace-nowrap text-[0.5rem] px-1 rounded-lg text-[#1D2939]">
+                                                            Min {{Matchjob.workexperienceDto.min}} Years
+                                                        </button>
+                                                    </div>
+                                                    <div class="">
+                                                        <button
+                                                            class="whitespace-nowrap text-[0.5rem] px-1 rounded-lg text-[#1D2939]">
+                                                            Intermediate English
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="">
+                                            <div class="ml-10 mt-2 mb-2">
+                                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <div class="border rounded-lg p-1 text-[#21A14B]">
+                                                <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                                                <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                                            </div>
+                                            <div class="mt-2 ml-7">
+                                                <svg [ngStyle]="{ fill: Matchjob.saved ? 'red' : 'white' }" width="20"
+                                                    height="18" viewBox="0 0 20 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    (click)="openPopup(Matchjob.requirementId, Matchjob.saved)">
+                                                    <path
+                                                        d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                                                        [ngStyle]="{ stroke: Matchjob.saved ? 'red' : '#475467' }"
+                                                        stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="!nodata">
+                            <div class="w-full">
+                                <div class="flex justify-center mt-14">
+                                    <div class="">
+                                        <img src="assets/images/rafiki10.png" alt=" " />
+                                        <p class="text-lg text-center">You Have Not Saved Any Jobs Yet ! </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mt-14 pb-28 p-5">
+                                <button type="save" class="green_button">Explore Jobs For You
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/4 hidden md:block">
+                <div class="shadow-lg rounded-lg p-3 bg-white">
+                    <div class="flex justify-between  h-full">
+                        <div class="flex">
+                            <div> <img src="/assets/images/pic1.png" alt=""></div>
+                            <div class="ml-3">
+                                <div class="text-[#344054] text-sm font-medium whitespace-nowrap">RRR Technologies</div>
+                                <div class="text-[#475467] text-xs font-normal whitespace-nowrap">Android Developer
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="text-base text-[#000000] font-semibold">Your Application Status</div>
+                    <div class="flex grid-col-2 gp-9 mt-4">
+                        <div>
+                            <div class="relative">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="bg-green-600 h-[4rem] w-[0.1rem]  ml-[0.7rem]"></div>
+                            <div class="relative ">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="bg-green-600 h-[4rem] w-[0.1rem]  ml-[0.7rem]"></div>
+                            <div class="relative">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#21A14B" />
+                                </svg>
+
+                                <div class="absolute inline-block top-2 left-1.5">
+                                    <svg width="12" height="9" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L3.5 6.5L1 4" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="h-[4rem] w-[0.1rem] border-dashed border-l-2 border-gray-600 ml-[0.7rem]"></div>
+                            <div class="relative">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+                                </svg>
+
+                            </div>
+                        </div>
+                        <div>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939]">Applied</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">12 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3rem]">Shortlisted</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">14 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3.5rem]">Selected</p>
+                            <p class="ml-[1.5rem] text-[#667085] text-xs font-normal">16 Jan</p>
+                            <p class="ml-[1.5rem] font-medium text-sm text-[#1D2939] mt-[3.5rem]">Offered</p>
+                        </div>
+                    </div>
+                    <div class="text-xs text-[#0175A2] font-semibold mt-3">Show More</div>
+                </div>
+                <div class="shadow-lg rounded-lg mt-5 p-3 bg-white">
+                    <div class="grid place-content-center">
+                        <svg width="81" height="95" viewBox="0 0 81 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M40.5 0.5L0.5 17.5909V43.2273C0.5 66.9409 17.5667 89.1164 40.5 94.5C63.4333 89.1164 80.5 66.9409 80.5 43.2273V17.5909L40.5 0.5ZM40.5 47.4573H71.6111C69.2556 65.0609 57.0333 80.7418 40.5 85.6555V47.5H9.38889V23.1455L40.5 9.85727V47.4573Z"
+                                fill="#6941C6" />
+                        </svg>
+                    </div>
+                    <div class="text-center text-[#1D2939] text-sm font-semibold py-3">JobCheck Security Center</div>
+                    <p class="text-justify text-xs font-medium text-[#475467] px- leading-5">We are dedicated to
+                        ensuring that your job search is secure and free of any fraudulent
+                        activities. Nonetheless, we advise you to exercise caution when receiving suspicious emails or
+                        phone calls.</p>
+                    <div class="text-xs text-[#0175A2] font-semibold mt-3">Know More</div>
+                </div>
+                <!-- <div class="fixed bottom-5 right-28">
+            <div class="bg-[#0175A2] rounded-full w-16 h-16 px-3.5 py-4">
+                <svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.5 3.41337V22.1869C3.68727 28.5882 10.339 30.1793 20.8708 29.9845C32.2341 29.7744 35.0056 26.8815 37.5 22.1869V3.41337H35.9757V9.92979C32.539 0.992897 27.1067 -6.74249e-05 19.3464 0C7.29026 0.000104759 3.5025 6.1544 2.02434 9.92979V3.41337H0.5Z"
+                        fill="white" />
+                    <rect x="4.65723" y="12.2969" width="29.3783" height="5.89581" rx="2.94791"
+                        fill="url(#paint0_linear_7367_35521)" />
+                    <ellipse cx="9.36898" cy="15.0904" rx="1.66292" ry="1.86184" fill="white" />
+                    <ellipse cx="29.8778" cy="15.0904" rx="1.66292" ry="1.86184" fill="white" />
+                    <defs>
+                        <linearGradient id="paint0_linear_7367_35521" x1="4.65723" y1="12.2969" x2="4.96215"
+                            y2="19.4347" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00A2E0" />
+                            <stop offset="1" stop-color="#30728C" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Jobs for you heart icon popup -->
+
+<div class="w-full place-items-center h-1/2 mx-4" *ngIf="isPopupVisible">
+    <div class="rounded-2xl z-50 popup-container1 fixed overflow-hidden top-[40%] h-full drop-shadow-lg blur-50"
+        [ngClass]="{ active: isPopupVisible }">
+        <div class="flex w-64 justify-between">
+            <div
+                class="pointer-events-auto relative flex w-full flex-col rounded-2xl border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+                <div class="rounded-lg">
+                    <div class="flex justify-center w-full">
+                        <img class="h-20" src="assets/images/heart.gif" alt="" />
+                    </div>
+                    <div class="text-sm font-medium text-gray-800 text-center">
+                        <h2>{{message11}}</h2>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-center text-xs">{{messsage12}}</p>
+                    </div>
+                </div>
+                <div class="flex w-full items-center border-t-2 mt-2">
+                    <div class="border-r-2 w-full">
+                        <div class="flex justify-center items-center" (click)="redHeart()" (click)="closePopup()">
+                            <button type="button" class="p-2 inline-block bg-primary-100 text-[#D92D20] text-center">
+                                Yes
+                            </button>
+                        </div>
+                    </div>
+                    <div (click)="closePopup()" class="flex justify-center items-center w-full">
+                        <button type="button"
+                            class="flex justify-center items-center p-2 inline-block whitespace-nowrap bg-primary-100 text-[#0175A2] text-center">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,1872 @@
+<div #myDiv class="sticky z-30 top-0">
+    <!-- <div #myDiv class="sticky z-30 top-0" [ngStyle]="{'top': top - 20 + 'px', 'transition': 'top 0.3s'}"> -->
+    <div>
+        <div>
+
+            <app-common-header></app-common-header>
+        </div>
+        <div class="">
+            <div class="flex px-5 -mt-11 justify-between">
+                <!-- routerLink="/dashboard" -->
+                <div (click)="goBack()" class="mt-2">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                        <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div routerLink="/dashboard/profile">
+                    <app-profile-image></app-profile-image>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex items-center md:mx-20">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
+        class="pt-8 ml-2 justify-center" (click)="goPrev()">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg> -->
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="goPrev()"
+        class="mt-10 mx-2">
+        <path d="M7 13L1 7L7 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <div class="w-full h-full mx-auto  overflow-x-auto scrollbar-hide">
+        <div id="slider" class="h-full flex  items-center justify-start transition ease-out duration-700">
+            <div class="flex flex-shrink-0 relative w-full gap-4">
+
+                <!-- 1 -->
+
+                <div class="w-48 py-2 mt-14">
+                    <div class=" flex w-38" routerLink="/jobs/saved-jobs">
+                        <div class="max-w-full  rounded-lg overflow-hidden shadow ">
+                            <div class="flex">
+                                <div class="h-16 w-[70px] bg-[#EAECF0] rounded-lg ">
+                                    <img class="pt-4 pl-1" src="assets/images/resume-builder.png">
+                                </div>
+                                <div class="grid items-center w-18 px-4">
+                                    <div class="flex justify-between">
+                                        <p class="font-semibold text-xl">{{savedJobsCount}} </p>
+                                        <!-- <p class="font-semibold text-xl">12 </p> -->
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-semibold text-gray-500 whitespace-nowrap text-xs ">Saved Jobs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="w-48  mt-14 py-2">
+                    <div class="flex w-38" routerLink="/jobs/matching-jobs">
+                        <div class="max-w-full rounded-lg  overflow-hidden shadow">
+                            <div class="flex">
+                                <div class="h-16 w-[70px] bg-[#EAECF0] rounded-lg ">
+                                    <img class="pt-2 pl-1" src="assets/images/career_progress.png">
+                                </div>
+                                <div class="grid items-center w-18 px-4">
+                                    <div class="flex justify-between">
+                                        <p class="font-semibold text-xl">{{matchingJobsCount > 100 ? '99+'
+                                            :matchingJobsCount}} </p>
+                                        <!-- <p class="font-semibold text-xl">0 </p> -->
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
+
+                                    <p class="font-semibold text-gray-500 whitespace-nowrap text-xs">Matching Jobs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="w-48 py-2 mt-14">
+                    <div class="flex w-38" routerLink="/jobs/applied-jobs">
+                        <div class="max-w-full  rounded-lg  overflow-hidden shadow">
+                            <div class="flex">
+                                <div class="h-16 w-[70px] bg-[#EAECF0] rounded-lg ">
+                                    <img class="pt-4 pl-1" src="assets/images/resume-builder.png">
+                                    <!-- <img class="pt-3.5 pl-1" src="assets/images/job_hunt.png"> -->
+                                </div>
+                                <div class="grid items-center w-18 px-4">
+                                    <div class="flex justify-between">
+                                        <p class="font-semibold text-xl px-4">{{appliedJobsCount}} </p>
+                                        <!-- <p class="font-semibold text-xl px-4">15 </p> -->
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
+
+                                    <p class="font-semibold text-gray-500 ml-4 whitespace-nowrap text-xs">Applied Jobs
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <!-- <p class="font-semibold text-xl ">10 </p> -->
+
+                <div class="w-48 py-2 mt-14" routerLink="/jobs/shortlisted-jobs">
+                    <!-- <div class="flex w-38" routerLink="/jobs/shortlisted-jobs"> -->
+                    <!-- <img class="pt-4 pl-1" src="assets/images/img1001.png"> -->
+                    <div class="flex w-38">
+                        <div class="max-w-full  rounded-lg  overflow-hidden shadow">
+                            <div class="flex">
+                                <div class="h-16 w-[70px] bg-[#EAECF0] rounded-lg ">
+                                    <img class="pt-4 pl-1" src="assets/images/feeling_proud.png">
+                                </div>
+                                <div class="grid items-center w-18 px-4">
+                                    <div class="flex justify-between ">
+                                        <p class="font-semibold text-xl ">{{shortJobsCount}} </p>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-semibold text-gray-500 whitespace-nowrap text-xs">Shortlisted</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="w-48 py-2 mt-14 ">
+                    <!-- <img class="pt-4 pl-1" src="assets/images/img1002.png"> -->
+                    <!-- <div class="flex w-38" routerLink="/jobs/recruiterAction"> -->
+                    <div class="flex w-38" >
+                        <div class="max-w-full  rounded-lg bg-gray-300 overflow-hidden shadow">
+                            <div class="flex">
+                                <div class="h-16 w-[70px] bg-[#EAECF0] rounded-lg ">
+                                    <img class="pt-4 pl-1" src="assets/images/processing.png">
+                                </div>
+                                <div class="grid items-center w-18 px-4">
+                                    <div class="flex justify-between ">
+                                        <p class="font-semibold text-xl">{{storecount}}</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" stroke="currentColor" class="w-3 h-3 mt-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
+
+                                    <p class="font-semibold text-gray-500 whitespace-nowrap text-xs">Recruiter
+                                        Action
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button aria-label="slide forward" class="ml-2 mt-4 " (click)="goNext()">
+        <div class="pt-8 mr-2">
+            <svg width="12" height="12" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L1 13" stroke="black" stroke-width="2" />
+            </svg>
+        </div>
+    </button> -->
+
+
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="goNext()"
+        class="mt-10 mx-2 rotate-180">
+        <path d="M7 13L1 7L7 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+</div>
+<div>
+
+</div>
+
+
+<!-- IF Trending Jobs are there -->
+<div class="bg-[#F0F9FF] ">
+    <div class="mx-2 py-4">
+        <div class=" md:mx-20">
+            <div class="page_head mb-2 ml-2">Trending Jobs</div>
+            <!-- If No Job is not Trending -->
+            <div *ngIf="promo.length === 0"
+                class="border mx-2 rounded-lg p-3 bg-[white] grid grid-cols-1 gap-4 place-items-center">
+                <img src="../../../assets/images/NotAvailabe.png" alt="">
+                <div class="font-medium text-sm text-gray-600">No trending jobs at present.</div>
+            </div>
+            <!-- If Jobs are Trending -->
+            <div *ngIf="promo.length > 0">
+                <span
+                    class="text-gray-500 font-semibold text-xs flex place-content-center items-center -mt-7 float-right pr-4"
+                    routerLink="/jobs/trending-jobs">Show All</span>
+                <div class="pr-2 overflow-y-hidden flex">
+                    <div class="absolut  pt-10 z-10 -mr-5 mt-2">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_b_4604_14168)">
+                                <rect width="36" height="36" rx="18" fill="white" fill-opacity="0.9" />
+                                <path d="M20.5 23L15.5 18L20.5 13" stroke="#667085" stroke-width="1.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#EAECF0" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_b_4604_14168" x="-8" y="-8" width="52" height="52"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="4" />
+                                    <feComposite in2="SourceAlpha" operator="in"
+                                        result="effect1_backgroundBlur_4604_14168" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_4604_14168"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="border w-full rounded-lg mb-2 mr-4 px-4 pt-4 pb-2 bg-[white]"
+                        *ngFor="let i = index; let promoted; of: maxFiveTrendingJobsShow">
+                        <div class="flex justify-between">
+                            <div class="flex" routerLink="/jobs/job-description"
+                                [queryParams]="{ requirementId: promoted.requirementId }">
+                                <div class="h-8 w-8">
+                                    <img class="h-full w-full" src="assets/images/pic1.png" alt="" />
+                                </div>
+                                <div class="ml-2">
+                                    <div class="whitespace-nowrap text-[#252525] font-semibold text-md text-sm">
+                                        {{ promoted.title }}
+                                    </div>
+                                    <div class="text-gray-500 font text-xs font-medium">
+                                        {{ promoted.companyname }}
+                                    </div>
+                                    <div class="flex mt-1">
+                                        <div class="mt-0.5">
+                                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="ml-2 text-gray-500 text-sm font font-medium">
+                                            {{promoted.location[0]}}
+                                        </div>
+                                    </div>
+                                    <div class="flex mt-2">
+                                        <div>
+                                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                                                <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                                                <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                                            </svg>
+                                        </div>
+                                        <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+
+                                            {{ promoted.salarydto.minAnnualCTC |lpaCtc}} -
+                                            {{ promoted.salarydto.maxAnnualCTC |lpaCtc}}
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="-ml-1">
+                                            <button
+                                                class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                                {{ promoted.empType }}
+                                            </button>
+                                        </div>
+                                        <div class="">
+                                            <button
+                                                class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                                Min {{ promoted.workexperienceDto.min }} Years
+                                            </button>
+                                        </div>
+                                        <div class="">
+                                            <button
+                                                class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                                Intermediate English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="ml-10 mt-2 mb-2">
+                                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="border rounded-lg p-1 text-[#21A14B]">
+                                    <div class="ml-2 text-[0.625rem] text-xs font-bold">
+                                        {{ promoted.matchingPercentage }}%
+                                    </div>
+                                    <div class="ml-2 Jost text-[0.50rem]">Match</div>
+                                </div>
+                                <div class="mt-2 ml-7">
+                                    <svg [ngStyle]="{ fill: promoted.saved ? 'red' : 'white' }" width="20" height="18"
+                                        viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        (click)="openSavedPopup(promoted.requirementId, promoted.saved)">
+                                        <path
+                                            d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                                            [ngStyle]="{ stroke: promoted.saved ? 'red' : '#475467' }"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-ml-10 mt-12">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_b_4604_16384)">
+                                <rect width="36" height="36" rx="18" fill="white" fill-opacity="0.9" />
+                                <path d="M15.5 23L20.5 18L15.5 13" stroke="#667085" stroke-width="1.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#EAECF0" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_b_4604_16384" x="-8" y="-8" width="52" height="52"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="4" />
+                                    <feComposite in2="SourceAlpha" operator="in"
+                                        result="effect1_backgroundBlur_4604_16384" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_4604_16384"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <!-- <div class="border rounded-lg mb-2 mr-4 px-4 pt-4 pb-2 bg-[white]">
+                <div class="flex justify-between">
+                  <div class="flex" routerLink="/dashboard/job-profile">
+                    <div class="h-8 w-8">
+                      <img class="h-full w-full" src="assets/images/pic3.png" />
+                    </div>
+                    <div class="ml-2">
+                      <div class="text-[#252525] font-bold text-md text-sm">
+                        Android Developer
+                      </div>
+                      <div class="font text-xs font-medium text-[#667085]">
+                        RRR Technologies
+                      </div>
+                      <div class="flex mt-1">
+                        <div class="mt-0.5">
+                          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                              stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                              stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </div>
+                        <div class="ml-3 text-sm font font-medium text-[#475467]">
+                          Gurugram
+                        </div>
+                      </div>
+                      <div class="flex mt-2">
+                        <div>
+                          <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                            <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                            <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                          </svg>
+                        </div>
+                        <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                          &#8377; 20,000 - &#8377; 60,000
+                        </div>
+                      </div>
+        
+                      <div class="flex">
+                        <div class="-ml-1">
+                          <button class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                            Full Time
+                          </button>
+                        </div>
+                        <div class="">
+                          <button class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                            Min 2 Years
+                          </button>
+                        </div>
+                        <div class="">
+                          <button class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                            Intermediate English
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="">
+                    <div class="ml-10 mt-2 mb-2">
+                      <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                    <div class="border rounded-lg p-1 text-[#21A14B]">
+                      <div class="ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                      <div class="ml-2 Jost text-[0.50rem]">Match</div>
+                    </div>
+        
+                    <div class="mt-2 ml-7"  *ngIf="!cardOpen">
+                      <svg data-te-toggle="modal" data-te-target="#exampleModalCenter1" width="20" height="18"
+                        viewBox="0 0 20 18" fill="white" xmlns="http://www.w3.org/2000/svg" (click)="changeButtonColor()">
+                        <path
+                          d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                          stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                    <div class="mt-2 ml-7"  *ngIf="cardOpen">
+                      <svg data-te-toggle="modal" data-te-target="#exampleModalCenter1" width="20" height="18"
+                        viewBox="0 0 20 18" fill="red" xmlns="http://www.w3.org/2000/svg" (click)="changeButtonColor()">
+                        <path
+                          d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                          stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- trending end  -->
+
+<div class="bg-[#FEFDF0]  ">
+        <div class=" md:mx-20">
+            <div class=" mx-4 py-5 relative z-0 ">
+        <h2 class="page_head" (click)="boostYourProfile()">Boost Your Profile</h2>
+        <div (click)=" boostopen()">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                <div *ngIf="CertificateCount==0"
+                    class="relative z-30 mt-4 flex bg-white border border-[#EAECF0] rounded-lg shadow">
+                    <div class=" ml-4 mt-6">
+                        <svg width="57" height="48" viewBox="0 0 57 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.605469" width="45.6" height="34.56" rx="3" fill="#FFE6D5" />
+                            <path d="M16.6042 9.81543H29.4912" stroke="#475467" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9.66528 29.4014H14.6218" stroke="#475467" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M11.6479 20.1875H27.5088" stroke="#475467" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <ellipse cx="8.67386" cy="9.82111" rx="2.97391" ry="3.45588" fill="#475467" />
+                            <circle cx="42" cy="32.3955" r="15" fill="white" />
+                            <path
+                                d="M51.7501 26.3955H49.5001V25.6455C49.5001 25.2477 49.3421 24.8662 49.0608 24.5848C48.7795 24.3035 48.3979 24.1455 48.0001 24.1455H36.0001C35.6023 24.1455 35.2207 24.3035 34.9394 24.5848C34.6581 24.8662 34.5001 25.2477 34.5001 25.6455V26.3955H32.2407C31.8429 26.3955 31.4614 26.5535 31.1801 26.8348C30.8988 27.1162 30.7407 27.4977 30.7407 27.8955V29.3955C30.7407 30.3901 31.1358 31.3439 31.8391 32.0472C32.5423 32.7504 33.4962 33.1455 34.4907 33.1455H34.8657C35.7751 35.9486 38.2595 38.0486 41.2501 38.358V40.6455H39.0001C38.8012 40.6455 38.6104 40.7245 38.4698 40.8652C38.3291 41.0058 38.2501 41.1966 38.2501 41.3955C38.2501 41.5944 38.3291 41.7852 38.4698 41.9258C38.6104 42.0665 38.8012 42.1455 39.0001 42.1455H45.0001C45.199 42.1455 45.3898 42.0665 45.5304 41.9258C45.6711 41.7852 45.7501 41.5944 45.7501 41.3955C45.7501 41.1966 45.6711 41.0058 45.5304 40.8652C45.3898 40.7245 45.199 40.6455 45.0001 40.6455H42.7501V38.358C44.2115 38.2145 45.5982 37.6436 46.737 36.7165C47.8758 35.7895 48.7162 34.5474 49.1532 33.1455H49.5001C50.4947 33.1455 51.4485 32.7504 52.1517 32.0472C52.855 31.3439 53.2501 30.3901 53.2501 29.3955V27.8955C53.2501 27.4977 53.0921 27.1162 52.8108 26.8348C52.5295 26.5535 52.1479 26.3955 51.7501 26.3955ZM34.4907 31.6455C33.894 31.6455 33.3217 31.4085 32.8997 30.9865C32.4778 30.5645 32.2407 29.9922 32.2407 29.3955V27.8955H34.5001V30.8111C34.5014 31.0899 34.5171 31.3684 34.547 31.6455H34.4907ZM51.7501 29.3955C51.7476 29.9915 51.5098 30.5623 51.0884 30.9838C50.6669 31.4052 50.0961 31.643 49.5001 31.6455H49.4626C49.4893 31.3964 49.5019 31.146 49.5001 30.8955V27.8955H51.7501V29.3955Z"
+                                fill="#FEDF89" />
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold">Add Certificates</div>
+
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem]">Let recruiters know your skills, Add certificates to
+                                your
+                                profile
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div routerLink="/dashboard/profile/certificate/add-certificate" class="m-4">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-row  bg-white border border-[#EAECF0] rounded-lg shadow "
+                    *ngIf="!resumeAvail">
+                    <div class=" ml-4 mt-4">
+                        <svg width="48" height="59" viewBox="0 0 48 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.25" y="0.75" width="47.5" height="57.5" rx="2.75" stroke="#98A2B3"
+                                stroke-width="0.5" />
+                            <line x1="29" y1="7.25" x2="43" y2="7.25" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="23.5625" x2="43" y2="23.5625" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="14.5" x2="35.5" y2="14.5" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="18.125" x2="35.5" y2="18.125" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="29" x2="35.5" y2="29" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="32.625" x2="35.5" y2="32.625" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="43.5" x2="35.5" y2="43.5" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="47.125" x2="44.5" y2="47.125" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="38.0625" x2="44.5" y2="38.0625" stroke="#98A2B3" stroke-linecap="round" />
+                            <line x1="29" y1="52.5625" x2="44.5" y2="52.5625" stroke="#98A2B3" stroke-linecap="round" />
+                            <rect x="3" y="4.125" width="21" height="48.9375" fill="#98A2B3" />
+                            <ellipse cx="12.9545" cy="14.3409" rx="5.45455" ry="6.59091" fill="#F2F4F7" />
+                            <ellipse cx="12.9545" cy="12.3722" rx="1.63636" ry="1.97766" fill="#21A14B" />
+                            <path
+                                d="M9.68158 17.1154C9.68158 15.8047 10.7441 14.7422 12.0548 14.7422H13.8538C15.1645 14.7422 16.227 15.8047 16.227 17.1154C16.227 17.7707 15.6958 18.302 15.0404 18.302H10.8682C10.2128 18.302 9.68158 17.7707 9.68158 17.1154Z"
+                                fill="#21A14B" />
+                            <line x1="8" y1="27.1875" x2="17.5" y2="27.1875" stroke="#F9FAFB" stroke-linecap="round" />
+                            <line x1="8" y1="34.4375" x2="17.5" y2="34.4375" stroke="#F9FAFB" stroke-linecap="round" />
+                            <line x1="8" y1="41.6875" x2="17.5" y2="41.6875" stroke="#F9FAFB" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold ">Upload Resume</div>
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem] ">Upload resume to boost your profile and get placed
+                                in
+                                Top
+                                Companies
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div class="m-4" routerLink="/onBoarding/uploadResume">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-row  bg-white border border-[#EAECF0] rounded-lg shadow hidden">
+                    <div class=" ml-4 mt-3">
+                        <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.5 15.6667V33L34.6667 24.3333L19.5 15.6667ZM45.5 7H6.50002C4.11669 7 2.16669 8.95 2.16669 11.3333V37.3333C2.16669 39.7167 4.11669 41.6667 6.50002 41.6667H17.3334V46H34.6667V41.6667H45.5C47.8834 41.6667 49.8334 39.7167 49.8334 37.3333V11.3333C49.8334 8.95 47.8834 7 45.5 7ZM45.5 37.3333H6.50002V11.3333H45.5V37.3333Z"
+                                fill="#475467" />
+                            <path
+                                d="M26 12.3125C35.3438 12.3125 37.375 18.5281 37.375 22.0625C37.375 25.1906 36.9688 26.5312 36.9688 26.5312H15.0312C15.0312 26.5312 14.625 25.1906 14.625 22.0625C14.625 18.5281 16.6562 12.3125 26 12.3125Z"
+                                fill="#594640" />
+                            <path
+                                d="M36.2375 24.9067C36.2375 24.9067 35.9125 23.566 35.75 20.7629C35.5469 17.716 31.3219 20.1535 26 20.1535C20.6781 20.1535 16.4531 17.716 16.25 20.7629C16.0875 23.566 15.7625 24.9067 15.7625 24.9067C13.1219 24.9067 13.1219 29.2129 15.925 29.2129C15.925 33.8442 21.7344 36.6879 26 36.6879C30.2656 36.6879 36.075 33.8442 36.075 29.2129C38.8781 29.2129 38.8781 24.9067 36.2375 24.9067Z"
+                                fill="#FFE1BD" />
+                            <path
+                                d="M31.0781 28.5625C32.5365 28.5625 33.7188 27.3803 33.7188 25.9219C33.7188 24.4635 32.5365 23.2812 31.0781 23.2812C29.6197 23.2812 28.4375 24.4635 28.4375 25.9219C28.4375 27.3803 29.6197 28.5625 31.0781 28.5625Z"
+                                fill="white" />
+                            <path
+                                d="M31.0781 27.75C32.0878 27.75 32.9062 26.9315 32.9062 25.9219C32.9062 24.9122 32.0878 24.0938 31.0781 24.0938C30.0685 24.0938 29.25 24.9122 29.25 25.9219C29.25 26.9315 30.0685 27.75 31.0781 27.75Z"
+                                fill="#664E27" />
+                            <path
+                                d="M31.0781 26.5312C31.4147 26.5312 31.6875 26.2584 31.6875 25.9219C31.6875 25.5853 31.4147 25.3125 31.0781 25.3125C30.7416 25.3125 30.4688 25.5853 30.4688 25.9219C30.4688 26.2584 30.7416 26.5312 31.0781 26.5312Z"
+                                fill="#231F20" />
+                            <path
+                                d="M20.9219 28.5625C22.3803 28.5625 23.5625 27.3803 23.5625 25.9219C23.5625 24.4635 22.3803 23.2812 20.9219 23.2812C19.4635 23.2812 18.2812 24.4635 18.2812 25.9219C18.2812 27.3803 19.4635 28.5625 20.9219 28.5625Z"
+                                fill="white" />
+                            <path
+                                d="M20.9219 27.75C21.9315 27.75 22.75 26.9315 22.75 25.9219C22.75 24.9122 21.9315 24.0938 20.9219 24.0938C19.9122 24.0938 19.0938 24.9122 19.0938 25.9219C19.0938 26.9315 19.9122 27.75 20.9219 27.75Z"
+                                fill="#664E27" />
+                            <path
+                                d="M20.9219 26.5312C21.2584 26.5312 21.5312 26.2584 21.5312 25.9219C21.5312 25.5853 21.2584 25.3125 20.9219 25.3125C20.5853 25.3125 20.3125 25.5853 20.3125 25.9219C20.3125 26.2584 20.5853 26.5312 20.9219 26.5312Z"
+                                fill="#231F20" />
+                            <path
+                                d="M29.2907 31.0416C27.1782 32.5041 24.8219 32.5041 22.7094 31.0416C22.4657 30.8791 22.2219 31.1635 22.3844 31.4478C23.0344 32.5041 24.3344 33.4385 26 33.4385C27.6657 33.4385 28.9657 32.5041 29.6157 31.4478C29.7782 31.1635 29.5344 30.8791 29.2907 31.0416Z"
+                                fill="#664E27" />
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold ">Upload Video Profile</div>
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem] ">Take a video resume to Make a listing impression and
+                                Stand
+                                out
+                                from the crowd
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div class="m-4">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-row  bg-white border border-[#EAECF0] rounded-lg shadow"
+                    *ngIf="achievementCount == 0">
+                    <div class=" ml-4 mt-3">
+                        <svg width="50" height="35" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 7C1 8.5913 1.63214 10.1174 2.75736 11.2426C3.88258 12.3679 5.4087 13 7 13C8.5913 13 10.1174 12.3679 11.2426 11.2426C12.3679 10.1174 13 8.5913 13 7C13 5.4087 12.3679 3.88258 11.2426 2.75736C10.1174 1.63214 8.5913 1 7 1C5.4087 1 3.88258 1.63214 2.75736 2.75736C1.63214 3.88258 1 5.4087 1 7Z"
+                                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="50" height="20" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0003 4L13.4003 9.89L14.9983 6.657L18.5963 6.889L15.1963 1M4.80234 1L1.40234 6.89L5.00034 6.657L6.59834 9.889L9.99834 4"
+                                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold ">Achievements</div>
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem] ">Recognizing Achievements that Inspire!!
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div class="m-4" routerLink="/dashboard/profile/achievements/add-achievement">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-row  bg-white border border-[#EAECF0] rounded-lg shadow"
+                    *ngIf="countProject == 0">
+                    <div class=" ml-4 mt-3">
+                        <svg width="52" height="53" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.80039 2.80034C7.88479 2.80034 7.03039 3.05594 6.30199 3.50114C6.22671 3.09844 6.08948 2.70983 5.89519 2.34914C6.80874 1.84358 7.83841 1.58517 8.88243 1.59945C9.92644 1.61372 10.9487 1.90019 11.8481 2.43054C12.7474 2.96089 13.4929 3.71676 14.0106 4.62344C14.5284 5.53012 14.8006 6.55623 14.8004 7.60034H17.8016C18.2788 7.60066 18.7363 7.79044 19.0736 8.12797C19.4109 8.4655 19.6004 8.92316 19.6004 9.40034V16.6003C19.6004 17.0777 19.4107 17.5356 19.0732 17.8731C18.7356 18.2107 18.2778 18.4003 17.8004 18.4003H10.6004C10.123 18.4003 9.66516 18.2107 9.3276 17.8731C8.99003 17.5356 8.80039 17.0777 8.80039 16.6003V13.6003C7.96565 13.6014 7.13994 13.4277 6.37639 13.0903C6.39199 12.6823 6.40039 12.2539 6.40039 11.8003V11.7583C7.10599 12.1663 7.92559 12.4003 8.80039 12.4003V9.40034C8.80039 8.92295 8.99003 8.46512 9.3276 8.12755C9.66516 7.78998 10.123 7.60034 10.6004 7.60034H13.6004C13.6004 6.3273 13.0947 5.1064 12.1945 4.20623C11.2943 3.30605 10.0734 2.80034 8.80039 2.80034ZM14.6804 8.80034C14.4444 9.95302 13.875 11.011 13.043 11.843C12.2111 12.675 11.1531 13.2443 10.0004 13.4803V16.6003C10.0004 16.7595 10.0636 16.9121 10.1761 17.0246C10.2886 17.1371 10.4413 17.2003 10.6004 17.2003H17.8004C17.9595 17.2003 18.1121 17.1371 18.2247 17.0246C18.3372 16.9121 18.4004 16.7595 18.4004 16.6003V9.40034C18.4004 9.24121 18.3372 9.0886 18.2247 8.97608C18.1121 8.86355 17.9595 8.80034 17.8004 8.80034H14.6804ZM13.4492 8.80034H10.6004C10.4413 8.80034 10.2886 8.86355 10.1761 8.97608C10.0636 9.0886 10.0004 9.24121 10.0004 9.40034V12.2491C10.8306 12.0341 11.5881 11.6009 12.1945 10.9945C12.8009 10.3881 13.2341 9.63052 13.4492 8.80034ZM3.49759 0.550342C3.59719 0.637465 3.6652 0.755071 3.69103 0.884857C3.71686 1.01464 3.69905 1.14933 3.64039 1.26794C3.63023 1.30305 3.62498 1.3394 3.62479 1.37594C3.62479 1.45154 3.64399 1.59554 3.82519 1.77554C3.91279 1.86314 3.97999 1.92554 4.05319 1.99394C4.11319 2.04914 4.17679 2.10674 4.25719 2.18594C4.41319 2.33474 4.57759 2.50994 4.72519 2.72954C5.03119 3.18914 5.20039 3.76394 5.20039 4.60034C5.20039 5.62394 4.82119 6.49634 4.22959 7.03154L4.30639 7.12034C4.64239 7.53314 4.83799 8.06834 4.96039 8.59634C5.20039 9.64034 5.20039 10.8955 5.20039 11.7703V11.8003C5.20039 15.1447 4.74559 17.0419 4.24519 18.1267C3.99319 18.6727 3.72559 19.0207 3.49399 19.2391C3.39983 19.3295 3.29601 19.4092 3.18439 19.4767C3.13329 19.5075 3.07993 19.5344 3.02479 19.5571C3.02479 19.5571 2.88919 19.6003 2.80039 19.6003C2.71159 19.6003 2.57599 19.5571 2.57599 19.5571C2.52025 19.5357 2.46678 19.5088 2.41639 19.4767C2.30478 19.4092 2.20095 19.3295 2.10679 19.2391C1.87519 19.0195 1.60759 18.6727 1.35559 18.1267C0.855191 17.0419 0.400391 15.1447 0.400391 11.8003V11.7703C0.400391 10.8943 0.400391 9.64034 0.640391 8.59634C0.762791 8.06834 0.95839 7.53314 1.29439 7.12034C1.31839 7.09034 1.34479 7.06034 1.37119 7.03154C0.779591 6.49634 0.400391 5.62394 0.400391 4.60034C0.400391 4.20914 0.504791 3.74234 0.648791 3.31154C0.792791 2.87954 0.994391 2.43314 1.22719 2.07314C1.50439 1.60514 1.89439 1.21274 2.19679 0.948742C2.36258 0.802938 2.5356 0.665565 2.71519 0.537143L2.75119 0.513143L2.76199 0.504742L2.76559 0.502343L2.76799 0.501143C2.87803 0.427795 3.00921 0.392853 3.14115 0.401751C3.27309 0.410648 3.3984 0.462885 3.49759 0.550342ZM2.80039 6.40034C3.26479 6.39914 4.00039 5.88434 4.00039 4.60034C4.00039 3.93674 3.86959 3.61154 3.72559 3.39554C3.63804 3.26938 3.53705 3.1531 3.42439 3.04874L3.27559 2.90954C3.17839 2.81834 3.06439 2.71274 2.97559 2.62514C2.84435 2.49526 2.73168 2.34787 2.64079 2.18714C2.48804 2.34775 2.35362 2.52484 2.23999 2.71514C2.07199 2.97314 1.90879 3.32714 1.78759 3.69194C1.66279 4.06394 1.60039 4.39274 1.60039 4.60034C1.60039 5.88674 2.33839 6.40034 2.80039 6.40034ZM2.22439 7.87874C2.05399 8.08634 1.91239 8.41754 1.80919 8.86634C1.60279 9.76394 1.60039 10.8919 1.60039 11.8003C1.60039 15.0559 2.04559 16.7587 2.44519 17.6239C2.57719 17.9083 2.70079 18.0979 2.80039 18.2239C2.94217 18.0387 3.06141 17.8373 3.15559 17.6239C3.55519 16.7587 4.00039 15.0559 4.00039 11.8003C4.00039 10.8919 3.99799 9.76394 3.79039 8.86634C3.68719 8.41754 3.54559 8.08634 3.37639 7.87874C3.3102 7.78906 3.22317 7.71684 3.12281 7.66833C3.02245 7.61983 2.91179 7.59649 2.80039 7.60034H2.79799C2.68698 7.59678 2.57676 7.62026 2.47684 7.66876C2.37691 7.71726 2.29028 7.78932 2.22439 7.87874Z"
+                                fill="#21A14B" />
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold ">Project</div>
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem] ">Projects That Define Success!!
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div routerLink="/dashboard/profile/projects/add-project" class="m-4">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-row  bg-white border border-[#EAECF0] rounded-lg shadow"
+                    *ngIf="workExperienceCount == 0">
+                    <div class=" ml-4 mt-3">
+                        <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_9788_31268)">
+                                    <path
+                                        d="M21.3706 26.7298C24.3622 26.7298 26.7873 24.3047 26.7873 21.3132C26.7873 18.3216 24.3622 15.8965 21.3706 15.8965C18.3791 15.8965 15.9539 18.3216 15.9539 21.3132C15.9539 24.3047 18.3791 26.7298 21.3706 26.7298Z"
+                                        stroke="#98A2B3" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.3706 18.0625V21.3125L23.5373 22.3958" stroke="#98A2B3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <path
+                                    d="M25.12 13.6325V10.8164C25.12 9.71184 24.2246 8.81641 23.12 8.81641H6C4.89543 8.81641 4 9.71184 4 10.8164V22.2278C4 23.3323 4.89543 24.2278 6 24.2278H13.12"
+                                    stroke="#98A2B3" stroke-width="1.5" stroke-linejoin="round" />
+                                <rect x="10.26" y="4.5" width="8.6" height="3.81605" rx="0.5" stroke="#98A2B3" />
+                                <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3"
+                                    stroke-width="0.5" />
+                                <defs>
+                                    <clipPath id="clip0_9788_31268">
+                                        <rect width="13" height="13" fill="white"
+                                            transform="translate(14.8706 14.8125)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                             -->
+                        <svg width="45" height="35" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_3204_11486)">
+                                <path
+                                    d="M18.3708 22.7298C21.3623 22.7298 23.7874 20.3047 23.7874 17.3132C23.7874 14.3216 21.3623 11.8965 18.3708 11.8965C15.3792 11.8965 12.9541 14.3216 12.9541 17.3132C12.9541 20.3047 15.3792 22.7298 18.3708 22.7298Z"
+                                    stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M18.3711 14.0625V17.3125L20.5378 18.3958" stroke="#21A14B"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <path
+                                d="M22.12 9.63246V6.81641C22.12 5.71184 21.2246 4.81641 20.12 4.81641H3C1.89543 4.81641 1 5.71184 1 6.81641V18.2278C1 19.3323 1.89543 20.2278 3 20.2278H10.12"
+                                stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+                            <rect x="7.25977" y="0.5" width="8.6" height="3.81605" rx="0.5" stroke="#21A14B" />
+                            <defs>
+                                <clipPath id="clip0_3204_11486">
+                                    <rect width="13" height="13" fill="white" transform="translate(11.8711 10.8125)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+                            <div class="flex justify-between">
+                                <div class=" Jost text-gray-600 text-sm font-bold ">Add Work Experience</div>
+                            </div>
+                            <p class="mt-2.5 text-[0.75rem] ">
+                                Enhance profile, showcase expertise: Add experience details now.
+                            </p>
+                        </div>
+                        <!-- *ngIf="cardOpen" -->
+                        <div class="m-4"
+                            routerLink="/dashboard/profile/profile-workExperience/add-profile-workExperience">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="px-2">
+                    <div *ngIf="!cardOpen"
+                        class="relative z-20 w-full h-2.5  rounded-b-2xl -mt-1 bg-white  border-x-2 border-b-2">
+                    </div>
+                </div>
+                <div class="px-4">
+                    <div *ngIf="!cardOpen"
+                        class="relative  z-10 w-full   h-2.5  px-8  rounded-b-2xl -mt-1  bg-white border-x-2 border-b-2">
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</div>
+<hr class="h-1.5" style="background: rgba(180, 191, 233, 0.4)" />
+<div class="bg-[#F3F4F6]  ">
+    <div class="mx-4  py-4 ">
+        <div class="w-full md:mx-20">
+
+
+            <div class="page_head mb-2">Applied Jobs</div>
+
+            <!-- If No Job is Applied -->
+            <div *ngIf="Appliedjobs.length === 0"
+                class="border mb-3 rounded-lg p-3 bg-[white] grid grid-cols-1 gap-4 place-items-center">
+                <img src="../../../assets/images/NotAvailabe.png" alt="">
+                <div class="font-medium text-sm text-gray-600">You haven't applied for any jobs yet.</div>
+            </div>
+            <!-- If Jobs are Apllied -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                <div *ngIf="Appliedjobs.length > 0">
+                    <div class="border mb-3 rounded-lg p-3 bg-[white] grid grid-cols-1 gap-4 place-items-center1w"
+                        *ngFor="let i=index;let data of appliedjobs">
+                        <div class="flex">
+                            <div>
+                                <img src="assets/images/image 105.png">
+                            </div>
+
+                            <div class="flex ml-3 justify-between w-full">
+                                <div routerLink="/jobs/jobStatus" [queryParams]="{requirementId:data.requirementId}">
+                                    <div class="text-[#252525] font-semibold text-base">{{data.jobTitle}}
+                                    </div>
+                                    <div class="text-gray-500 font-medium text-[0.875rem] ">{{data.companyname}}
+                                    </div>
+                                    <div class="flex mt-1">
+                                        <div class="">
+                                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                                            {{data.location[0]}} </div>
+                                    </div>
+                                    <div class="flex mt-2">
+                                        <div>
+                                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                                                <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                                                <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                                            </svg>
+                                        </div>
+                                        <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                                            {{data.salarydto.minAnnualCTC |lpaCtc}} -
+                                            {{data.salarydto.maxAnnualCTC |lpaCtc}}</div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="ml-10 mt-2 mb-2" routerLink="/jobs/jobStatus"
+                                        [queryParams]="{requirementId:data.requirementId}">
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="border rounded-lg p-1 text-[#21A14B]">
+                                        <div class=" ml-2 text-[0.625rem] text-xs font-bold">
+                                            {{data.matchingPercentage}}%</div>
+                                        <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                                    </div>
+                                    <div class="mt-2 ml-7">
+                                        <!-- <svg [ngStyle]="{ fill: data.saved ? 'red' : 'white' }" width="20" height="18" viewBox="0 0 20 18"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    (click)="openSavedPopup(data.requirementId, data.saved)">
+                                    <path
+                                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                                      [ngStyle]="{ stroke: data.saved ? 'red' : '#475467' }" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex text-gray-800 mt-3 ml-10">
+                            <div
+                                class="border-2 border-[#EAECF0] rounded-lg bg-[#F2F4F7] p-1 px-3 Jost text-[#667085] text-[0.625rem] mr-2">
+                                {{data.applicationDate | date}}
+                            </div>
+                            <div
+                                class="border-2 border-[#A6F4C5] rounded-lg bg-[#D1FADF] p-1 px-3 Jost text-[#21A14B] text-[0.625rem] text-[0.625rem]">
+                                Applied </div>
+
+                        </div>
+
+                    </div>
+                    <div routerLink="/jobs/applied-jobs"
+                        class="text-gray-500 font-semibold text-xs flex place-content-center items-center py-3">
+                        Show more
+                        <button class="ml-2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 5L19 12L12 19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--=========================================main div============================-->
+<div class="bg-[#FEFAF5] hidden">
+    <div class="flex flex-no-wrap overflow-x-scroll mx-4 scrolling-touch items-start gap-x-3 scrollbar-hide ">
+        <!-- main card -->
+        <div class="w-5/6 h-80 p-4 flex-shrink-0 relative overflow-hidden ">
+            <div><img src="assets/images/rafiki.svg" class="block w-48" alt="fresher" />
+            </div>
+            <p class="font-bold text-[#475467] text-sm w-full pt-4 pr-4 rubik">Fastest Growing Skills in Your
+                Department
+            </p>
+            <br>
+            <p class="text-[#475467] text-xs font-normal w-full pr-4">Based on the recruiters and organisation
+                demands
+                during 3
+                months
+            </p>
+        </div>
+
+        <!-- card 1 -->
+
+        <div
+            class="rounded-xl w-full p-4 bg-white flex-shrink-0 relative overflow-hidden mt-4 -ml-10 z-10 border border-gray-300">
+            <div class="ml-2 flex justify-between w-full">
+                <div class="text-sm font-semibold text-[#21A14B] rubik">IT/Software Engineer</div>
+                <div class="">
+                    <svg class="w-6 h-6 my-1 " aria-hidden="true" fill="none" stroke="#15803d" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex gap-x-2 ml-2">
+                <div class="grid mt-4 justify-between">
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">1</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">2</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">3</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">4</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">5</button>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center justify-between my-2">
+
+                        <p class="text-black font-medium">
+                            Java Script
+                        </p>
+                        <p class="text-slate-300 font-medium ">
+                            130 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Java
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            120 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Dot.Net
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            110 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-300 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Go
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            100 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-200 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2 ">
+                        <p class="text-black font-medium">
+                            Python
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            90 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-100 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- card 2 -->
+        <div class="rounded-xl w-full p-4 bg-white flex-shrink-0 relative overflow-hidden mt-4 border border-gray-300 ">
+            <div class="ml-2 pb-2 flex">
+                <p class="font-semibold text-sm mb-1 rubik">IT/Software Engineer</p>
+            </div>
+            <div class="flex gap-x-2 ml-2">
+                <div class="grid mt-4 justify-between">
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">1</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">2</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">3</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">4</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">5</button>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center justify-between my-2">
+
+                        <p class="text-black font-medium">
+                            Java Script
+                        </p>
+                        <p class="text-slate-300 font-medium ">
+                            130 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Java
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            120 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Dot.Net
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            110 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-300 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Go
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            100 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-200 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2 ">
+                        <p class="text-black font-medium">
+                            Python
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            90 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-100 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- card-3 -->
+        <div class="rounded-xl w-full p-4 bg-white flex-shrink-0 relative overflow-hidden mt-4 border border-gray-300 ">
+            <div class="ml-2 pb-2 flex">
+                <p class="font-semibold text-sm mb-1 rubik">IT/Software Engineer</p>
+            </div>
+            <div class="flex gap-x-2 ml-2">
+                <div class="grid mt-4 justify-between">
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">1</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">2</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">3</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">4</button>
+                    <button class="bg-slate-100 rounded text-sm font-semibold hover:bg-opacity-75 w-6 h-6 ">5</button>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center justify-between my-2">
+
+                        <p class="text-black font-medium">
+                            Java Script
+                        </p>
+                        <p class="text-slate-300 font-medium ">
+                            130 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Java
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            120 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-500 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Dot.Net
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            110 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-300 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2">
+                        <p class="text-black font-medium">
+                            Go
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            100 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-200 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between my-2 ">
+                        <p class="text-black font-medium">
+                            Python
+                        </p>
+                        <p class="text-slate-300 font-medium">
+                            90 Lakhs view
+                        </p>
+                    </div>
+                    <div class="w-full h-1 bg-slate-100 rounded-full">
+                        <div class="w-2/3 h-full text-center text-xs text-white bg-slate-500 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- part-2 -->
+<div class="bg-[#F8F9FC] py-4 hidden">
+    <div class="flex flex-no-wrap overflow-x-scroll mx-4 scrolling-touch items-start gap-x-3 scrollbar-hide">
+        <!-- main card -->
+        <div class="w-5/6 h-80 p-4 flex-shrink-0 relative overflow-hidden ">
+            <div><img src="assets/images/banknote.svg" class="block w-48" alt="fresher" />
+            </div>
+            <p class="font-bold text-[#475467] text-sm w-full pt-4 pr-8 rubik">What is the CTC trends for your
+                area
+                of
+                Interest</p>
+            <br>
+            <p class="text-[#475467] text-xs font-normal w-full pr-4">Based on the 5 Lakhs of organisation
+                offering
+                during 3 months</p>
+        </div>
+        <!-- card-1 -->
+        <div class="shadow-lg rounded-xl w-3/4 h-[19rem] p-4 mb-4 bg-white flex-shrink-0 relative  mt-4 -ml-10 z-10">
+            <div class="px-4 ">
+                <div class="flex justify-between ">
+                    <p class="font-semibold text-emerald-600 ">Web Development</p>
+                    <svg class="mt-2" width="11" height="7" viewBox="0 0 11 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1.38477L5.5 5.38477L9.5 1.38477" stroke="#21A14B" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="bg-[#F9F5FF] my-4 rounded-lg shadow-lg">
+                    <div class=" py-4 ">
+                        <p class="text-[#344054] text-3xl font-bold text-center px-2">5.5 LPA</p>
+                        <div class="font-semibold text-[#344054] text-xs text-center px-6 mt-4">Average Salary
+                        </div>
+                        <hr class="h-px mt-4 bg-gray-300 border-0 dark:bg-gray-700">
+                        <div class="mt-4 place-content-center flex">
+                            <div>
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 13.0511V3.71777" stroke="#21A14B" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.33325 8.38444L7.99992 3.71777L12.6666 8.38444" stroke="#21A14B"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="font-semibold text-xs text-[#667085]"><span class="text-[#21A14B]">23
+                                    %</span>
+                                from Last Year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="font-medium mt-8  text-xs w-full text-center px-4 text-[#98A2B3]">5 Lakhs of Active
+                Organisation
+                across India
+            </p>
+        </div>
+        <!-- card-2 -->
+        <div class="shadow-lg rounded-xl w-96 my-4 bg-white flex-shrink-0 relative  ">
+            <div class="flex justify-between p-1">
+                <p class="font-semibold text-emerald-600 ml-3 mt-2">Location - Top Contributors</p>
+                <svg class="w-6 h-6 my-1  " aria-hidden="true" fill="none" stroke="#15803d" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </div>
+            <div class="mt-1">
+                <div class="pl-2 ">
+                    <div class="vertical"></div>
+                    <div class="flex pl-2">
+                        <p class="font-semibold ">Bangalore</p>
+                        <div class="w-full h-4 bg-white rounded-r-lg dark:bg-white px-4 py-1">
+                            <div class="h-4 bg-emerald-600 rounded-r-lg dark:bg-emerald-600 font-semibold text-end"
+                                style="width: 80%"></div>
+                        </div>
+                    </div><br>
+                    <div class="flex pl-2">
+                        <p class="font-semibold">Chennai</p>
+                        <div class="w-full h-4 bg-white rounded-r-lg dark:bg-white px-7 py-1">
+                            <div class="h-4 bg-emerald-600 rounded-r-lg dark:bg-emerald-600 font-semibold text-end"
+                                style="width: 70%"></div>
+                        </div>
+                    </div><br>
+                    <div class="flex pl-2">
+                        <div class="font-semibold ">NewDelhi</div>
+                        <div class="w-full h-4 bg-white rounded-r-lg dark:bg-white px-4 py-1">
+                            <div class="h-4 bg-emerald-600 rounded-r-lg dark:bg-emerald-600" style="width: 60%">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="flex pl-2">
+                        <p class="font-semibold ">Pune</p>
+                        <div class="w-full h-4 bg-white rounded-r-lg dark:bg-white px-[3.3rem] py-1">
+                            <div class="h-4 bg-emerald-600 rounded-r-lg dark:bg-emerald-600" style="width: 50%">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="flex pl-2">
+                        <p class="font-semibold">Hyderabad</p>
+                        <div class="w-full h-4 bg-white rounded-r-lg dark:bg-white px-2 py-1">
+                            <div class="h-4 bg-emerald-600 rounded-r-lg dark:bg-emerald-600" style="width: 40%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-24 py-0">
+                        <hr class="h-0.5 w-64  bg-[#667085] border-0 dark:bg-[#667085]">
+                    </div>
+                </div>
+                <div class="flex px-24 w-full py-0 justify-between ml-2 pb-5">
+                    <p class="font-semibold">0</p>
+                    <p class="font-semibold">2</p>
+                    <p class="font-semibold">4</p>
+                    <p class="font-semibold">6</p>
+                    <p class="font-semibold">8</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- part-3 -->
+<div class="bg-[#F5FBEE] py-8 hidden">
+    <div class="flex flex-no-wrap overflow-x-scroll mx-4 pb-2 scrolling-touch items-start gap-x-3 scrollbar-hide ">
+        <!-- main card -->
+        <div class="w-5/6 h-[17.5rem] p-4 flex-shrink-0 relative overflow-hidden">
+            <div><img src="assets/images/card.svg" class="block w-48" alt="fresher" />
+            </div>
+            <p class="font-bold text-[#475467] text-sm w-full pt-4 pr-8 rubik">Which city offer more Jobs for
+                your
+                area of
+                Interest</p><br>
+            <p class="text-[#475467] text-xs font-normal w-full pr-4">Based on the 5k organisation across all
+                India
+                in
+                last 3 months</p>
+        </div>
+        <!-- card-1 -->
+        <div class="rounded-xl w-96 md:w-96 h-[18rem] p-4 bg-white flex-shrink-0 relative -ml-10 z-10">
+            <div class="flex gap-x-6 ">
+                <p class="font-semibold text-emerald-600 inline-block rubik">Web Development</p>
+                <svg class="w-6 h-6 my-1 " aria-hidden="true" fill="none" stroke="#15803d" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+                <p class="font-semibold text-emerald-600 rubik">Banglore</p>
+                <svg class="w-6 h-6 my-1 " aria-hidden="true" fill="none" stroke="#15803d" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </div>
+            <div class="px-10 ">
+                <div class="bg-slate-100 rounded-lg shadow-lg w-64">
+                    <div class="px-7 py-4 ">
+                        <p class="text-[#344054] text-3xl font-bold text-center">5k Jobs</p>
+                        <div class="font-bold text-sm text-center mt-4">Openning in Bangalore</div>
+                        <hr class="h-px mt-4 bg-gray-300 border-0 dark:bg-gray-700">
+                        <div class="mt-4 place-content-center flex">
+                            <div>
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 13.0511V3.71777" stroke="#21A14B" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.33325 8.38444L7.99992 3.71777L12.6666 8.38444" stroke="#21A14B"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="font-semibold text-xs text-[#667085]"><span class="text-[#21A14B]">23
+                                    %</span>
+                                from Last Year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="font-medium text-sm mt-4 text-center px-12 pb-2 text-[#98A2B3]">5 Lakhs of Job Opening
+                Organisation across India</p>
+        </div>
+        <!-- card-2 -->
+        <div class="mr-2">
+            <div class="h-[17.5rem] rounded-xl w-72 md:w-72 bg-white flex-shrink-0 relative z-10">
+                <div><img src="assets/images/India.png" class="block w-72 " alt="fresher" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- like -->
+<div class="py-5 hidden">
+    <div class="text-center pb-3 text-xs font-medium text-[#667085]">Did you find these insights useful?</div>
+    <div class="flex place-content-center">
+        <div><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6 10L10 1C10.7956 1 11.5587 1.31607 12.1213 1.87868C12.6839 2.44129 13 3.20435 13 4V8H18.66C18.9499 7.99672 19.2371 8.0565 19.5016 8.17522C19.7661 8.29393 20.0016 8.46873 20.1919 8.68751C20.3821 8.90629 20.5225 9.16382 20.6033 9.44225C20.6842 9.72068 20.7035 10.0134 20.66 10.3L19.28 19.3C19.2077 19.7769 18.9654 20.2116 18.5979 20.524C18.2304 20.8364 17.7623 21.0055 17.28 21H6M6 10V21M6 10H3C2.46957 10 1.96086 10.2107 1.58579 10.5858C1.21071 10.9609 1 11.4696 1 12V19C1 19.5304 1.21071 20.0391 1.58579 20.4142C1.96086 20.7893 2.46957 21 3 21H6"
+                    stroke="#21A14B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="ml-8">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 12.0004L12 21.0004C11.2044 21.0004 10.4413 20.6843 9.87871 20.1217C9.3161 19.5591 9.00003 18.796 9.00003 18.0004V14.0004H3.34003C3.05012 14.0036 2.76297 13.9439 2.49846 13.8251C2.23395 13.7064 1.99842 13.5316 1.80817 13.3128C1.61793 13.0941 1.47753 12.8365 1.39669 12.5581C1.31586 12.2797 1.29652 11.987 1.34003 11.7004L2.72003 2.70036C2.79235 2.22346 3.0346 1.78875 3.40212 1.47636C3.76965 1.16396 4.2377 0.994909 4.72003 1.00036H16M16 12.0004V1.00036M16 12.0004H18.67C19.236 12.0104 19.7859 11.8122 20.2154 11.4435C20.645 11.0749 20.9242 10.5613 21 10.0004V3.00036C20.9242 2.43942 20.645 1.92586 20.2154 1.55718C19.7859 1.1885 19.236 0.990352 18.67 1.00036H16"
+                    stroke="#21A14B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</div>
+<hr class="h-1.5" style="background: rgba(180, 191, 233, 0.4)" />
+<!-- jobs to matches profile -->
+
+<div *ngIf="!matchingJObsGhost">
+    <div class="border border-blue-100 shadow rounded-md my-5 p-4 max-w-sm w-full mx-auto">
+        <div class="animate-pulse flex space-x-4">
+            <div class="rounded-lg bg-slate-700 h-10 w-10"></div>
+            <div class="flex-1 space-y-3 py-1">
+                <!-- <div class="h-2 bg-slate-700 rounded"></div> -->
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-5">
+                        <div class="h-2 w-5/6 bg-slate-700 rounded col-span-2"></div>
+                        <!-- <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="border border-blue-100 shadow rounded-md my-5 p-4 max-w-sm w-full mx-auto">
+        <div class="animate-pulse flex space-x-4">
+            <div class="rounded-lg bg-slate-700 h-10 w-10"></div>
+            <div class="flex-1 space-y-3 py-1">
+                <!-- <div class="h-2 bg-slate-700 rounded"></div> -->
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-5">
+                        <div class="h-2 w-5/6 bg-slate-700 rounded col-span-2"></div>
+                        <!-- <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="border border-blue-100 shadow rounded-md my-5 p-4 max-w-sm w-full mx-auto">
+        <div class="animate-pulse flex space-x-4">
+            <div class="rounded-lg bg-slate-700 h-10 w-10"></div>
+            <div class="flex-1 space-y-3 py-1">
+                <!-- <div class="h-2 bg-slate-700 rounded"></div> -->
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-4">
+                        <div class="h-2 w-full bg-slate-700 rounded col-span-2"></div>
+                        <div class="h-2 w-1/6 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between gap-5">
+                        <div class="h-2 w-5/6 bg-slate-700 rounded col-span-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bg-[#F3F4F6]" *ngIf="matchingJObsGhost">
+    <div class="mx-4 pt-4">
+        <div class=" w-full md:mx-20">
+            <div class="page_head mb-2">Job Matches to Profiles</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                <div class="border rounded-lg mb-2 px-4 pt-4 pb-2 bg-[white] " *ngFor="let similar of Matchingjobs">
+                    <div class="flex justify-between">
+                        <div class=" flex">
+                            <div class="">
+                                <img src="assets/images/pic2.png">
+                            </div>
+                            <div class="ml-2" routerLink="/jobs/job-description"
+                                [queryParams]="{requirementId:similar.requirementId}">
+                                <div class="text-[#252525] font-bold text-md text-sm">{{similar.jobTitle}}
+                                </div>
+                                <div class="font text-xs font-medium text-[#667085] ">{{similar.industry}}
+                                </div>
+                                <div class="flex mt-1">
+                                    <div class="mt-0.5">
+                                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                                stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                                stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-2 text-sm font font-medium text-[#475467]">
+                                        {{similar.location[0]}}
+                                    </div>
+                                </div>
+                                <div class="flex mt-2">
+                                    <div>
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                                            <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                                            <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+
+                                        {{similar.salarydto.minAnnualCTC |lpaCtc}} - {{similar.salarydto.maxAnnualCTC
+                                        |lpaCtc}}
+                                    </div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="">
+                                        <button
+                                            class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                            {{similar.empType}}
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <button
+                                            class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                            Min {{similar.workexperienceDto.min}} Years
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <button
+                                            class="whitespace-nowrap text-[0.625rem] font-medium px-1 rounded-lg text-[#1D2939]">
+                                            Intermediate English
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="ml-10 mt-2 mb-2" routerLink="/jobs/job-description"
+                                [queryParams]="{requirementId:similar.requirementId}">
+                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="border rounded-lg p-1 text-[#21A14B]">
+                                <div class=" ml-2 text-[0.625rem] text-xs font-bold">{{similar.matchingPercentage}}%
+                                </div>
+                                <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                            </div>
+                            <div class="mt-2 ml-7">
+                                <svg [ngStyle]="{ fill: similar.saved ? 'red' : 'white' }" width="20" height="18"
+                                    viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    (click)="openSavedPopup(similar.requirementId, similar.saved)">
+                                    <path
+                                        d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                                        [ngStyle]="{ stroke: similar.saved ? 'red' : '#475467' }" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-gray-500 font-semibold text-xs flex place-content-center items-center py-4"
+                routerLink="/jobs/matching-jobs">
+                Show more
+                <button class="ml-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M12 5L19 12L12 19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- <hr class=" my-4" style="background: rgba(180, 191, 233, 0.2);"> -->
+    </div>
+</div>
+<div class=" bg-white mx-4 hidden">
+    <div class="page_head mt-4 rubik">Top Companies</div>
+    <div class="mt-4 text-xs font-semibold  text-[#667085]">Hiring for Your Area Of Interest</div>
+    <div class="button w-full my-4 gap-2 flex justify-between">
+        <button
+            class="bg-[#F5F5F5] whitespace-nowrap font-medium w-full text-[10px] px-2 py-1 rounded-lg text-[#475467] border border-[#A3A3A3] ">
+            Java Developer
+        </button>
+        <button
+            class="bg-[#F5F5F5] whitespace-nowrap font-medium w-full text-[10px] px-2 py-1 rounded-lg text-[#475467] border border-[#A3A3A3] ">
+            Web Developer
+        </button>
+        <button
+            class="bg-[#F5F5F5] whitespace-nowrap font-medium w-full text-[10px] px-2 py-1 rounded-lg text-[#475467] border border-[#A3A3A3]">
+            Software Development
+        </button>
+    </div>
+    <div class="flex overflow-y-hidden scrollbar-hide ">
+
+        <div style="box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);"
+            class="mb-2 bg-white border border-[#D0D5DD]  px-4 py-3 rounded-lg mt-[16px] ">
+            <div class="font-medium text-sm">
+                <div class="text-base font-semibold text-[#475467] rubik">MNCs</div>
+                <div class=" w-[10rem]">
+                    <p class="text-[.625rem] mt-[.4rem]"> 789+ Actively Hiring </p>
+                    <div class="flex my-3">
+                        <div class="">
+                            <img class="h-10 w-10" src="assets/images/companylogo-1.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-2.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-3.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-4.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-5.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] text-sm font-medium ">Explore companies</div>
+                </div>
+            </div>
+        </div>
+        <div style="box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);"
+            class="mb-2 bg-white border border-[#D0D5DD]  px-4 py-3 rounded-lg mt-[16px] ml-[24px] ">
+            <div class="font-medium text-sm">
+                <div class="text-base font-semibold text-[#475467] rubik">Corporates</div>
+                <div class=" w-[10rem]">
+                    <p class="text-[.625rem] mt-[.4rem]"> 789+ Actively Hiring </p>
+                    <div class="flex my-3">
+                        <div class=" ">
+                            <img class="h-10 w-10" src="assets/images/companylogo-1.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-2.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-3.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-4.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-5.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] text-sm font-medium ">Explore companies</div>
+                </div>
+            </div>
+        </div>
+        <div style="box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);"
+            class="mb-2 bg-white border border-[#D0D5DD]  px-4 py-3 rounded-lg mt-[16px] ml-[24px] ">
+            <div class="font-medium text-sm">
+                <div class="text-base font-semibold text-[#475467] rubik">Unicorns</div>
+                <div class=" w-[10rem]">
+                    <p class="text-[.625rem] mt-[.4rem]"> 789+ Actively Hiring </p>
+                    <div class="flex my-3">
+                        <div class="">
+                            <img class="h-10 w-10" src="assets/images/companylogo-1.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-2.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-3.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-4.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-5.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] text-sm font-medium ">Explore companies</div>
+                </div>
+            </div>
+        </div>
+        <div style="box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);"
+            class="mb-2 bg-white border border-[#D0D5DD]  px-4 py-3 rounded-lg mt-[16px] ml-[24px] ">
+            <div class="font-medium text-sm">
+                <div class="text-base font-semibold text-[#475467] rubik">Fortune 500</div>
+                <div class=" w-[10rem]">
+                    <p class="text-[.625rem] mt-[.4rem]"> 789+ Actively Hiring </p>
+                    <div class="flex my-3">
+                        <div class="">
+                            <img class="h-10 w-10" src="assets/images/companylogo-1.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-2.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-3.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-4.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-5.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] text-sm font-medium ">Explore companies</div>
+                </div>
+            </div>
+        </div>
+        <div style="box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);"
+            class="mb-2 bg-white border border-[#D0D5DD]  px-4 py-3 rounded-lg mt-[16px] ml-[24px] ">
+            <div class="font-medium text-sm">
+                <div class="text-base font-semibold text-[#475467] rubik">Startups</div>
+                <div class=" w-[10rem]">
+                    <p class="text-[.625rem] mt-[.4rem]"> 789+ Actively Hiring </p>
+                    <div class="flex my-3">
+                        <div class="">
+                            <img class="h-10 w-10" src="assets/images/companylogo-1.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-2.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-3.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-4.svg" alt="Image">
+                        </div>
+                        <div class="-ml-4">
+                            <img class="h-10 w-10" src="assets/images/companylogo-5.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="text-[#21A14B] text-sm font-medium ">Explore companies</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-gray-500 font-semibold text-xs flex place-content-center items-center py-2.5">
+        Show more
+        <button class="ml-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5L19 12L12 19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- <hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.4);"> -->
+<!-- <div class="pb-16 ">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        <div style="box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.08), 0px -7px 12px -2px rgba(16, 24, 40, 0.08);"
+            class="border border-[#D0D5DD]  rounded-lg mx-4 p-4 mt-4 ">
+            <div class="flex">
+                <div>
+                    <svg width="50" height="43" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.3923 37.5205V40.6175C22.3923 41.9095 23.4395 42.9566 24.7314 42.9566H26.8214C28.1133 42.9566 29.1605 41.9095 29.1605 40.6175V37.5205H22.3923Z"
+                            fill="#E2DFE2" />
+                        <path
+                            d="M24.0389 40.6181V37.5205H20.7832V40.6181C20.7832 41.91 21.8304 42.9572 23.1223 42.9572H26.378C25.086 42.9572 24.0389 41.91 24.0389 40.6181Z"
+                            fill="#C1BFC1" />
+                        <path
+                            d="M24.0598 1.01697C24.0005 1.02081 23.9434 1.03179 23.8847 1.03618C24.1602 1.05813 24.4346 1.08502 24.7058 1.12234C18.1643 1.99224 12.9548 7.42948 12.485 14.089C12.1387 18.9944 14.2994 23.4125 17.8152 26.1945C19.802 27.7669 21.0045 30.1252 21.0045 32.6591V36.7709C21.0045 37.4844 21.5829 38.0629 22.2964 38.0629H20.6933H20.6938H29.25C29.9635 38.0629 30.542 37.4844 30.542 36.7709V32.658C30.542 30.1685 31.6671 27.7998 33.6324 26.2724C36.9578 23.6885 39.0977 19.6513 39.0977 15.1142C39.0977 7.01072 32.2746 0.50107 24.0598 1.01697Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M23.1998 36.7708V32.659C23.1998 30.125 21.9973 27.7667 20.0106 26.1943C16.4953 23.4123 14.3346 18.9937 14.6803 14.0888C15.1501 7.42932 20.3596 1.99208 26.9011 1.12164C25.9791 0.995409 25.0296 0.955345 24.0598 1.01626C17.0743 1.45533 11.3753 7.10661 10.8825 14.0888C10.5361 18.9942 12.6969 23.4123 16.2127 26.1943C18.1994 27.7667 19.4019 30.125 19.4019 32.659V36.7708C19.4019 37.4842 19.9804 38.0627 20.6939 38.0627H24.4917C23.7783 38.0627 23.1998 37.4842 23.1998 36.7708Z"
+                            fill="#F8C464" />
+                        <path
+                            d="M48.8458 15.6523H43.104C42.6496 15.6523 42.2808 15.2841 42.2808 14.8291C42.2808 14.3741 42.6496 14.0059 43.104 14.0059H48.8458C49.3003 14.0059 49.6691 14.3741 49.6691 14.8291C49.6691 15.2841 49.3003 15.6523 48.8458 15.6523Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M6.83974 15.6523H1.0979C0.642922 15.6523 0.274658 15.2841 0.274658 14.8291C0.274658 14.3741 0.642922 14.0059 1.0979 14.0059H6.83974C7.29472 14.0059 7.66298 14.3741 7.66298 14.8291C7.66298 15.2841 7.29472 15.6523 6.83974 15.6523Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M40.8308 6.86159C40.5416 6.86159 40.2606 6.70846 40.1102 6.43734C39.8896 6.03944 40.0328 5.53891 40.4307 5.31828L45.4525 2.53463C45.8498 2.31509 46.3515 2.45779 46.5715 2.85569C46.7922 3.25359 46.6489 3.75412 46.251 3.97475L41.2293 6.75841C41.1036 6.82811 40.9664 6.86159 40.8308 6.86159Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M4.09239 27.2259C3.80261 27.2259 3.52161 27.0733 3.37178 26.8022C3.1517 26.4043 3.29495 25.9032 3.69285 25.6832L8.71462 22.8995C9.11253 22.6789 9.61361 22.8221 9.83369 23.22C10.0538 23.6179 9.91052 24.119 9.51262 24.3391L4.49084 27.1227C4.36406 27.193 4.22741 27.2259 4.09239 27.2259Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M9.11234 6.86183C8.97733 6.86183 8.84067 6.82835 8.71389 6.75865L3.69212 3.97499C3.29421 3.75436 3.15097 3.25383 3.37105 2.85593C3.59113 2.45803 4.09221 2.31479 4.49011 2.53487L9.51189 5.31853C9.90979 5.53915 10.053 6.03969 9.83295 6.43759C9.68312 6.70871 9.40212 6.86183 9.11234 6.86183Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M45.852 27.2259C45.717 27.2259 45.5798 27.1924 45.453 27.1227L40.4312 24.3391C40.0333 24.119 39.8901 23.6179 40.1107 23.22C40.3308 22.8221 40.8324 22.6789 41.2297 22.8995L46.2515 25.6832C46.6494 25.9032 46.7927 26.4043 46.572 26.8022C46.4222 27.0733 46.1412 27.2259 45.852 27.2259Z"
+                            fill="#FFE181" />
+                        <path
+                            d="M24.9719 20.398C24.0329 20.398 23.2711 19.6362 23.2711 18.6971V17.184C23.2711 16.7159 23.4637 16.2691 23.8046 15.9475L26.4889 13.413C26.8566 13.0245 27.0586 12.5168 27.0586 11.9806V11.8801C27.0586 11.3127 26.8346 10.7819 26.428 10.3851C26.0218 9.98943 25.4834 9.77759 24.9159 9.79405C23.7963 9.82259 22.8853 10.7968 22.8853 11.9658C22.8853 12.9048 22.1235 13.6666 21.1845 13.6666C20.2454 13.6666 19.4836 12.9048 19.4836 11.9658C19.4836 8.96971 21.8809 6.47035 24.8276 6.39461C26.3193 6.35455 27.732 6.90831 28.8011 7.94999C29.8702 8.99166 30.4591 10.3873 30.4591 11.8801V11.9806C30.4591 13.4185 29.907 14.778 28.9043 15.8076C28.8878 15.8246 28.8702 15.8416 28.8532 15.8581L26.6716 17.9173V18.6971C26.6727 19.6367 25.9115 20.398 24.9719 20.398Z"
+                            fill="#F78659" />
+                        <path
+                            d="M25.0855 25.6133C26.0879 25.6133 26.9005 24.8008 26.9005 23.7984C26.9005 22.796 26.0879 21.9834 25.0855 21.9834C24.0831 21.9834 23.2705 22.796 23.2705 23.7984C23.2705 24.8008 24.0831 25.6133 25.0855 25.6133Z"
+                            fill="#F78659" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="page_head  ml-3">Know How Jobcheck works ?</div>
+                    <div class="text-[#667085] text-xs font-medium ml-3 mt-2">Explore how Jobcheck helps you with
+                        job
+                        hunt
+                    </div>
+                </div>
+            </div>
+            <div class="text-[#21A14B] text-xs font-medium text-right mt-4 ">Know More</div>
+        </div>
+        <div style="box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.08), 0px -7px 12px -2px rgba(16, 24, 40, 0.08);"
+            class=" border border-[#D0D5DD]  rounded-lg  mx-4 p-4 mt-4 ">
+            <div class="flex">
+                <div>
+                    <svg width="46" height="50" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M36.6043 7.59114C30.7741 6.53081 25.687 4.33769 21.4841 1.07381C20.5703 0.364721 19.2938 0.364721 18.3794 1.07381C14.1765 4.33769 9.08939 6.53081 3.25864 7.59114C2.04738 7.81122 1.1687 8.86827 1.1687 10.1037V27.7617C1.1687 37.2509 8.04552 45.6655 18.6884 49.2006C19.089 49.3334 19.51 49.4003 19.9315 49.4003C20.353 49.4003 20.7739 49.3334 21.1746 49.2006C31.8175 45.6661 38.6937 37.2504 38.6937 27.7617V10.1037C38.6943 8.86772 37.815 7.81122 36.6043 7.59114Z"
+                            fill="#B42318" />
+                        <path
+                            d="M33.4169 10.9136C28.7014 10.0557 24.5869 8.28247 21.1874 5.64206C20.4481 5.06853 19.4158 5.06853 18.6765 5.64206C15.2771 8.28192 11.1625 10.0557 6.44698 10.9136C5.46732 11.0914 4.75659 11.9464 4.75659 12.9459V27.228C4.75659 34.9028 10.319 41.7094 18.9268 44.5682C19.2511 44.6758 19.5914 44.7296 19.9322 44.7296C20.2731 44.7296 20.6133 44.6758 20.9377 44.5677C29.5455 41.7089 35.1073 34.9023 35.1073 27.2275V12.9459C35.1073 11.9464 34.3966 11.0919 33.4169 10.9136Z"
+                            fill="#F04438" />
+                        <path
+                            d="M38.5825 23.5424C40.5415 23.5424 42.1295 21.9543 42.1295 19.9953C42.1295 18.0363 40.5415 16.4482 38.5825 16.4482C36.6235 16.4482 35.0354 18.0363 35.0354 19.9953C35.0354 21.9543 36.6235 23.5424 38.5825 23.5424Z"
+                            fill="#CF3D44" />
+                        <path
+                            d="M44.6613 19.5785H42.5214C42.4396 18.7975 42.129 18.0841 41.6598 17.5045L43.1745 15.9897C43.337 15.8273 43.337 15.5633 43.1745 15.4008C43.0121 15.2384 42.7486 15.2384 42.5856 15.4008L41.0709 16.9156C40.4913 16.4458 39.7778 16.1357 38.9968 16.0539V13.9146C38.9968 13.6846 38.8102 13.498 38.5803 13.498C38.3503 13.498 38.1637 13.6846 38.1637 13.9146V16.0539C37.3827 16.1357 36.6693 16.4464 36.0897 16.9156L34.5749 15.4008C34.4125 15.2384 34.1485 15.2384 33.986 15.4008C33.8236 15.5633 33.8236 15.8273 33.986 15.9897L35.5008 17.5045C35.031 18.0841 34.7209 18.7975 34.6391 19.5785H32.4998C32.2699 19.5785 32.0833 19.7651 32.0833 19.9951C32.0833 20.225 32.2699 20.4116 32.4998 20.4116H34.6391C34.7209 21.1926 35.0316 21.9061 35.5008 22.4857L33.986 24.0004C33.8236 24.1629 33.8236 24.4269 33.986 24.5893C34.0673 24.6705 34.1737 24.7112 34.2802 24.7112C34.3867 24.7112 34.4932 24.6705 34.5744 24.5893L36.0891 23.0745C36.6687 23.5443 37.3822 23.8544 38.1632 23.9368V26.0761C38.1632 26.306 38.3498 26.4927 38.5797 26.4927C38.8097 26.4927 38.9963 26.306 38.9963 26.0761V23.9368C39.7773 23.855 40.4907 23.5443 41.0703 23.0745L42.5851 24.5893C42.6663 24.6705 42.7728 24.7112 42.8792 24.7112C42.9857 24.7112 43.0922 24.6705 43.1734 24.5893C43.3359 24.4269 43.3359 24.1629 43.1734 24.0004L41.6587 22.4857C42.1284 21.9061 42.4385 21.1926 42.5203 20.4116H44.6596C44.8896 20.4116 45.0762 20.225 45.0762 19.9951C45.0762 19.7651 44.8907 19.5785 44.6613 19.5785ZM38.5803 23.1256C36.8537 23.1256 35.4498 21.7211 35.4498 19.9945C35.4498 18.2679 36.8542 16.864 38.5803 16.864C40.3063 16.864 41.7108 18.2685 41.7108 19.9945C41.7108 21.7206 40.3069 23.1256 38.5803 23.1256Z"
+                            fill="#717BBC" />
+                        <path
+                            d="M19.9321 49.6688C19.4651 49.6688 19.0052 49.5947 18.5656 49.4487C7.81401 45.878 0.866943 37.358 0.866943 27.7448V10.1943C0.866943 8.76465 1.88447 7.54186 3.28673 7.28775C9.0143 6.24553 14.0097 4.09302 18.1336 0.890611C19.1923 0.0690152 20.6709 0.0690152 21.7301 0.890611C25.854 4.09357 30.8489 6.24553 36.5775 7.28775C37.9798 7.54186 38.9968 8.76465 38.9968 10.1943C38.9968 10.4243 38.8102 10.6109 38.5802 10.6109C38.3503 10.6109 38.1637 10.4243 38.1637 10.1943C38.1637 9.16749 37.4337 8.28936 36.4288 8.10715C30.5673 7.04078 25.4501 4.83394 21.2197 1.54866C20.4618 0.960861 19.4025 0.960861 18.6446 1.54866C14.4137 4.83394 9.2964 7.04078 3.43491 8.10715C2.42946 8.28936 1.69952 9.16749 1.69952 10.1943V27.7448C1.69952 36.9936 8.42266 45.2024 18.8279 48.6584C19.5381 48.895 20.3256 48.895 21.0364 48.6584C30.2446 45.6003 36.7257 38.6758 37.9507 30.5861C37.9847 30.3588 38.1955 30.2035 38.4244 30.237C38.6516 30.271 38.808 30.484 38.7734 30.7106C37.5012 39.1121 30.8061 46.2919 21.2987 49.4487C20.8586 49.5947 20.3986 49.6688 19.9321 49.6688Z"
+                            fill="#F97066" />
+                        <path
+                            d="M19.9321 44.979C19.5468 44.979 19.167 44.9175 18.8043 44.7973C10.0966 41.905 4.46997 35.0013 4.46997 27.2095V13.0498C4.46997 11.8577 5.31901 10.8375 6.48801 10.6256C11.0971 9.787 15.1156 8.056 18.4322 5.48035C19.3152 4.79431 20.549 4.79431 21.4326 5.48035C23.2909 6.92322 25.3913 8.11308 27.6761 9.01699C29.4521 9.71949 31.3702 10.2606 33.3767 10.6262C33.6034 10.6673 33.7538 10.8841 33.7126 11.1102C33.6715 11.3369 33.4514 11.4873 33.2286 11.4456C31.1677 11.0707 29.1969 10.5142 27.3704 9.79139C25.0126 8.85893 22.8425 7.62956 20.9222 6.13839C20.3393 5.68616 19.526 5.68616 18.9437 6.13839C15.5201 8.79746 11.3797 10.5828 6.63729 11.4456C5.86399 11.5861 5.30309 12.2611 5.30309 13.0509V27.2106C5.30309 34.6374 10.7058 41.2305 19.0672 44.0081C19.6237 44.1936 20.2427 44.1936 20.7982 44.0081C28.1459 41.568 33.3471 36.0495 34.3729 29.6057C34.4085 29.3785 34.6215 29.2221 34.8493 29.2605C35.0765 29.2962 35.2307 29.5097 35.1945 29.7369C34.1199 36.4886 28.704 42.2601 21.0605 44.7984C20.6977 44.9175 20.3179 44.979 19.9321 44.979Z"
+                            fill="#F97066" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="page_head ml-3">Beware of Imposters !</div>
+                    <div class="text-[#667085] text-xs font-medium ml-3 mt-2">
+                        Jobcheck does not promise job or an
+                        interview
+                        in exchange of money ...
+                        <!-- <span class="text-[#0175A2] text-xs font-medium"> Read
+                        More</span> -->
+                        <!-- <span class="text-[#0175A2] text-xs font-medium text-right mt-4 "
+                            routerLink="/jobs/beware-imposters"> Read
+                            More</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-[#21A14B] text-xs font-medium text-right ">Got it</div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="relative z-30" [ngStyle]="{'bottom': bottom + 'px', 'transition': 'bottom 0.3s'}">
+
+    <app-footer></app-footer>
+</div>
+
+<!-- </div> -->
+<div *ngIf="connectionStatus === 'offline'" class="fixed h-full">
+    <app-no-internet></app-no-internet>
+</div>
+<div *ngIf="connectionStatus === 'online'" class="online fixed bottom-0 ">
+    <span class="">{{connectionStatusMessage}}</span>
+</div>
+<!-- Jobs for you heart icon popup -->
+
+<div class=" w-full place-items-center h-1/2" *ngIf="isPopupVisible">
+    <div class="rounded-2xl z-50 popup-container1 ml-5 fixed overflow-hidden  top-[40%] h-full  w-full drop-shadow-lg blur-50"
+        [ngClass]="{ 'active': isPopupVisible }">
+        <div class="flex items-center w-full justify-center ">
+            <div
+                class="pointer-events-auto relative flex w-64   flex-col rounded-2xl border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
+                <div class=" rounded-lg ">
+                    <div class="flex justify-center w-full ">
+                        <img class="h-20" src="assets/images/heart.gif" alt="">
+                    </div>
+                    <div class="text-sm font-medium text-gray-800 text-center ">
+                        <h2>{{message11}}!</h2>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-center  text-xs">{{messsage12}}!</p>
+                    </div>
+                </div>
+                <div class=" flex w-full items-center border-t-2 mt-2">
+                    <div class="border-r-2 w-full">
+                        <div class="flex justify-center items-center" (click)="redHeart()" (click)="closeSavedPopup()">
+                            <button type="button" class="p-2 inline-block bg-primary-100 text-[#D92D20]  text-center">
+                                Yes
+                            </button>
+                        </div>
+                    </div>
+                    <div (click)="closeSavedPopup()" class=" flex justify-center items-center w-full">
+                        <button type="button"
+                            class="flex justify-center items-center p-2 inline-block whitespace-nowrap bg-primary-100 text-[#0175A2]  text-center ">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+<div (click)="closeSavedPopup()" *ngIf="isPopupVisible" class="fixed z-40 w-full top-0 h-screen bg-black bg-opacity-25">
+</div>

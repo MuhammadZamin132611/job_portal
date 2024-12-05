@@ -1,0 +1,373 @@
+<!-- <div class="mx-7">
+    <div class="flex justify-between">
+        <div class="flex">
+            <div><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                        stroke="#21A14B" stroke-width="1.5" />
+                    <path d="M20.4 8.84518L22.8 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M15.5999 6.03576L19.1999 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+
+            </div>
+            <div class="text-[#000000] text-lg font-semibold ml-3">Primary Skills </div>
+            <div class="text-[#000000] text-lg font-semibold ml-3">Primary Skills ({{primary.length}}/9)</div>
+        </div>
+        <div class="flex">
+            <div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18H14" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4 12L20 12" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4 6H10" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </div>
+            <div (click)="addSkill()" class="ml-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div routerLink="/dashboard/profile/skills/edit-skills" class="ml-3"><svg width="22" height="22" viewBox="0 0 22 22"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                        stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="skillfilled" class="text-red-800 text-sm font-medium">Can't add more then 9 skills</div>
+    <div *ngFor="let i=index;let sk of primary">
+        <div *ngIf="i<5" class="my-2">
+            <div class="text-[#344054] text-sm font-medium">{{sk.skillName}}</div>
+            <div class="mt-2">
+            <hr class="bg-[#EAECF0] h-1 rounded-lg">
+            <span class="absolute h-1 w-1/2 -mt-1 bg-[#FDB022] rounded-lg"></span>
+        </div>
+            <div class="mt-2">
+                <div class="w-full h-1 bg-gray-300 rounded-lg overflow-hidden">
+                    <div class="h-full bg-[#FDB022]"
+                        [style.backgroundColor]="sk.rating<35? 'red': sk.rating<70&&sk.rating>34? 'amber':'green'"
+                        [style.width.%]="sk.rating"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex my-5 place-content-center">
+        <div class="text-[]">Show all skills</div>
+        <div class="mt-1 ml-1"><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.83331 8H13.1666" stroke="#344054" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.5 3.33398L13.1667 8.00065L8.5 12.6673" stroke="#344054" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+<hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.2);">
+
+<div class="mx-7">
+    <div class="flex justify-between">
+        <div class="flex">
+            <div><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                        stroke="#21A14B" stroke-width="1.5" />
+                    <path d="M20.4 8.84518L22.8 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M15.5999 6.03576L19.1999 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="text-[#000000] text-lg font-semibold ml-3">Other Skills</div>
+        </div>
+        <div class="flex">
+            <div routerLink="/dashboard/profile/skills/add-other-skills"><svg width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div routerLink="/dashboard/profile/skills/edit-other-skills" class="ml-3"><svg width="22" height="22"
+                    viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                        stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="flex flex-wrap w-full">
+            <div *ngFor="let skill of other;let i =index;">
+                <div *ngIf="i<=7" class="bg-[#F2F4F7] mr-3 text-[#475467] my-2 text-center px-3 py-2 rounded-lg">
+                    <div class=" w-full">{{skill.skillName}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="other.length>7" class="flex my-5 mt-0 place-content-center">
+        <div class="text-[]">Show all skills</div>
+        <div class="mt-1 ml-1"><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.83331 8H13.1666" stroke="#344054" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.5 3.33398L13.1667 8.00065L8.5 12.6673" stroke="#344054" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+
+</div> -->
+
+<div class="mx-7">
+  <div class="flex justify-between">
+    <div class="flex -ml-2.5">
+      <div>
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+            stroke="#21A14B" stroke-width="1.5" />
+          <path d="M20.4 8.84518L22.8 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M15.5999 6.03576L19.1999 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="ml-3 text-lg font-semibold text-[#1D2939] rubik">
+        Primary Skills ({{primary.length?primary.length:'0'}}/9)
+      </div>
+    </div>
+    <div class="flex ml-4">
+      <div class="bg-gray-100 h-6">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18H14" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4 12L20 12" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4 6H10" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div (click)="addSkill()" class="ml-3">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div routerLink="/dashboard/profile/skills/edit-primary-skills" class="ml-3">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="skillfilled" class="text-red-800 text-sm font-medium">Can't add more then 9 skills</div>
+    
+  <div *ngFor="let i=index;let sk of primary" >
+    <div  *ngIf="i<=5" class="my-2">
+        <div class="text-[#344054] text-sm font-medium">{{sk.skillName}}</div>
+        <!-- <div class="mt-2">
+            <hr class="bg-[#EAECF0] h-1 rounded-lg">
+            <span class="absolute h-1 w-1/2 -mt-1 bg-[#FDB022] rounded-lg"></span>
+        </div> -->
+        <div class="mt-2">
+            <div class="w-full h-1 bg-gray-300 rounded-lg overflow-hidden">
+                <div class="h-full bg-[#FDB022]" [style.backgroundColor]="sk.rating*10<35? 'red': sk.rating*10<70&&sk.rating*10>34? 'amber':'green'" [style.width.%]="sk.rating*10"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- <div class="py-2">
+    <button *ngFor="let data of primary"
+        class="text-[#475467] rounded-lg mr-2 mb-2 px-4 py-1.5 bg-[#F2F4F7]">
+        <div class="flex space-x-2 text-sm">
+            <span class="font-normal">{{ data.skillName }}</span>
+        </div>
+    </button>
+</div> -->
+
+<div  *ngIf="primary.length==0" class="border-2 rounded-lg my-1">
+  <div class="p-2">
+    <div class="flex">
+      <div>
+        <div class="relative">
+          <div class="absolute p-1">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                stroke="#98A2B3" stroke-width="1.5" />
+              <path d="M20.4 8.84518L22.8 5.5957" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.5999 6.03576L19.1999 1" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+            </svg>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="ml-3 text-[#000000] text-sm font-medium">
+        Make your mark,share your skills
+      </div>
+    </div>
+    <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+
+    </div>
+    <div>
+      <button routerLink="/dashboard/profile/skills/add-primary-skills"
+        class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 px-2">
+        Add Primary skills
+      </button>  
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+  <div routerLink="/dashboard/profile/skills/edit-primary-skills" class="flex showall mt-5 font-semibold">
+    Show all Skills
+    <div routerLink="/dashboard/profile/skills/edit-primary-skills" class="ml-1">
+      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.83331 8H13.1666" stroke="#344054" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.5 3.33398L13.1667 8.00065L8.5 12.6673" stroke="#344054" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+<hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.2)" />
+
+<div class="mx-7">
+  <div class="flex justify-between">
+    <div class="flex">
+      <div>
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+            stroke="#21A14B" stroke-width="1.5" />
+          <path d="M20.4 8.84518L22.8 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M15.5999 6.03576L19.1999 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="ml-3 text-lg font-semibold text-[#1D2939] rubik">
+        Other Skills ({{other.length? other.length:'0'}}/9)
+      </div>
+    </div>
+    <div class="flex">
+      <div (click)="addOther()"  class="ml-3">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div routerLink="/dashboard/profile/skills/edit-other-skills" class="ml-3">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg> 
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="otherSkillLimit" class="text-red-800 text-sm font-medium">Can't add more then 9 skills</div>
+    
+
+  <div class="py-1" >
+    <div class="flex flex-wrap w-full" >
+        <div *ngFor="let skill of other;let i =index;">
+        <div *ngIf="i<=8"   class="bg-[#F2F4F7] mr-3 text-[#475467] my-2 text-center px-3 py-2 rounded-lg">
+            <div class="text-sm w-full">{{skill.skillName}}</div></div>
+        </div>
+    </div>
+    
+</div>
+
+  <div  *ngIf="other.length==0" class="border-2 rounded-lg my-1">
+    <div class="p-2">
+      <div class="flex">
+        <div>
+          <div class="relative">
+            <div class="absolute p-1">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                  stroke="#98A2B3" stroke-width="1.5" />
+                <path d="M20.4 8.84518L22.8 5.5957" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M15.5999 6.03576L19.1999 1" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#98A2B3" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+
+            <div>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+              </svg>
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <div class="ml-3 text-[#000000] text-sm font-medium">
+          Make your mark,share your skills
+        </div>
+      </div>
+      <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+
+      </div>
+      <div>
+        <button routerLink="/dashboard/profile/skills/add-other-skills"
+          class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 px-2">
+          Add Other skills
+        </button>
+        
+      </div>

@@ -1,0 +1,214 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'ngx-toastr/toastr';
+@import "~animate.css/animate.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  /* @apply Jost; */
+  font-family: "Jost", sans-serif;
+   /* To remove tap effect on click(button ,link) */
+   -webkit-tap-highlight-color: transparent;
+   /* to disable long press copy paste selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+           -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+              -moz-user-select: none; /* Firefox */
+               -ms-user-select: none; /* Internet Explorer/Edge */
+                   user-select: none; /* Non-prefixed version, currently
+                                         supported by Chrome and Opera */
+  /* font-family: 'Rubik', sans-serif; */
+}
+/* Only add rubik in heading */
+.rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+
+@layer components {
+  /* global */ 
+  .page_head {
+    @apply leading-7 h-7 text-base font-semibold text-[#1D2939] rubik;
+  }
+  .page_head_desc {
+    @apply text-[#4B5565] text-[0.875rem] font-normal leading-5;
+  }
+  .green_button {
+    @apply bg-gray-400 focus:bg-green-600 active:bg-green-600 text-base font-medium text-white w-full rounded-md h-14 shadow-xl;
+  }
+
+  .global_input {
+    @apply w-full mt-2.5 bg-[#FCFCFD] bg-opacity-50 rounded-[10px] border gap-2.5 border-gray-300 text-base outline-none text-gray-700 py-2.5 px-2.5 leading-8 transition-colors duration-200 ease-in-out flex-none order-1 flex-grow-0;
+  }
+  ._global_inputcaret {
+    @apply absolute inset-y-0 flex items-center  mt-3 pointer-events-none right-4;
+  }
+
+  .global_label {
+    @apply leading-6 text-[1rem] font-medium  text-[#475467];
+  }
+
+  .showall {
+    @apply text-gray-500 font-semibold text-xs flex place-content-center items-center;
+  }
+
+
+  /* internet connection snack_bar */
+
+  .online {
+    @apply bg-green-900 text-white p-2.5 w-full text-center mt-[180px];
+  }
+
+  /* offcanvas */
+
+  .global_offcanvas {
+    @apply invisible w-full fixed bottom-0 left-0 right-0 z-[1055] flex h-5/6 max-h-full max-w-full translate-y-full flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none md:rounded-l-3xl lg:rounded-l-3xl sm:rounded-t-3xl lg:rounded-tr-none md:rounded-tr-none rounded-t-3xl;
+  }
+  .global_offcanvas_title {
+    @apply leading-normal text-[#252525] text-[1.125rem] font-semibold rubik;
+  }
+  .global_offcanvas_input {
+    @apply w-full p-4 pl-16 text-[#475467]  bg-[#F9FAFB] outline-none border-2 border-gray-200 rounded-xl focus:outline-none;
+  }
+  /*custom checkbox/radio button */
+  .radio_button {
+    @apply absolute right-0 mx-2 mt-2 cursor-pointer;
+  }
+  .radio_button_ring {
+    @apply max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 peer-checked:ring-transparent ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-green-600 peer-checked:text-sky-600 ;
+  }
+  /* auth landing */
+  .pills {
+    @apply text-white text-sm font-bold mr-2 bg-[#5EA8C5] border-0 py-1  px-4 focus:outline-none hover:bg-gray-200 rounded-full;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+/*Start Onboarding screen progress-bar */
+
+@-webkit-keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+
+@property --pgPercentage {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  --size: 2.5rem;
+  --fg: #21a14b;
+  --bg: #ededed;
+  --kf: #000000;
+  /* //chanage */
+  --pgPercentage: var(--value);
+  -webkit-animation: growProgressBar 3s 1 forwards;
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: calc(var(--size));
+  border-radius: 25%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      closest-side,
+      white 70%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--kf);
+  /* //changed// */
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+}
+
+/*End Onboarding screen progress-bar */
+
+
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 5px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #0388BC;
+  border-color: #0388BC;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+
+.border1{
+  border:1px solid black
+}

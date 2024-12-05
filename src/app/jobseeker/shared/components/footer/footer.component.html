@@ -1,0 +1,67 @@
+<div class="block md:hidden">
+<nav class="fixed bottom-0 w-full bg-white border-t-2 border-gray-200 h-16 z-30">
+  <ul class="flex justify-around">
+    <li *ngFor="let item of navigationItems">
+      <a class="text-center grid place-items-center" [routerLink]="item.url" routerLinkActive="text-[#0175A2] border-t-2 border-[#0175A2]"  #rla="routerLinkActive">
+        <img [hidden]="!rla.isActive" [src]="item.iconf" class="h-5 w-5 my-2" alt="">
+        <img [hidden]="rla.isActive"  [src]="item.iconh" class="h-5 w-5 my-2 fill-current text-gray-400 hover:text-[#0175A2]" alt="">
+        <span class="text-xs text-center mt-1">{{ item.label }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<div class="hidden md:block">
+  <div class="bg-[#0388BC] text-[#FFFFFF] text-xs md:text-sm pt-16 pb-4 bottom-0 hidden md:block">
+    <div class="flex justify-center mt-16">
+      <div class="flex  font-inter gap-2 lg:gap-16">
+        <!-- 1 -->
+        <div class="mt-8 lg:mt-4">
+          <img src="assets/images/JobCheckWhiteLogo.svg" class="" alt="logo">
+          <p class="m-4 flex gap-3 lg:gap-3">
+            <img src="assets/images/mailicon.svg" alt="">
+            jobcheckinfo@jobcheck.com
+          </p>
+          <p class="m-4 flex gap-3 lg:gap-3">
+            <img src="assets/images/phoneicon.svg" alt="">
+            8059340597
+          </p>
+          <p class="m-4">Stay Connected</p>
+          <p class="flex gap-4 m-3">
+            <img src="assets/images/facebookicon.svg" alt="">
+            <img src="assets/images/twittericon.svg" alt="">
+            <img src="assets/images/youtubeicon.svg" alt="">
+            <img src="assets/images/instagramicon.svg" alt="">
+          </p>
+        </div>
+        <!-- 2 -->
+        <div class="mt-6 lg:mt-16">
+          <p class="mt-2 lg:mt-4">About us</p>
+          <p class="mt-2 lg:mt-4">Careers</p>
+          <p class="mt-2 lg:mt-4">Employer Name</p>
+          <p class="mt-2 lg:mt-4">Site Map</p>
+        </div>
+        <!-- 3 -->
+        <div class="mt-6 lg:mt-16">
+          <p class="mt-2 lg:mt-4">Help center</p>
+          <p class="mt-2 lg:mt-4">Summons/Notices</p>
+          <p class="mt-2 lg:mt-4">Grievances</p>
+          <p class="mt-2 lg:mt-4">Report issue</p>
+        </div>
+        <!-- 4 -->
+        <div class="mt-6 lg:mt-16">
+          <p class="mt-2 lg:mt-4">Privacy policy</p>
+          <p class="mt-2 lg:mt-4">Terms & Conditions</p>
+          <p class="mt-2 lg:mt-4">Fraud alert</p>
+          <p class="mt-2 lg:mt-4">Trust & safety</p>
+        </div>
+        <!-- 5 -->
+        <div class="-mt-28 lg:-mt-24 w-full max-w-xs mx-auto">
+          <img src="assets/images/footericons/footerimg.png" class="w-full h-auto" alt="">
+        </div>
+      </div>
+    </div>
+    <p class="mt-10 flex justify-center">All trademarks are the property of their respective owners. All Rights Reserved © 2022 First Meridian Services Ltd</p>
+  </div>
+</div>

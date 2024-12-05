@@ -1,0 +1,174 @@
+<div class="sticky z-30 top-0">
+    <app-common-header></app-common-header>
+    <div class="sticky top-0 z-50">
+        <div class="flex px-4 -mt-11 justify-between">
+            <div routerLink="/dashboard/profile" class="mt-2">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                    <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="mt-1">
+                <app-profile-image></app-profile-image>
+            </div>
+        </div>
+    </div>
+    <div class="flex px-7 pt-10 bg-white">
+        <div>
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                    stroke="#21A14B" stroke-width="1.5" />
+                <path d="M20.3998 8.84518L22.7998 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M15.5997 6.03576L19.1997 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <div class="text-[#252525] text-lg font-semibold">Edit Primary Skills</div>
+            <div class="text-[#667085] text-sm font-medium">Edit primary skills to your profile</div>
+        </div>
+    </div>
+</div>
+<!-- <div class="relative w-full ">
+    <input id="slider" type="range" class="absolute w-full  top-12" style="color: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%); "
+    min="0" max="10" step="1" [value]="sliderValue" (input)="onSliderChange($event)">
+    <div class="absolute p-2 rounded-lg bg-white border-2 border-gray-300  -translate-x-2/4 text-gray-700 text-center text-sm" [style.left.1%]="sliderValue">
+        {{ sliderValue }}/10
+      </div>
+</div> -->
+
+
+
+
+<div class="mx-4">
+    <!-- <div *ngIf="!skills">
+        <div *ngFor="let i =index;let skill of primary">
+        <div  class="flex justify-between py-4">
+            <div class="text-[#344054] text-sm font-medium">{{skill.skillName}}</div>
+            <div (click)="editPrimarySkill(skill)" class="mt-2">
+                <svg class="h-4 w-4" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                        stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <hr>
+        </div>        
+    </div> -->
+    <div *ngIf="!skills1">
+        <div *ngFor="let i of primary">
+            <div class="flex justify-between py-4">
+                <div class="text-[#344054] text-sm font-medium">{{i.skillName}}</div>
+                <div class="text-[#344054] text-sm font-medium"></div>
+                <div (click)="editPrimarySkill(i)" class="mt-2">
+                    <svg class="h-4 w-4" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="skills1" class="mx-7 py-5">
+    <div>
+        <div class="text-[#475467] mb-2 text-base font-medium">Skills</div>
+        <input readonly type="text" id="first_name" placeholder="Java"
+            class="bg-[#FCFCFD] border border-[#D0D5DD] text-[#667085] font-medium text-sm rounded-lg w-full p-2.5 outline-none"
+            [(ngModel)]="skillToEdit.skillName">
+        <div class="absolute right-8 -mt-8">
+            <svg (click)="deleteSkills()" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6H5H21" stroke="#1D2939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6"
+                    stroke="#1D2939" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <div class="text-[#475467] py-5 text-base font-medium">Rate yourself in {{skillToEdit.skillName}}</div>
+    <div class="relative w-80 ">
+        <input id="slider" type="range" class=" w-full  top-8"
+            style="color: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%); " min="0" max="10" step="1"
+            [(ngModel)]="skillToEdit.rating" (input)="onSliderChange($event)">
+        <div class="absolute p-1 -ml-2 rounded-lg bg-white border-2 border-gray-300  -translate-x-2/4 text-gray-700 text-center text-sm"
+            [style.left.1%]="skillToEdit.rating">
+            {{skillToEdit.rating }}/10
+        </div>
+    </div>
+    <!-- <div class="h-2 w-full bg-[#F2F4F7] rounded-full"></div>
+    <div class="h-2 w-2/3 -mt-2 rounded-full" style="background: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%);"></div> -->
+    <!-- <input
+        id="customRange1"
+        class="form-range w-full"
+        style="color: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%);"
+        type="range"
+        value="30"
+      > -->
+    <!-- <input #form [value]="skillToEdit.rating" class="range" type="range" name="ind2" [style]="instyle"
+        (input)="prog(form['value'])"> -->
+    <div class="text-[#98A2B3] text-sm font-medium pt-5 mt-4">Skill is not verified !</div>
+    <div class="flex py-5">
+        <div class="text-[#0175A2] text-sm font-medium">Verify your skill Rate</div>
+        <div class="ml-1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5L19 12L12 19" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <button (click)="updateSkill()"
+        class="bg-green-600 text-base font-medium text-white w-full rounded-md h-11 shadow-xl shadow-gray-500/30 mt-8">
+        Save
+    </button>
+</div>
+<!--============================================= DELETE POPUP============================================= -->
+<div class=" w-full place-items-center h-1/2 mx-4">
+    <div class="rounded-2xl z-50 popup-container1 fixed overflow-hidden left-[0%] right-[0%] top-[40%] h-full w-0  drop-shadow-lg blur-50"
+        [ngClass]="{ 'active': delskill }">
+        <div class="flex justify-between">
+            <div
+                class="pointer-events-auto relative flex w-full h-full px-5 flex-col rounded-2xl border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
+                <div class=" rounded-lg ">
+                    <div class="flex justify-center w-full ">
+                        <img class="h-20" src="assets/images/delete.gif" alt="">
+                    </div>
+                    <div class="text-sm font-medium text-gray-800 text-center mt-2">
+                        <h2>Delete Skill ! </h2>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 text-xs">Your skill will be deleted from permanently !</p>
+                </div>
+                <div class=" flex w-full items-center border-t-2 ">
+                    <div class="border-r-2 w-1/2">
+                        <div class="mt-2 ">
+                            <button (click)="deleteSkills()" type="button"
+                                class="p-4 ml-5 inline-block bg-primary-100 text-[#D92D20] w-1/2 text-center">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div (click)="deleteSkill()" class=" mt-2 w-1/2">
+                        <button type="button"
+                            class="ml-3 p-4 inline-block whitespace-nowrap bg-primary-100 text-[#0175A2] w-1/2 text-center ">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div (click)="deleteSkills()" *ngIf="delskill" class="fixed z-50 w-full top-0 h-screen bg-black bg-opacity-25">
+</div>

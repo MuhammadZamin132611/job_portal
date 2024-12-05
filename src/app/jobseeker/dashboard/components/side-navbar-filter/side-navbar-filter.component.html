@@ -1,0 +1,748 @@
+<div *ngIf="visible3"
+  class="fixed top-0 left-0 z-50 h-screen w-80 rounded-r-3xl bg-white animate__animated animate__slideInLeft">
+  <div class="sticky top-0 z-30 left-0 right-0">
+    <div class="flex justify-between pt-14 mx-4">
+
+      <div class="ml-4 page_head">Filters (2)
+      </div>
+      <div class="">
+        <button type="button " (click)="closeOpen()"
+          class="flex items-center justify-between w-20 h-7 px-6 rounded-lg font-medium text-sm text-left text-white-500 border  border-gray-200 hover:bg-green-600 hover:text-white">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div>
+
+      </div>
+    </div>
+
+
+    <div class="pt-7 ml-4 mt-7">
+      <svg width="280" height="2" viewBox="0 0 327 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.997559 0.759766L326.002 0.759766" stroke="#D0D5DD" />
+      </svg>
+    </div>
+
+
+
+  </div>
+
+
+
+  <div class="mt-3">
+
+
+    <div class="grid grid-cols-2 divide-x">
+
+      <div class="">
+
+        <div class="pl-3 text-xs">
+          <!-- <p>Experience Level</p> -->
+          <button type="button" (click)="toggleVisibility(1)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 1, 'bg-white': activeButton !== 1}"
+            class="rounded-none py-2 text-left pl-3 relative   border-2 border-white ml-2 h-18 w-32 ">
+            <span class="items-start font-medium text-xs">Experience
+              Level</span>
+          </button>
+        </div>
+
+
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Freshness</p> -->
+          <button type="button" (click)="toggleVisibility(0)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 0, 'bg-white': activeButton !== 0}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">Freshness</button>
+        </div>
+
+
+        
+
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Job Role</p> -->
+          <button type="button" (click)="toggleVisibility(4)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 4, 'bg-white': activeButton !== 4}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white ml-2 h-18 w-32 items-start font-medium text-xs">Job
+            Role</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Job City</p> -->
+          <button type="button" (click)="toggleVisibility(3)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 3, 'bg-white': activeButton !== 3}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">Job
+            City</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>English Fluency</p> -->
+          <button type="button" (click)="toggleVisibility(5)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 5, 'bg-white': activeButton !== 5}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">English
+            Fluency</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Industry Type</p> -->
+          <button type="button" (click)="toggleVisibility(6)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 6, 'bg-white': activeButton !== 6}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">Industry
+            Type</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Job Type</p> -->
+          <button type="button" (click)="toggleVisibility(7)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 7, 'bg-white': activeButton !== 7}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">Job
+            Type</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Employment Type</p> -->
+          <button type="button" (click)="toggleVisibility(8)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 8, 'bg-white': activeButton !== 8}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white  ml-2 h-18 w-32 items-start font-medium text-xs">Employment
+            Type</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Shift Type</p> -->
+          <button type="button" (click)="toggleVisibility(9)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 9, 'bg-white': activeButton !== 9}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white ml-2 h-18 w-32 items-start font-medium text-xs">Shift
+            Type</button>
+        </div>
+        <div class="pt-2 pl-3 text-xs">
+          <!-- <p>Department</p> -->
+          <button type="button" (click)="toggleVisibility(10)"
+            [ngClass]="{'bg-blue-50 border-l-blue-500': activeButton === 10, 'bg-white': activeButton !== 10}"
+            class="rounded-none py-2 text-left pl-3 border-2 border-white ml-2 h-18 w-32 items-start font-medium text-xs">Department
+          </button>
+        </div>
+
+      </div>
+
+
+
+
+      <div>
+
+        <!------Experience------------>
+
+
+        <div id="collapseOne" class="!visible"
+          [ngClass]="{'visible': activeElement === 1, 'hidden': activeElement !== 1}">
+
+
+          <div class="flex flex-col" >
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class=" mx-5 mt-2 text-xs font-sm">
+                    Fresher
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="salaryType" id="salaryType" (click)="experienceFilter('1')" [checked]="Fresher"/>
+                  
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div> 
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col" >
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class=" mx-5 mt-2 text-xs font-sm">
+                    1-2 Years
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="salaryType" id="salaryType" (click)="experienceFilter('2')" [checked]="twoYears"/>
+                  
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex flex-col" >
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class=" mx-5 mt-2 text-xs font-sm">
+                    2-4 Years
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="salaryType" id="salaryType" (click)="experienceFilter('3')" [checked]="fourYears"/>
+                  
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex flex-col" >
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class=" mx-5 mt-2 text-xs font-sm">
+                    More Then 5 Years
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="salaryType" id="salaryType" (click)="experienceFilter('4')" [checked]="fiveYears"/>
+                  
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <!--------freshness------------->
+
+        <div id="collapseTwo" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 0, 'hidden': activeElement !== 0}">
+
+
+          <div class="flex flex-col">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                   All
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType" />
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    Last 24 Hours
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType" />
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    Last 3 days
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType" />
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    Last 7 days
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType"/>
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <!---------job city------------->
+
+        <div id="collapseThree" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 3, 'hidden': activeElement !== 3}">
+          <div class="relative  w-auto mx-2 ">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="simple-search" (input)='searchCitys($event.target)'
+              class="bg-gray-50 border border-gray-300 h-8 text-gray-900 text-sm rounded-lg outline-none block w-full pl-10 p-2.5 "
+              placeholder="Search for city" required>
+          </div>
+
+          <div class="overflow-y-auto h-96">
+            <div class="flex flex-col" *ngFor="let city of masterLocation; let i = index">
+              <div class="flex items-center form-check h-10 mr-4">
+                <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                  <div class="ml-4">
+                    <p class="Jost mx-5 mt-2 text-xs font-sm">
+                      {{city | titlecase }}
+                    </p>
+                  </div>
+                  <div>
+                    <label class="absolute left-2 mt-2 cursor-pointer">
+                      <input type="radio" class="peer sr-only" name="jobRoles" id="checkbox-item-{{i}}" value="{{city}}" 
+                      [checked]="uncheckjobrole[i]" (click)="jobCityFilter(city)"/>
+                      <div
+                        class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                        <div class="flex flex-col gap-1">
+                          <div class="flex items-center justify-between">
+                            <div class="h-2 w-2 rounded-md bg-white"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-----job role------->
+
+
+        <div id="collapse3" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 4, 'hidden': activeElement !== 4}">
+
+
+          <div class="relative w-auto mx-2">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="simple-search" (input)='JobRoleSearch1($event.target)'
+              class="bg-gray-50 border border-gray-300 h-8 text-gray-900 text-sm rounded-lg outline-none block w-full pl-10 p-2.5 "
+              placeholder="Search for roles" required>
+          </div>
+
+          <div class="overflow-y-auto h-96">
+            <div class="flex flex-col" *ngFor="let roles of jobRoles; let i = index">
+              <div class="flex items-center form-check h-10 mr-4">
+                <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                  <div class="ml-4">
+                    <p class="Jost mx-5 mt-2 text-xs font-sm">
+                      {{roles}}
+                    </p>
+                  </div>
+                  <div>
+                    <label class="absolute left-2 mt-2 cursor-pointer">
+                      <input type="radio" class="peer sr-only" name="jobRoles" id="checkbox-item-{{i}}" value="{{roles}}" 
+                      [checked]="uncheckjobrole[i]" (click)="jobRoleFilter(roles)"/>
+                      <div
+                        class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                        <div class="flex flex-col gap-1">
+                          <div class="flex items-center justify-between">
+                            <div class="h-2 w-2 rounded-md bg-white"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <!------english fluency------->
+
+        <div id="collapse4" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 5, 'hidden': activeElement !== 5}">
+
+          <div class="flex flex-col" *ngFor="let fluency of fluency; let i=index">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    {{fluency}}
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="jobfluency" id="checkbox-item-{{i}}" value="{{fluency}}" 
+                    [checked]="uncheckjobfluency[i]" (click)="jobEnglishFluency(fluency)"/>
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <!-----industry type------->
+        <div id="collapse5" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 6, 'hidden': activeElement !== 6}">
+
+          <div class="relative w-auto mx-2">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="simple-search" (input)="industrySearch($event.target)"
+              class="bg-gray-50 border  h-8 border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+              placeholder="Search for Industry" required>
+          </div>
+
+
+          <div class="overflow-y-auto h-96">
+            <div class="flex flex-col" *ngFor="let industry of industryType; let i=index">
+              <div class="flex items-center form-check h-10 mr-4">
+                <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                  <div class="ml-4">
+                    <p class="Jost mx-5 mt-2 text-xs font-sm">
+                      {{industry}}
+                    </p>
+                  </div>
+                  <div>
+                    <label class="absolute left-2 mt-2 cursor-pointer">
+                      <input type="radio" class="peer sr-only" name="industry" id="checkbox-item-{{i}}" value="{{industry}}" 
+                      [checked]="uncheckindustry[i]" (click)="industryFilter(industry)"/>
+                      <div
+                        class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                        <div class="flex flex-col gap-1">
+                          <div class="flex items-center justify-between">
+                            <div class="h-2 w-2 rounded-md bg-white"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <!------job type-------->
+        <div id="collapse6" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 7, 'hidden': activeElement !== 7}">
+          <div class="flex flex-col" *ngFor="let jobType of jobType">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    {{jobType}}
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType" />
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+        <!-----Employment type--------->
+        <div id="collapse7" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 8, 'hidden': activeElement !== 8}">
+
+          <div class="flex flex-col" *ngFor="let employmentType of employmentType; let i=index">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    {{employmentType}}
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="emptype" id="checkbox-item-{{i}}" value="{{employmentType}}" 
+                    [checked]="uncheckEmpType[i]" (click)="empTpyeFilter(employmentType)"/>
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!----shift type--------->
+        <div id="collapse8" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 9, 'hidden': activeElement !== 9}">
+
+          <div class="flex  flex-col" *ngFor="let shiftType of shiftType; let i=index">
+            <div class="flex items-center form-check h-10 mr-4">
+              <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                <div class="ml-4">
+                  <p class="Jost mx-5 mt-2 text-xs font-sm">
+                    {{shiftType.name}}
+                  </p>
+                </div>
+                <div>
+                  <label class="absolute left-2 mt-2 cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="shiftType" id="checkbox-item-{{i}}" value="{{shiftType.value}}" 
+                    [checked]="uncheckshift[i]" (click)="shiftTypeFilter(shiftType.value)"/>
+                    <div
+                      class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                          <div class="h-2 w-2 rounded-md bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!------Department----------->
+        <div id="collapse9" class="!visible hidden"
+          [ngClass]="{'visible': activeElement === 10, 'hidden': activeElement !== 10}">
+
+          <div class="relative w-auto mx-2">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="simple-search" (input)="departmentSearch($event.target)"
+              class="bg-gray-50 border h-8 border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+              placeholder="Search for Department" required>
+          </div>
+
+
+          <div class="overflow-y-auto h-96">
+            <div class="flex flex-col" *ngFor="let department of department">
+              <div class="flex items-center form-check h-10 mr-4">
+                <div class="flex w-full h-10 rounded overflow-hidden shadow-none relative gap-4">
+                  <div class="ml-4">
+                    <p class="Jost mx-5 mt-2 text-xs font-sm">
+                      {{department}}
+                    </p>
+                  </div>
+                  <div>
+                    <label class="absolute left-2 mt-2 cursor-pointer">
+                      <input type="checkbox" class="peer sr-only" name="salaryType" id="salaryType" />
+                      <div
+                        class="max-w-xl rounded-md bg-white p-1 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                        <div class="flex flex-col gap-1">
+                          <div class="flex items-center justify-between">
+                            <div class="h-2 w-2 rounded-md bg-white"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="fixed z-30 bottom-0 h-20  w-80 bg-white rounded-r-3xl right-0  left-0">
+
+      <div class="flex gap-2 mx-4 justify-between">
+        <div class="my-4">
+          <button type="button" (click)="clearFilters()" 
+            class="flex items-center justify-between py-2 w-[8.65625rem] h-10 pl-10 rounded-lg font-medium text-left text-white-500 border  border-gray-200 hover:bg-green-600 hover:text-white">
+            <span>Clear All</span>
+          </button>
+        </div>
+
+        <div class="my-4">
+          <button type="button" routerLink="/dashboard/jobsForYou"
+            class="flex items-center  justify-between py-2 w-[8.65625rem] h-10 px-14 rounded-lg font-medium text-left text-white-500 border border-gray-200 hover:bg-green-600 hover:text-white">
+            <span>Apply</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+</div>

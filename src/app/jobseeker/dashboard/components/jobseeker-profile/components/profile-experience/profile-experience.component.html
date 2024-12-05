@@ -1,0 +1,195 @@
+<div class="mx-7">
+    <div class="flex justify-between">
+        <div class="flex">
+            <div><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2177_17085)">
+                        <path
+                            d="M23.8801 17.0427V17.5381C23.8794 18.6992 23.4883 19.8291 22.7653 20.7591C22.0422 21.6891 21.0259 22.3694 19.8679 22.6987C18.7098 23.0279 17.4721 22.9883 16.3394 22.5859C15.2066 22.1835 14.2395 21.4398 13.5822 20.4657C12.9249 19.4916 12.6127 18.3394 12.6922 17.1807C12.7716 16.0221 13.2385 14.9192 14.0231 14.0365C14.8077 13.1538 15.868 12.5387 17.0459 12.2828C18.2238 12.0269 19.4562 12.144 20.5593 12.6165"
+                            stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M23.88 13.2305L18.28 18.6205L16.6 17.0051" stroke="#21A14B" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </g>
+                    <path
+                        d="M22.12 9.63246V6.81641C22.12 5.71184 21.2246 4.81641 20.12 4.81641H3C1.89543 4.81641 1 5.71184 1 6.81641V18.2278C1 19.3323 1.89543 20.2278 3 20.2278H10.12"
+                        stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+                    <rect x="7.26001" y="0.5" width="8.6" height="3.81605" rx="0.5" stroke="#21A14B" />
+                    <defs>
+                        <clipPath id="clip0_2177_17085">
+                            <rect width="13.44" height="12.9231" fill="white" transform="translate(11.5601 11.0762)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <!-- <div class="text-[#000000] text-lg font-semibold ml-3">Experience {{count}}</div> -->
+            <div class="ml-3 text-lg font-semibold text-[#1D2939] rubik">Experience <span
+                    *ngIf="workExperienceCount > 0">({{workExperienceCount}})</span> </div>
+        </div>
+        <div class="flex">
+            <button>
+                <div routerLink="/dashboard/profile/profile-workExperience/add-profile-workExperience"><svg width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </button>
+            <div routerLink="/dashboard/profile/profile-workExperience/edit-profile-workExperience" class="ml-3"><svg
+                    width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+                        stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="flex mt-4" >
+        <div>
+            <img class="h-16 w-16" src="assets/images/Group 895.svg" alt="Image">
+        </div>
+        <div class="ml-2 mt-1">
+            <div class="my-1 text-[#1D2939] font-bold text-sm">Android Developer</div>
+            <div class="my-1 text-[#475467] text-sm font-medium">Four brick Technologies</div>
+            <div class="my-1 text-[#475467] text-sm font-medium">Oct 2020 - Apr 2020</div>
+            <div class="my-1 text-[#475467] text-sm font-medium">Utter Pradesh</div>
+            <div class="my-1 text-[#667085] text-xs font-medium">Designed and Developed Mobile apps with Java and XML,
+                spring boot</div>
+        </div>
+    </div> -->
+    <!-- Android Developer
+Four brick Technologies
+Oct 2020 - Apr 2020 4 Months -->
+
+
+    <div *ngIf="workExperienceCount > 0">
+
+        <div *ngFor="let item of workExperience.slice(0,2) let i=index">
+            <!-- <div class="flex mt-4" *ngFor="let item of workContainTwoExpriences"> -->
+            <hr *ngIf="i==1" class="my-4" style="border: 1px solid #D0D5DD;">
+            <div class="flex mt-4">
+                <div class="-ml-1">
+                    <!-- <img class="h-16 w-16" src="assets/images/image 890.svg" alt="Image"> -->
+                    <!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="5" fill="#EAECF0" />
+                    <path
+                        d="M9.01136 26V14.3636H16.7159V16.392H11.4716V19.1648H16.2045V21.1932H11.4716V26H9.01136ZM17.9276 16.392V14.3636H27.4844V16.392H23.9219V26H21.4901V16.392H17.9276Z"
+                        fill="#344054" />
+                </svg> -->
+                    <div
+                        style="width: 40px; height: 40px; background-color: #EAECF0; border-radius: 5px; font-weight: 600;">
+                        <p class="grid place-content-center justify-center h-full">{{item.condition}}</p>
+                    </div>
+                    <!-- width="40" height="40" rx="5" fill="#EAECF0" -->
+                </div>
+                <div class="ml-2 ">
+
+                    <!-- <div class="my-1 text-[#1D2939] font-bold text-sm">{{item.jobTitle}}</div> -->
+                    <div class=" text-[#1D2939]  font-bold text-sm">{{item.jobTitle}}</div>
+                    <!-- <div class="my-1 text-[#475467] text-sm font-medium">{{item.companyName}}</div> -->
+                    <div class="my-1 text-[#475467] text-sm font-medium">{{item.companyName}}</div>
+                    <!-- <div class="my-1 text-[#475467] text-sm font-medium">{{item.startDate}} - {{item.endDate}}
+                </div> -->
+
+                    <div class="my-1 text-[#475467] text-sm font-medium">{{item.department}}</div>
+                    <div class="my-1 text-[#475467] text-sm font-medium" *ngIf="item.currentlyWorking==true">
+                        {{item.startDate | date:'MMM yyyy'}}
+                    </div>
+                    <div class="my-1 text-[#475467] text-sm font-medium" *ngIf="item.currentlyWorking==false">
+                        {{item.startDate | date:'MMM yyyy'}} - {{item.endDate | date:'MMM yyyy'}}
+                    </div>
+                    <div class="my-1 text-[#475467] text-sm font-medium">{{item.location}}</div>
+
+                    <div class="my-4 text-[#475467] text-sm font-medium">{{item.description}}</div>
+
+
+
+
+                </div>
+
+            </div>
+            <hr *ngIf="i==1" class="my-4" style="border: 1px solid #D0D5DD;">
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="border-2 rounded-lg my-3" *ngIf="workExperienceCount == 0">
+        <div class="p-2">
+            <div class="flex">
+                <div>
+                    <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+                <circle cx="6.54548" cy="6.54457" r="3.63636" fill="#D0D5DD" />
+                <ellipse cx="6.54544" cy="5.45636" rx="1.09091" ry="1.09112" fill="#21A14B" />
+                <path
+                  d="M4.36359 8.07497C4.36359 7.35184 4.9498 6.76562 5.67293 6.76562H7.41788C8.14101 6.76562 8.72722 7.35184 8.72722 8.07497C8.72722 8.43654 8.43412 8.72964 8.07255 8.72964H5.01826C4.65669 8.72964 4.36359 8.43654 4.36359 8.07497Z"
+                  fill="#21A14B" />
+                <line x1="15.0455" y1="5.31836" x2="28.5909" y2="5.31836" stroke="#98A2B3" stroke-linecap="round" />
+                <line x1="15.0455" y1="9.68164" x2="28.5909" y2="9.68164" stroke="#98A2B3" stroke-linecap="round" />
+                <line x1="3.40912" y1="14.0449" x2="28.5909" y2="14.0449" stroke="#98A2B3" stroke-linecap="round" />
+                <line x1="3.40912" y1="18.4082" x2="28.5909" y2="18.4082" stroke="#98A2B3" stroke-linecap="round" />
+                <rect x="2.90912" y="21.8184" width="26.1818" height="7.27273" fill="#21A14B" />
+              </svg> -->
+                    <div class="relative">
+
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_9788_31268)">
+                                <path
+                                    d="M21.3706 26.7298C24.3622 26.7298 26.7873 24.3047 26.7873 21.3132C26.7873 18.3216 24.3622 15.8965 21.3706 15.8965C18.3791 15.8965 15.9539 18.3216 15.9539 21.3132C15.9539 24.3047 18.3791 26.7298 21.3706 26.7298Z"
+                                    stroke="#98A2B3" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21.3706 18.0625V21.3125L23.5373 22.3958" stroke="#98A2B3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <path
+                                d="M25.12 13.6325V10.8164C25.12 9.71184 24.2246 8.81641 23.12 8.81641H6C4.89543 8.81641 4 9.71184 4 10.8164V22.2278C4 23.3323 4.89543 24.2278 6 24.2278H13.12"
+                                stroke="#98A2B3" stroke-width="1.5" stroke-linejoin="round" />
+                            <rect x="10.26" y="4.5" width="8.6" height="3.81605" rx="0.5" stroke="#98A2B3" />
+                            <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3"
+                                stroke-width="0.5" />
+                            <defs>
+                                <clipPath id="clip0_9788_31268">
+                                    <rect width="13" height="13" fill="white" transform="translate(14.8706 14.8125)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="ml-3 text-[#000000] text-sm font-medium">
+                    Enhance profile, showcase expertise: Add experience details now.
+                </div>
+            </div>
+            <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+
+            </div>
+            <div>
+                <button routerLink="/dashboard/profile/profile-workExperience/add-profile-workExperience" class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 px-2 hover:text-white hover:text-white hover:bg-gradient-to-b hover:from-[#00A2E0]
+              hover:to-[#30728C] hover:border-none">
+                    Add Experience
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div routerLink="/dashboard/profile/profile-workExperience/edit-profile-workExperience"
+        *ngIf="workExperienceCount > 2" class="flex showall mt-6 mb-2">Show
+        all
+        Experiences
+        <div routerLink="/dashboard/profile/profile-workExperience/edit-profile-workExperience" class="ml-1"><svg
+                width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.83331 8H13.1666" stroke="#344054" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.5 3.33398L13.1667 8.00065L8.5 12.6673" stroke="#344054" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</div>

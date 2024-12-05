@@ -1,0 +1,35 @@
+<div class="absolute z-0 h-screen w-screen">
+<div class="sticky top-0 z-30 ">
+    <app-header></app-header>
+    <div class=" flex justify-between mx-7 -mt-14">
+        <div class="">
+            <svg width="30" height="32" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                <path d="M20.25 15H9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M15 20.25L9.75 15L15 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class=" bg-white rounded-full">
+            <img class="h-9 w-9 p-0.5" src="assets/images/Ellipse 54.svg" alt="Image">
+        </div>
+    </div>
+</div>
+<div class="absolute top w-full">
+    <div class="flex justify-center mt-14">
+        <div class="">
+            <img src="assets/images/Frame 12070.svg" alt=" ">
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+</div>
+
+<div *ngIf="connectionStatus === 'offline'" class="fixed h-full">
+
+    <app-no-internet></app-no-internet>
+  </div>
+  <div *ngIf="connectionStatus === 'online'" class="online fixed bottom-0">
+    <span class="">{{ connectionStatusMessage }}</span>
+  </div>

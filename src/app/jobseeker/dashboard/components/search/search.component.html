@@ -1,0 +1,145 @@
+<div class="sticky z-30 top-0">
+  <div>
+    <app-common-header></app-common-header>
+
+
+  </div>
+  <div class="flex justify-between mx-5 -mt-11">
+    <div routerLink="/dashboard">
+      <svg width="30" height="32" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+        <path d="M20.25 15H9.75" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M15 20.25L9.75 15L15 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div routerLink="/dashboard/profile">
+      <app-profile-image></app-profile-image>
+    </div>
+  </div>
+</div>
+<div class="flex justify-between mx-4 mt-7 py-6">
+  <span class="text-[1.125rem] font-semibold text-[#1D2939] rubik">Search</span>
+  <!-- <span class="text-[0.875rem] font-medium text-[#21A14B] rubik">Clear All</span> -->
+</div>
+<!-- <div class="px-4 h-1/3">
+  <div class="h-full">
+    <select #location1 (click)="select()"class="relative w-full h-11 px-2 ring-transparent border-b-2 border-gray-500 outline-none" name="" id="">
+      <option disabled selected hidden>Location</option>
+      <option *ngFor="let loc of Location" [value]="loc" >{{loc}}</option>
+      
+    </select>
+    <div class="absolute right-4 -mt-10 ">
+      <img src="/assets/icons/mic.svg" alt="" />
+    </div>
+  </div>
+</div> -->
+<form >
+<div class="px-4 pb-4 h-1/3">
+  <div class="h-full bg-white">
+    <!-- placeholder="Job, Designation, Company" -->
+    <!-- <ng-select placeholder="Location" [(ngModel)]="selectedItem" class="bg-white" [items]="Location1" style="background-color: #f2f2f2;"></ng-select> -->
+    <!--<ng-select [items]="searchData1" formControlName="seacrhDate" [(ngModel)]="selectedItem" class="custom border-b-2 border-gray-500">
+       <ng-option *ngFor="let search of searchData1" [value]="search">{{search}}</ng-option> -->
+    <!-- </ng-select> -->
+    <!-- <ng-select [items]="searchData1" [(ngModel)]="selectedItem" class="custom border-b-2 border-gray-500">
+    </ng-select> -->
+    <!-- <ng-select #selectRef [items]="searchData1" [(ngModel)]="selectedItem" class="custom border-b-2 border-gray-500" >
+    </ng-select>
+     -->
+     <ng-select [items]="searchData1" [(ngModel)]="selectedSkill" (change)="onSelectionSkill($event)" class="custom border-b-2 border-gray-500"></ng-select>
+
+    <div class="absolute right-4 -mt-7 ">
+      <!-- <img src="/assets/icons/mic.svg" alt="" /> -->
+    </div>
+  </div>
+</div>
+<div class="px-4 h-1/3">
+  <div class="h-full bg-white">
+    <!-- <ng-select placeholder="Location" [(ngModel)]="selectedItem" class="bg-white" [items]="Location1" style="background-color: #f2f2f2;"></ng-select> -->
+    <ng-select [items]="Location1" [(ngModel)]="selectedLocation" (change)="onSelectionLocation($event)" class="custom border-b-2 border-gray-500"></ng-select>
+      <!-- <ng-option *ngFor="let location of Location1" [value]="location">{{location}}</ng-option> -->
+
+    <div class="absolute right-4 -mt-7 ">
+      <!-- <img src="/assets/icons/mic.svg" alt="" /> -->
+    </div>
+  </div>
+</div>
+<p class="px-4 text-sm text-red-800" *ngIf="message">
+  {{message}}
+</p>
+ <!-- routerLink="/dashboard/search-jobs" -->
+<div class="mx-4 my-6">
+  <button class="green_button h-11 w-full bg-green-600 rounded-lg text-white shadow-lg"
+     (click)="search()">
+    Search
+  </button>
+</div>
+
+<div class="mx-4">
+  <h1 class="text-[#1D2939] text-[1.125rem] h-7 font-semibold rubik">
+    Recent Searches
+  </h1>
+  <div class="flex py-1">
+    <div>
+      <img src="/assets/icons/Svg.svg" alt="" />
+    </div>
+    <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+      Java Developer, Bangalore
+    </div>
+  </div>
+  <div class="flex py-1">
+    <div>
+      <img src="/assets/icons/Svg.svg" alt="" />
+    </div>
+    <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+      UI/Ux, New Delhi
+    </div>
+  </div>
+  <div class="flex py-1">
+    <div>
+      <img src="/assets/icons/Svg.svg" alt="" />
+    </div>
+    <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+      Google, Bangalore
+    </div>
+  </div>
+  <div class="mt-4 mb-32">
+    <h1 class="text-[#1D2939] text-lg font-semibold mb-2 rubik">
+      Top Searches
+    </h1>
+    <div class="flex py-1">
+      <div>
+        <img src="/assets/icons/top.svg" alt="" />
+      </div>
+      <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+        Sales Executive, Bangalore
+      </div>
+    </div>
+
+    <div class="flex py-1">
+      <div>
+        <img src="/assets/icons/top.svg" alt="" />
+      </div>
+      <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+        Airtel, New Delhi
+      </div>
+    </div>
+    <div class="flex py-1">
+      <div>
+        <img src="/assets/icons/top.svg" alt="" />
+      </div>
+      <div class="ml-3 text-[0.875rem] h-5 font-medium text-[#667085]">
+        Microsoft, Bangalore
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<div *ngIf="connectionStatus === 'offline'" class="fixed h-full">
+
+  <app-no-internet></app-no-internet>
+</div>
+<div *ngIf="connectionStatus === 'online'" class="online fixed bottom-0">
+  <span class="">{{ connectionStatusMessage }}</span>
+</div>

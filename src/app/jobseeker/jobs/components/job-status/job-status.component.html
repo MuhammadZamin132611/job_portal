@@ -1,0 +1,1088 @@
+<div class="absolute z-0 w-full">
+  <div class="sticky z-30 top-0">
+    <app-common-header></app-common-header>
+    <div class="sticky top-0 z-50">
+      <div class="flex px-4 -mt-11 justify-between">
+        <!-- routerLink="/dashboard" -->
+        <div (click)="goBack()" class="mt-2">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+            <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div routerLink="/dashboard/profile">
+          <app-profile-image></app-profile-image>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-3 mx-5">
+    <div class="mt-[1.625rem] overflow-hidde">
+      <h1 class="text-[#252525] text-[1.5rem]">
+        {{appliedJobsstatus.title}}
+      </h1>
+      <div class="flex">
+        <div class="">
+          <img src="assets/images/pic2.png" class="h-10 w-10 mt-3" alt="Company logo" />
+        </div>
+        <div class="ml-3">
+          <p class="mt-2 text-[#344054] text-base font-medium">{{appliedJobsstatus.industry}}</p>
+          <p class="font-normal text-[#475467] text-sm">
+          </p>
+          <p class="font-normal text-[#475467] text-sm">
+            {{appliedJobsstatus.workexperience.min}}-{{appliedJobsstatus.workexperience.max}} Years Exp.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 py-4 font-medium text-[#21A14B] text-[0.875rem] cursor-pointer">
+      View Description
+    </p>
+    <div class="bg-[#ECFDF3] mt-2 mb-7 shadow-sm rounded-md">
+      <div class="flex mx-2">
+        <div class="mt-3">
+          <img src="assets/images/chain.svg" class="h-[2.5rem] w-[2.5rem]" alt="icon  " />
+        </div>
+        <div class="ml-3">
+          <div class="my-3 font-medium text-[#1D2939] text-sm">
+            <div class="">{{ApplicantCountstatus.count}} Applicants for this job</div>
+            <div>{{ShortlistedApplicantCountstatus.count}} Applicants are shortlisted for this job</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="h-1.5 my-4" style="background: rgba(180, 191, 233, 0.2)" />
+
+  <div class="bg-white mt-3 mx-5 mb-14">
+    <div>
+      <p class="font-semibold text-lg rubik">
+        Your Application Status
+      </p>
+    </div>
+    <div class="flex grid-col-2 gp-9 mt-4">
+      <!-- applied svg start-->
+      <div>
+        <div *ngIf="isApplied">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#475467" stroke-dasharray="6 6" />
+          </svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg><svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#475467" stroke-dasharray="6 6" />
+          </svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg>
+        </div>
+        <div *ngIf="isShortlisted">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#475467" stroke-dasharray="6 6" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg>
+        </div>
+        <div *ngIf="isViewed">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11.5" stroke="#667085" />
+          </svg>
+        </div>
+        <div *ngIf="isOffered">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg width="2" class="ml-[0.7rem]" height="58" viewBox="0 0 2 58" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V58" stroke="#21A14B" />
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#21A14B" />
+            <g clip-path="url(#clip0_2177_21332)">
+              <path d="M16 9L10.5 14.5L8 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2177_21332">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <!-- <p class="ml-[1.5rem] font-semibold">{{appliedJobsstatus.jobstatus[0].action}}</p> -->
+        <p class="ml-[1.5rem] font-semibold">Applied</p>
+        <p class="ml-[1.5rem] text-gray-500">{{appliedJobsstatus.jobstatus[0].date | date}}</p>
+
+        <!-- <p class="ml-[1.5rem] font-semibold">Applied</p> -->
+        <div *ngIf="isShortlisted">
+          <!-- <p class="ml-[1.5rem] font-semibold mt-[2rem]">{{appliedJobsstatus.jobstatus[0].action}}</p> -->
+          <p class="ml-[1.5rem] font-semibold mt-[2rem]">Shortlisted</p>
+          <p class="ml-[1.5rem] text-gray-500">{{appliedJobsstatus.jobstatus[0].date | date}}</p>
+        </div>
+        <p class="ml-[1.5rem] font-semibold mt-[2rem]">Shortlisted</p>
+        <!-- <p class="ml-[1.5rem] text-gray-500">June 30, 2019</p> -->
+
+        <div *ngIf="isViewed">
+          <!-- <p class="ml-[1.5rem] font-semibold mt-[2rem]">{{appliedJobsstatus.jobstatus[0].action}}</p> -->
+          <p class="ml-[1.5rem] font-semibold mt-[3.6rem]">Selected</p>
+          <p class="ml-[1.5rem] text-gray-500">{{appliedJobsstatus.jobstatus[0].date| date}}</p>
+        </div>
+        <p class="ml-[1.5rem] font-semibold mt-[3.6rem]">Selected</p>
+        <!-- <p class="ml-[1.5rem] text-gray-500">June 30, 2019</p> -->
+
+        <div *ngIf="isOffered">
+          <!-- <p class="ml-[1.5rem] font-semibold mt-[2rem]">{{appliedJobsstatus.jobstatus[0].action}}</p> -->
+          <p class="ml-[1.5rem] font-semibold mt-[3.5rem]">Offered</p>
+          <p class="ml-[1.5rem] text-gray-500">{{appliedJobsstatus.jobstatus[0].date| date}}</p>
+        </div>
+
+        <p class="ml-[1.5rem] font-semibold mt-[3.5rem]">Offered</p>
+        <!-- <p class="ml-[1.5rem] text-gray-500">June 30, 2019</p> -->
+
+
+      </div>
+    </div>
+    <div class="my-6">
+      <button
+        class="w-full border border-red-500 bg-[#FEE4E2] text-[0.875rem] text-[#F04438] p-[0.65rem] mb-4 rounded-xl shadow-red-400 outline-red-900"
+        (click)="togglePopup3()">
+        Decline Application
+      </button>
+      <!-- <button
+        class="w-full border border-red-500 bg-[#FEE4E2] text-[0.875rem] text-[#F04438] p-[0.65rem] mb-4 rounded-xl shadow-red-400 outline-red-900">
+        Decline Application
+      </button> -->
+    </div>
+  </div>
+
+  <div class="bg-[#F3F4F6] hidden">
+    <div class="mx-4 py-5  hidden">
+      <div class="text-gray-800 text-lg text-[1.125rem] font-semibold mb-4 rubik">
+        Similar Jobs
+      </div>
+
+      <div *ngFor="let i = index; let similar of jobData"
+        class="border rounded-[0.75rem] mb-6 px-4 pt-4 pb-2 bg-[white]">
+        <div class="flex justify-between" routerLink="/jobs/job-description"
+          [queryParams]="{ requirementId: similar.requirementId }">
+          <div class="flex">
+            <div class="">
+              <img src="assets/images/pic2.png" />
+            </div>
+            <div class="ml-2">
+              <div class="text-[#252525] font-bold text-md text-sm">
+                <!-- Python Developer -->
+                {{ similar.jobTitle }}
+              </div>
+              <div class="font text-xs font-medium text-[#667085]">
+                <!-- Q tech -->
+                {{ similar.companyname }}
+              </div>
+              <div class="flex mt-1">
+                <div class="mt-0.5">
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="ml-3 text-sm font font-medium text-[#475467]">{{similar.location[0]}}
+                  <!-- *ngIf="similar?.locations[0]?.city; else message">
+                  &nbsp; {{ similar?.locations[0]?.city }} -->
+                </div>
+                <!-- <ng-template #message> &nbsp; NA </ng-template> -->
+              </div>
+              <div class="flex mt-2">
+                <div>
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                    <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                    <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                  </svg>
+                </div>
+                <div class="ml-3 mb-2 text-[0.75rem] text-xs font-normal text-gray-600">
+                  {{ similar.salarydto.minAnnualCTC |currency:'INR'}} -
+                  {{ similar.salarydto.maxAnnualCTC |currency:'INR'}}
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    {{ similar.empType }}
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Min {{ similar.workexperienceDto.minExp }} Years
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Intermediate English
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="ml-10 mt-2 mb-2">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="border rounded-lg p-1 text-[#21A14B]">
+              <div class="ml-2 text-[0.625rem] text-xs font-bold">{{ similar.matchingPercentage }}%</div>
+              <div class="ml-2 Jost text-[0.50rem]">Match</div>
+            </div>
+            <div class="mt-2 ml-7">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                  stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="border rounded-[0.75rem] mb-6 px-4 pt-4 pb-2 bg-[white]">
+        <div class="flex justify-between">
+          <div class="flex">
+            <div class="">
+              <img src="assets/images/pic3.png" />
+            </div>
+            <div class="ml-2">
+              <div class="text-[#252525] font-bold text-md text-sm">
+                Android Developer
+              </div>
+              <div class="font text-xs font-medium text-[#667085]">
+                RRR Technologies
+              </div>
+              <div class="flex mt-1">
+                <div class="mt-0.5">
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="ml-3 text-sm font font-medium text-[#475467]">
+                  Gurugram
+                </div>
+              </div>
+              <div class="flex mt-2">
+                <div>
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                    <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                    <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                  </svg>
+                </div>
+                <div class="ml-3 mb-2 text-[0.75rem] text-xs font-normal text-gray-600">
+                  &#8377; 20,000 - &#8377; 60,000
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Full Time
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Min 2 Years
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Intermediate English
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="ml-10 mt-2 mb-2">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="border rounded-lg p-1 text-[#21A14B]">
+              <div class="ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+              <div class="ml-2 Jost text-[0.50rem]">Match</div>
+            </div>
+            <div class="mt-2 ml-7">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                  stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded-[0.75rem] mb-6 px-4 pt-4 pb-2 bg-[white]">
+        <div class="flex justify-between">
+          <div class="flex">
+            <div class="">
+              <img src="assets/images/pic1.png" />
+            </div>
+            <div class="ml-2">
+              <div class="text-[#252525] font-bold text-md text-sm">
+                Web App Developer
+              </div>
+              <div class="font text-xs font-medium text-[#667085]">
+                RRR Technologies
+              </div>
+              <div class="flex mt-1">
+                <div class="mt-0.5">
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="ml-3 text-sm font font-medium text-[#475467]">
+                  Gurugram
+                </div>
+              </div>
+              <div class="flex mt-2">
+                <div>
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                    <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                    <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                  </svg>
+                </div>
+                <div class="ml-3 mb-2 text-[0.75rem] text-xs font-normal text-gray-600">
+                  &#8377; 20,000 - &#8377; 60,000
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Full Time
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Min 2 Years
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Intermediate English
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="ml-10 mt-2 mb-2">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="border rounded-lg p-1 text-[#21A14B]">
+              <div class="ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+              <div class="ml-2 Jost text-[0.50rem]">Match</div>
+            </div>
+            <div class="mt-2 ml-7">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                  stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded-[0.75rem] mb-2 px-4 pt-4 pb-2 bg-[white]">
+        <div class="flex justify-between">
+          <div class="flex">
+            <div class="">
+              <img src="assets/images/infosys.png" />
+            </div>
+            <div class="ml-2">
+              <div class="text-[#252525] font-bold text-md text-sm">
+                Android Developer
+              </div>
+              <div class="font text-xs font-medium text-[#667085]">Infosys</div>
+              <div class="flex mt-1">
+                <div class="mt-0.5">
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                      stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="ml-3 text-sm font font-medium text-[#475467]">
+                  Gurugram
+                </div>
+              </div>
+              <div class="flex mt-2">
+                <div>
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                    <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                    <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                  </svg>
+                </div>
+                <div class="ml-3 mb-2 text-[0.75rem] text-xs font-normal text-gray-600">
+                  &#8377; 20,000 - &#8377; 60,000
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Full Time
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Min 2 Years
+                  </button>
+                </div>
+                <div class="">
+                  <button class="whitespace-nowrap text-[0.625rem] font-medium p-1 mr-1 rounded-md text-[#1D2939]">
+                    Intermediate English
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="ml-10 mt-2 mb-2">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="border rounded-lg p-1 text-[#21A14B]">
+              <div class="ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+              <div class="ml-2 Jost text-[0.50rem]">Match</div>
+            </div>
+            <div class="mt-2 ml-7">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                  stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="border mb-3 rounded-lg p-3 bg-[white] ">
+          <div class="flex">
+            <div>
+              <img src="assets/images/image 105.png">
+            </div>
+
+            <div class="flex ml-3 justify-between w-full">
+              <div>
+                <div class="text-[#252525] font-semibold text-base">Android
+                  Developer</div>
+                <div class="text-gray-500 font-medium text-[0.875rem] ">Infosys</div>
+                <div class="flex">
+                  <div class="">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                    Gurugram </div>
+                </div>
+                <div class="flex mt-2">
+                  <div>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                      <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                      <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                    &#8377; 20,000 - &#8377;
+                    60,000</div>
+                </div>
+              </div>
+              <div class="">
+                <div class=" mt-2 mb-2 ml-8">
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="border rounded-lg p-1 text-[#21A14B]">
+                  <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                  <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                </div>
+                <div class="mt-2 ml-5">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                      stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-gray-800 mt-3 ml-10">
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">Full
+              Time</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">
+              Min 2 Years</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem]">
+              Intermediate English
+            </div>
+          </div>
+        </div>
+        <div class="border mb-3 rounded-lg p-3 bg-[white] ">
+          <div class="flex">
+            <div>
+              <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="36" height="27.3488" fill="url(#pattern0)" />
+                <defs>
+                  <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_2177_21409" transform="matrix(0.003125 0 0 0.00411352 0 -0.158163)" />
+                  </pattern>
+                  <image id="image0_2177_21409" width="320" height="320"
+                    xlink:href="data:image/jpeg;base64,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" />
+                </defs>
+              </svg>
+
+            </div>
+
+            <div class="flex ml-3 justify-between w-full">
+              <div>
+                <div class="text-[#252525] font-semibold text-base">Android
+                  Developer</div>
+                <div class="text-gray-500 font-medium text-[0.875rem] ">Royal Tech</div>
+                <div class="flex">
+                  <div class="">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                    Gurugram </div>
+                </div>
+                <div class="flex mt-2">
+                  <div>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                      <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                      <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                    &#8377; 20,000 - &#8377;
+                    60,000</div>
+                </div>
+              </div>
+              <div class="">
+                <div class=" mt-2 mb-2 ml-8">
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="border rounded-lg p-1 text-[#21A14B]">
+                  <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                  <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                </div>
+                <div class="mt-2 ml-5">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                      stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-gray-800 mt-3 ml-10">
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">Full
+              Time</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">
+              Min 2 Years</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem]">
+              Intermediate English
+            </div>
+          </div>
+        </div>
+        <div class="border mb-3 rounded-lg p-3 bg-[white] ">
+          <div class="flex">
+            <div>
+              <img src="assets/images/image 100.png">
+            </div>
+
+            <div class="flex ml-3 justify-between w-full">
+              <div>
+                <div class="text-[#252525] font-semibold text-base">Web
+                  Developer</div>
+                <div class="text-gray-500 font-medium text-[0.875rem] ">JCS Technologies</div>
+                <div class="flex">
+                  <div class="">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                    Gurugram </div>
+                </div>
+                <div class="flex mt-2">
+                  <div>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                      <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                      <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                    &#8377; 20,000 - &#8377;
+                    60,000</div>
+                </div>
+              </div>
+              <div class="">
+                <div class=" mt-2 mb-2 ml-8">
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="border rounded-lg p-1 text-[#21A14B]">
+                  <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                  <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                </div>
+                <div class="mt-2 ml-5">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                      stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-gray-800 mt-3 ml-10">
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">Full
+              Time</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">
+              Min 2 Years</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem]">
+              Intermediate English
+            </div>
+          </div>
+        </div>
+        <div class="border mb-3 rounded-lg p-3 bg-[white] ">
+          <div class="flex">
+            <div>
+              <img src="assets/images/image 101.png">
+            </div>
+
+            <div class="flex ml-3 justify-between w-full">
+              <div>
+                <div class="text-[#252525] font-semibold text-base">Java
+                  Developer</div>
+                <div class="text-gray-500 font-medium text-[0.875rem] ">RRR Technologies</div>
+                <div class="flex">
+                  <div class="">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                    Gurugram </div>
+                </div>
+                <div class="flex mt-2">
+                  <div>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                      <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                      <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                    &#8377; 20,000 - &#8377;
+                    60,000</div>
+                </div>
+              </div>
+              <div class="">
+                <div class=" mt-2 mb-2 ml-8">
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="border rounded-lg p-1 text-[#21A14B]">
+                  <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                  <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                </div>
+                <div class="mt-2 ml-5">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                      stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-gray-800 mt-3 ml-10">
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">Full
+              Time</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">
+              Min 2 Years</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem]">
+              Intermediate English
+            </div>
+          </div>
+        </div>
+        <div class="border mb-3 rounded-lg p-3 bg-[white] ">
+          <div class="flex">
+            <div>
+              <img src="assets/images/image 102.png">
+            </div>
+
+            <div class="flex ml-3 justify-between w-full">
+              <div>
+                <div class="text-[#252525] font-semibold text-base">PHP
+                  Developer</div>
+                <div class="text-gray-500 font-medium text-[0.875rem] ">TCC Tech</div>
+                <div class="flex">
+                  <div class="">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                        stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-gray-500 font font-medium text-[0.875rem]">
+                    Gurugram </div>
+                </div>
+                <div class="flex mt-2">
+                  <div>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="0.5" width="14" height="6" rx="1.5" stroke="#475467" />
+                      <rect y="3" width="18" height="13" rx="2" fill="#667085" />
+                      <ellipse cx="16" cy="10" rx="1" ry="2" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-[0.75rem] text-xs font-normal text-gray-600">
+                    &#8377; 20,000 - &#8377;
+                    60,000</div>
+                </div>
+              </div>
+              <div class="">
+                <div class=" mt-2 mb-2 ml-8">
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="border rounded-lg p-1 text-[#21A14B]">
+                  <div class=" ml-2 text-[0.625rem] text-xs font-bold">75%</div>
+                  <div class=" ml-2 Jost text-[0.50rem] ">Match</div>
+                </div>
+                <div class="mt-2 ml-5">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.3666 2.84124C16.941 2.41541 16.4356 2.07761 15.8794 1.84714C15.3232 1.61667 14.727 1.49805 14.1249 1.49805C13.5229 1.49805 12.9267 1.61667 12.3705 1.84714C11.8143 2.07761 11.3089 2.41541 10.8833 2.84124L9.99994 3.72457L9.1166 2.84124C8.25686 1.98149 7.0908 1.49849 5.87494 1.49849C4.65908 1.49849 3.49301 1.98149 2.63327 2.84124C1.77353 3.70098 1.29053 4.86704 1.29053 6.0829C1.29053 7.29876 1.77353 8.46483 2.63327 9.32457L3.5166 10.2079L9.99994 16.6912L16.4833 10.2079L17.3666 9.32457C17.7924 8.89894 18.1302 8.39358 18.3607 7.83736C18.5912 7.28115 18.7098 6.68497 18.7098 6.0829C18.7098 5.48083 18.5912 4.88465 18.3607 4.32844C18.1302 3.77222 17.7924 3.26686 17.3666 2.84124Z"
+                      stroke="#475467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-gray-800 mt-3 ml-10">
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">Full
+              Time</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem] mr-1">
+              Min 2 Years</div>
+            <div class="border rounded-lg bg-gray-200 p-1 px-2 Jost text-[0.625rem]">
+              Intermediate English
+            </div>
+          </div>
+        </div> -->
+
+      <div class="flex justify-center pb-4">
+        <div class="text-gray-700 font-medium text-[0.75rem] mt-3 mb-6" (click)="jobrole()"
+          routerLink="/jobs/similarJobs">
+          Show all
+        </div>
+        <div class="mt-2 ml-2">
+
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 5L19 12L12 19" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="mt-1">
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="connectionStatus === 'offline'" class="fixed h-full">
+
+  <app-no-internet></app-no-internet>
+</div>
+<div *ngIf="connectionStatus === 'online'" class="online fixed bottom-0">
+  <span class="">{{ connectionStatusMessage }}</span>
+</div>
+
+
+
+
+<!-- Apply job popup -->
+
+
+<div class="w-full place-items-center h-1/2 mx-4">
+  <div
+    class="rounded-2xl z-50 popup-container1 fixed overflow-hidden left-[0%] right-[0%] top-[40%] h-full w-0 drop-shadow-lg blur-50"
+    [ngClass]="{ active: isPopupVisible3 }">
+    <div class="flex justify-between">
+      <div
+        class="pointer-events-auto relative flex w-full h-full px-5 flex-col rounded-2xl border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+        <div class="rounded-lg">
+          <!-- <div class="flex justify-center w-full ">
+              <img class="h-20" src="assets/images/delete.gif" alt="">
+            </div> -->
+          <div class="text-sm font-medium text-gray-800 text-center mt-5">
+            <h2>Decline Application !</h2>
+          </div>
+          <p class="text-gray-500 text-center mt-2 mb-1 text-xs">
+            Are you sure you want to cancel this job?
+          </p>
+        </div>
+        <div class="flex w-full items-center border-t-2">
+          <div class="border-r-2 w-1/2">
+            <div (click)="togglePopup3()" class=" ">
+              <button type="button"
+                class="px-4 py-2 ml-5 inline-block whitespace-nowrap bg-primary-100 text-[#0175A2] w-1/2 text-center"
+                (click)="deleteStatus()">
+                Yes
+              </button>
+            </div>
+          </div>
+          <div (click)="togglePopup3()" class="w-1/2">
+            <button type="button" class="px-4 py-2 ml-6 inline-block bg-primary-100 text-[#D92D20] w-1/2 text-center">
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div (click)="togglePopup3()" *ngIf="isPopupVisible3" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-20">
+</div>

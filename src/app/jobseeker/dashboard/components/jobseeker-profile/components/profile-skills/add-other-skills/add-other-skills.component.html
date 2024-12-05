@@ -1,0 +1,311 @@
+<div class="sticky z-30 top-0">
+    <app-common-header></app-common-header>
+    <div class="sticky top-0 z-50">
+        <div class="flex px-4 -mt-11 justify-between">
+            <div routerLink="/dashboard/profile" class="mt-2">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                    <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="mt-1">
+                <app-profile-image></app-profile-image>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="mx-4 pt-10 bg-white">
+        <div class="flex">
+            <div>
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.7664 7.28876C11.8483 7.07431 12.1517 7.07431 12.2336 7.28875L12.9342 7.02125L12.2336 7.28876L13.7479 11.2552C14.0067 11.9332 14.6571 12.3811 15.3828 12.3811H19.894C19.9739 12.3811 20.0199 12.4046 20.0501 12.429C20.0855 12.4576 20.1177 12.5036 20.1345 12.5627C20.1513 12.6219 20.1481 12.6779 20.133 12.7208C20.1202 12.7575 20.0935 12.8017 20.0255 12.8437L16.668 14.9197C15.9539 15.3613 15.654 16.2479 15.9535 17.0323L17.2982 20.5547C17.3835 20.7781 17.1366 20.9822 16.9332 20.8565L12.9204 18.3752C12.3563 18.0265 11.6437 18.0265 11.0796 18.3752L7.06681 20.8565C6.86341 20.9822 6.61648 20.7781 6.70177 20.5547L8.04653 17.0323C8.34601 16.2479 8.04614 15.3613 7.33198 14.9197L3.97454 12.8437C3.90654 12.8017 3.87983 12.7575 3.86698 12.7208C3.85192 12.6779 3.84873 12.6219 3.86554 12.5627C3.88234 12.5036 3.9145 12.4576 3.94991 12.429C3.9801 12.4046 4.02607 12.3811 4.10602 12.3811H8.61721C9.34289 12.3811 9.99329 11.9332 10.2521 11.2552L11.7664 7.28876Z"
+                        stroke="#21A14B" stroke-width="1.5" />
+                    <path d="M20.3998 8.84518L22.7998 5.5957" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M15.5997 6.03576L19.1997 1" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M7.20017 8.1988L9.6001 4.57422" stroke="#21A14B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <div class="text-[#252525] text-lg font-semibold">Add Other Skills</div>
+                <div class="text-[#667085] text-sm font-medium">Add other skills to your profile</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="selectedSkill.skillName=='' ">
+    <div>
+        <div class="mt-5 px-4  bg-white" >
+            <div class="text-[#475467] mb-2 text-base font-medium">Skills</div>
+            <input type="text"  (click)="togglePopup1()" readonly
+                class="bg-[#FCFCFD] cursor-pointer border border-[#D0D5DD] text-[#667085] font-medium text-sm rounded-lg w-full p-3 outline-none"
+                placeholder="eg: java/python/painting">
+            <div class="absolute right-8 -mt-6">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class=" px-4 py-5 mt-2">
+            <div id="recjobs" onclick="document.getElementById('recjobs').style='display:none'"
+                class=" p-4 bg-[#FAFAFF] rounded-lg">
+                <div class="flex justify-between">
+                    <div class="text-[#1D2939] text-sm font-medium">Suggested based on Area of Interest </div>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="#1D2939" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M6 6L18 18" stroke="#1D2939" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <!-- <label for="noticeperiod" class="block mb-2 text-base font-medium text-[#475467]">Notice
+                        Period</label> -->
+                    <div class="bg-white-200 " x-data="app">
+                        <div class="-m-2 flex flex-wrap">
+                            <div *ngFor="let skill of recomended" class="m-1">
+                                <!-- <input type="radio" name="skills" id="AdvanceJava" class="peer hidden" value="AdvanceJava" /> -->
+                                <input type="radio" name="skills" (click)="selectSkill(skill)"
+                                    [id]="skill.replace(' ','')" class="peer hidden" [value]="skill.replace(' ','')" />
+                                <!-- <label for="AdvanceJava"
+                            class="block cursor-pointer border  border-gray-300 select-none rounded-full  px-2.5 py-2.5 p-2 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            AdvanceJava</label> -->
+                                <label [for]="skill.replace(' ','')"
+                                    class="block cursor-pointer border  border-gray-300 select-none rounded-full  px-5 py-1  text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                                    {{skill}}</label>
+                            </div>
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Python" class="peer hidden" value="Python" />
+                        <label for="Python"
+                            class="block cursor-pointer border border-gray-300 select-none rounded-full  px-3.5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">Python</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Node Js" class="peer hidden" value="Node Js" />
+                        <label for="Node Js"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Node Js</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Ruby" class="peer hidden" value="Ruby" />
+                        <label for="Ruby"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Ruby</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Android SDK" class="peer hidden" value="Android SDK" />
+                        <label for="Android SDK"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Android SDK</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Angular" class="peer hidden" value="Angular" />
+                        <label for="Angular"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Angular</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="DS" class="peer hidden" value="DS" />
+                        <label for="DS"
+                            class="block cursor-pointer border border-gray-300 select-none rounded-full  px-7 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">DS</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="React Js" class="peer hidden" value="React Js" />
+                        <label for="Node Js"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            React Js</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Spring boot" class="peer hidden" value="Spring boot" />
+                        <label for="Spring boot"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Spring boot</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="Rest Api" class="peer hidden" value="Rest Api" />
+                        <label for="Rest Api"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            Rest Api</label>
+                    </div> -->
+                            <!-- <div class="m-1">
+                        <input type="radio" name="skills" id="React Js" class="peer hidden" value="React Js" />
+                        <label for="React Js"
+                            class="block cursor-pointer rounded-full border border-gray-300 select-none px-5 py-2.5 p-4 text-center peer-checked:bg-green-600 peer-checked:font-bold peer-checked:text-white">
+                            React Js</label>
+                    </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-4 pb-20" *ngIf="selectedSkill.skillName!='' ">
+    <div>
+        <div class="text-[#475467] p-3 mt-3 -ml-2 text-base font-medium">Skills</div>
+        <input type="text" id="first_name"
+                class="bg-[#FCFCFD] border border-[#D0D5DD] text-[#667085] font-medium text-sm rounded-lg w-full p-2.5 outline-none"
+                [value]="selectedSkill.skillName">
+        <div class="absolute right-8 -mt-8">
+            <svg (click)="unselectSkill()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#1D2939" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M6 6L18 18" stroke="#1D2939" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <div class="text-[#475467] py-6  mb-4 ml-1 text-base font-medium">Rate yourself in {{selectedSkill.skillName}}</div>
+    <!-- <hr class="bg-[#F2F4F7] rounded-lg h-3 ml-1">
+    <div class="w-3/5 rounded-lg h-2 -mt-3 ml-1"
+        style="background: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%);">
+    </div> -->
+    
+    <div class="relative mx-5">
+        <input id="slider" type="range" class=" w-full  top-8" style="color: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%); "
+        min="0" max="10" step="1" [(ngModel)]="selectedSkill.rating" >
+        <div class="absolute p-2 rounded-lg bg-white border-2 border-gray-300  -translate-x-2/4 text-gray-700 text-center text-sm" [style.left.1%]="selectedSkill.rating">
+            {{selectedSkill.rating }}/10
+          </div>
+    </div>
+    <!-- <div class="text-[#98A2B3] text-sm font-medium pt-5">Skill rating is above 5 please verify</div> -->
+    <div class="flex py-10 mt-3">
+        <!-- <div class="text-[#0175A2] text-sm font-medium">Verify your skill Rate</div> -->
+        <div class="block  bottom-0 bg-white w-full">
+            <button (click)="addSkill(selectedSkill)" 
+                class=" btn btn-primary bg-[#21A14B] mb-8  active:bg-green-600 text-base font-medium text-white w-full rounded-md h-14  shadow-xl ">
+                Save </button>
+        </div>
+        <!-- <div class="ml-1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5L19 12L12 19" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div> -->
+    </div>
+</div>
+
+<!-- <div class="invisible overflow-auto  max-w-md w-full fixed bottom-0 left-0 right-0 z-[1045] flex h-5/6 max-h-full max-w-full translate-y-full flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none  md:rounded-l-3xl lg:rounded-l-3xl sm:rounded-t-3xl lg:rounded-tr-none md:rounded-tr-none rounded-t-3xl"
+    tabindex="-1" id="offcanvasBottom1" aria-labelledby="offcanvasBottomLabel" data-te-offcanvas-init>
+
+    <div class="grid place-items-end">
+        <div class=" max-w-md bg-white overflow-auto shadow-lg h-full">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-4">
+                    <div class="sticky top-0 z-30 bg-white">
+                        <p class="offcanvas-title leading-normal text-[#252525] pt-4 text-2xl font-semibold">
+                            Choose Your Skills
+                        </p>
+                        <!-- <p class="text-[#4B5565] text-xs">You can choose only 9 from below options</p> -->
+<!-- <div class="relative mt-6">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                        stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <input type="search" id="default-search" (input)='masterSkillsFilter($event.target)'
+                                class="Jost w-full p-4 pl-16 text-md text-[#475467] border-1 bg-[#F9FAFB] outline-none border-2 border-gray-200  rounded-xl focus:outline-none"
+                                placeholder="eg: Java , Physics" required>
+                        </div>
+                    </div>
+                    <div class="overflow-full mt-4 mb-14">
+                        <div *ngFor="let masterskills of  masterDataskills ;let i=index">
+                            <div class="flex w-full h-10 rounded overflow-hidden shadow-none mt-2 relative">
+                                <p class="text-[#475467] Jost mt-2 text-base font-semibold">{{masterskills}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block inset-x-0 bottom-0 bg-white fixed">
+                        <div class="flex w-full m-4 rounded h-10 overflow-hidden shadow-none mt-2  relative">
+                            <button data-te-offcanvas-toggle data-te-target="#offcanvasBottom1"
+                                aria-controls="offcanvasBottom" data-te-ripple-init data-te-ripple-color="light"
+                                class=" btn btn-primary bg-green-600 text-base font-medium text-white w-5/6 rounded-md h-11 ml-4 shadow-xl shadow-gray-500/30">Choose
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+                        <img class="img " [src]="errorMsgOfskills" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+
+<div class="rounded-t-2xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full bg-white ease-out duration-700 drop-shadow-lg blur-50"
+    [ngClass]="{ 'active': isPopupVisible1 }">
+
+    <div class="grid place-items-end">
+        <div class=" max-w-md bg-white shadow-lg">
+            <div class="absolute inset-x-0 top-0">
+                <div class="p-4">
+                    <p class="global_offcanvas_title rubik">
+                        Choose Your Skills
+                    </p>
+
+                    <div class="relative mt-6 mb-6">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg width="20" height="20" class="w-6 h-6 ml-2" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M19 19L14.65 14.65" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input #he (input)="masterSkillsFilter($event.target)" type="search" id="default-search"
+                            class="global_offcanvas_input"
+                            placeholder="eg: Java , Physics" required>
+                    </div>
+
+                    <div class="mt-4 overflow-y-auto bg-white h-[34rem]">
+                        <div *ngFor="let skills of  masterDataskills ;let i=index"
+                            class="flex w-full py-2 rounded overflow-hidden shadow-none relative">
+                            <p class="text-[#475467] Jost mt-2 text-base font-semibold"> {{skills}}
+                            </p>
+                            <label class="absolute right-0 mx-2 cursor-pointer">
+                                <input type="radio" class="peer sr-only" name="educationtype" value="FULLTIME" (click)="selectSkill(skills);togglePopup1()">
+                                <div
+                                    class="max-w-xl rounded-md bg-white p-2 text-gray-600 ring-1 ring-[#D4D4D4] transition-all hover:shadow peer-checked:bg-[#21A14B] peer-checked:text-sky-600 peer-checked:ring-transparent">
+                                    <div class="flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <div class="h-3 w-3 rounded-sm bg-white"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-center font-medium text-2xl text-red-800">
+                            <img class="img" [src]="errorMsgOfskills" alt="" />
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div (click)="togglePopup1()" *ngIf=" isPopupVisible1" class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>

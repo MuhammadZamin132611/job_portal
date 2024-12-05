@@ -1,0 +1,22 @@
+<svg  class="inline-block mb-1 icon-expand-link" width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="expand" x="1" y="5.02051" width="22" height="16.4798" rx="3" stroke="#9AA4B2" stroke-width="2"/>
+              <rect class="expand" x="6.5" y="1" width="11" height="4.27994" rx="1.5" stroke="#9AA4B2"/>
+              <path class="expand" d="M8.5 13.0605C8.5 12.2321 9.17157 11.5605 10 11.5605H14C14.8284 11.5605 15.5 12.2321 15.5 13.0605V14.3405C15.5 15.1689 14.8284 15.8405 14 15.8405H10C9.17157 15.8405 8.5 15.1689 8.5 14.3405V13.0605Z" stroke="#9AA4B2"/>
+              <path class="expand" d="M6 11.5H18" stroke="#9AA4B2" stroke-width="2" stroke-linecap="round"/>
+              <defs>
+              <linearGradient id="paint0_linear_481_3712" x1="0" y1="4.02051" x2="3.57756" y2="25.8476" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00A2E0"/>
+              <stop offset="1" stop-color="#30728C"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_481_3712" x1="0" y1="4.02051" x2="3.57756" y2="25.8476" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00A2E0"/>
+              <stop offset="1" stop-color="#30728C"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_481_3712" x1="6" y1="0.5" x2="6.59457" y2="6.84817" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00A2E0"/>
+              <stop offset="1" stop-color="#30728C"/>
+              </linearGradient>
+              </defs>
+              </svg>
+           
+                

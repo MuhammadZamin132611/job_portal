@@ -1,0 +1,534 @@
+<div class="mx-7">
+  <div class="flex">
+    <div>
+      <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M15.9022 4.89023C15.9022 7.06872 13.7855 9.03046 10.913 9.03046C8.04052 9.03046 5.92389 7.06872 5.92389 4.89023C5.92389 2.71174 8.04052 0.75 10.913 0.75C13.7855 0.75 15.9022 2.71174 15.9022 4.89023Z"
+          stroke="#21A14B" stroke-width="1.5" />
+        <path
+          d="M17.6957 12H6.8931C6.79061 12 6.68901 12.0074 6.58799 12.0247C4.63201 12.3596 1 13.5751 1 16.0001V18.8892C1 19.9937 1.89543 20.8892 3 20.8892H11.9565"
+          stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+        <g clip-path="url(#clip0_2177_17020)">
+          <path
+            d="M17.5 23.0827C20.0313 23.0827 22.0834 21.0307 22.0834 18.4993C22.0834 15.968 20.0313 13.916 17.5 13.916C14.9687 13.916 12.9167 15.968 12.9167 18.4993C12.9167 21.0307 14.9687 23.0827 17.5 23.0827Z"
+            stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 20.3333V18.5" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 16.666H17.505" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+        <defs>
+          <clipPath id="clip0_2177_17020">
+            <rect width="11" height="11" fill="white" transform="translate(12 13)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    <div class="font-semibold text-lg text-black ml-3 rubik">About Me</div>
+  </div>
+  <div>
+    <!-- no data fill -->
+    <div class="p-2 border-2 rounded-lg my-3" *ngIf="!personalBio">
+      <div class="flex">
+        <div>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+            <circle cx="6.54548" cy="6.54457" r="3.63636" fill="#D0D5DD" />
+            <ellipse cx="6.54544" cy="5.45636" rx="1.09091" ry="1.09112" fill="#21A14B" />
+            <path
+              d="M4.36359 8.07497C4.36359 7.35184 4.9498 6.76562 5.67293 6.76562H7.41788C8.14101 6.76562 8.72722 7.35184 8.72722 8.07497C8.72722 8.43654 8.43412 8.72964 8.07255 8.72964H5.01826C4.65669 8.72964 4.36359 8.43654 4.36359 8.07497Z"
+              fill="#21A14B" />
+            <line x1="15.0455" y1="5.31836" x2="28.5909" y2="5.31836" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="15.0455" y1="9.68164" x2="28.5909" y2="9.68164" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="3.40912" y1="14.0449" x2="28.5909" y2="14.0449" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="3.40912" y1="18.4082" x2="28.5909" y2="18.4082" stroke="#98A2B3" stroke-linecap="round" />
+            <rect x="2.90912" y="21.8184" width="26.1818" height="7.27273" fill="#21A14B" />
+          </svg>
+        </div>
+        <div class="ml-3 text-[#000000] text-sm font-medium">
+          Write a summary to highlight your personality or work experience
+        </div>
+      </div>
+      <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+        <div>
+          <p>
+            Members who include a summary will highlight profile to top
+            companies recruiters
+          </p>
+        </div>
+      </div>
+      <div>
+        <button routerLink="/dashboard/profile/persionalBio/persionalBio"
+          class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 px-2">
+          Add Summary
+        </button>
+      </div>
+    </div>
+    <div class="p-2 my-3" *ngIf="personalBio">
+      <div class="flex justify-between">
+        <h2 class="text-[#1D2939] font-semibold text-[0.875rem] ">
+          Summary
+        </h2>
+        <div routerLink="/dashboard/profile/persionalBio/persionalBio">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 3.0003C17.2626 2.73766 17.5744 2.52932 17.9176 2.38718C18.2608 2.24503 18.6286 2.17188 19 2.17188C19.3714 2.17187 19.7392 2.24503 20.0824 2.38718C20.4256 2.52932 20.7374 2.73766 21 3.0003C21.2626 3.26295 21.471 3.57475 21.6131 3.91791C21.7553 4.26107 21.8284 4.62887 21.8284 5.0003C21.8284 5.37174 21.7553 5.73953 21.6131 6.08269C21.471 6.42585 21.2626 6.73766 21 7.0003L7.5 20.5003L2 22.0003L3.5 16.5003L17 3.0003Z"
+              stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div *ngIf="!showFullText">
+        <div class="my-4 h-auto w-full text-[#0d0c3f] opacity-60 text-[0.875rem] font-medium">
+          {{ data.personalDescription | slice : 0 :90}}
+        </div>
+        <div (click)="toggleText()" *ngIf="personalBioLength > 90" class="text-[#0175A2] font-medium text-[0.875rem] font-inter"> View More</div>
+      </div>
+      <div *ngIf="showFullText">
+        <div class="my-4 h-auto w-full text-[#0d0c3f] opacity-60 text-[0.875rem] font-medium">
+          {{ data.personalDescription}}
+        </div>
+        <div class="text-[#0175A2] font-medium text-[0.875rem] font-inter" (click)="toggleText()"> View Less</div>
+      </div>
+      <!-- <div class="my-4 h-auto w-full text-[#0d0c3f] opacity-60 text-[0.875rem] font-medium">
+        {{ data.personalDescription | slice : 0 : numLines * 60 }}
+      </div>
+      
+      <button class="text-[#0175A2] font-medium text-[0.875rem] font-inter"
+        (click)="numLines = numLines === 4 ? 60 : 4">
+      <div *ngIf="numLines==4"> View More</div>
+      <div *ngIf="numLines>4"> View Less</div>
+      </button> -->
+    </div>
+    <!-- <div  *ngIf="!resumeAvail" class="border-2 rounded-lg my-3"> -->
+    <div *ngIf="!resumeAvail" class="border-2 rounded-lg my-3">
+      <div class="p-3">
+        <div class="flex">
+          <div>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+              <line x1="19.5" y1="3.5" x2="28.5" y2="3.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="12.5" x2="28.5" y2="12.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="7.5" x2="23.5" y2="7.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="9.5" x2="23.5" y2="9.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="15.5" x2="23.5" y2="15.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="17.5" x2="23.5" y2="17.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="23.5" x2="23.5" y2="23.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="25.5" x2="29.5" y2="25.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="20.5" x2="29.5" y2="20.5" stroke="#98A2B3" stroke-linecap="round" />
+              <line x1="19.5" y1="28.5" x2="29.5" y2="28.5" stroke="#98A2B3" stroke-linecap="round" />
+              <rect x="2" y="2" width="14" height="27" fill="#98A2B3" />
+              <circle cx="8.63636" cy="7.63636" r="3.63636" fill="#F2F4F7" />
+              <ellipse cx="8.63632" cy="6.54815" rx="1.09091" ry="1.09112" fill="#21A14B" />
+              <path
+                d="M6.45447 9.16677C6.45447 8.44364 7.04068 7.85742 7.76381 7.85742H9.50876C10.2319 7.85742 10.8181 8.44364 10.8181 9.16677C10.8181 9.52833 10.525 9.82144 10.1634 9.82144H7.10914C6.74758 9.82144 6.45447 9.52833 6.45447 9.16677Z"
+                fill="#21A14B" />
+              <line x1="5.5" y1="14.5" x2="11.5" y2="14.5" stroke="#F9FAFB" stroke-linecap="round" />
+              <line x1="5.5" y1="18.5" x2="11.5" y2="18.5" stroke="#F9FAFB" stroke-linecap="round" />
+              <line x1="5.5" y1="22.5" x2="11.5" y2="22.5" stroke="#F9FAFB" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="ml-3 text-[#000000] text-sm font-medium">
+            Upload a resume to boost your profile and get placed in Top
+            Companies
+          </div>
+        </div>
+        <!-- <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+          Don't have resume ? Create resume with jobcheck
+        </div> -->
+        <div class="flex">
+          <div>
+            <button class="text-white text-xs font-semibold rounded-full p-1 py-1 px-3 outline-none" style="
+                background: linear-gradient(
+                  167.98deg,
+                  #00a2e0 0%,
+                  #30728c 100%
+                );
+              " routerLink="/onBoarding/uploadResume">
+              Upload Resume
+            </button>
+          </div>
+          <!-- <div class="ml-3" routerLink="/services/resumes">
+            <button class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 py-1 px-2">
+              Create Resume
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+    <div *ngIf="resumeAvail">
+      <h1 class="text-[#1D2939] font-semibold text-[0.875rem] ">Uploaded Resumes</h1>
+
+      <div class="border-2 rounded-lg my-3" style="background-color: rgb(253, 245, 230)">
+        <div class="p-3 flex" style="justify-content: space-between">
+          <svg width="48" height="59" viewBox="0 0 48 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.25" y="0.75" width="47.5" height="57.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+            <line x1="29" y1="7.25" x2="43" y2="7.25" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="23.5625" x2="43" y2="23.5625" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="14.5" x2="35.5" y2="14.5" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="18.125" x2="35.5" y2="18.125" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="29" x2="35.5" y2="29" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="32.625" x2="35.5" y2="32.625" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="43.5" x2="35.5" y2="43.5" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="47.125" x2="44.5" y2="47.125" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="38.0625" x2="44.5" y2="38.0625" stroke="#98A2B3" stroke-linecap="round" />
+            <line x1="29" y1="52.5625" x2="44.5" y2="52.5625" stroke="#98A2B3" stroke-linecap="round" />
+            <rect x="3" y="4.125" width="21" height="48.9375" fill="#98A2B3" />
+            <ellipse cx="12.9545" cy="14.3409" rx="5.45455" ry="6.59091" fill="#F2F4F7" />
+            <ellipse cx="12.9545" cy="12.3722" rx="1.63636" ry="1.97766" fill="#21A14B" />
+            <path
+              d="M9.68158 17.1154C9.68158 15.8047 10.7441 14.7422 12.0548 14.7422H13.8538C15.1645 14.7422 16.227 15.8047 16.227 17.1154C16.227 17.7707 15.6958 18.302 15.0404 18.302H10.8682C10.2128 18.302 9.68158 17.7707 9.68158 17.1154Z"
+              fill="#21A14B" />
+            <line x1="8" y1="27.1875" x2="17.5" y2="27.1875" stroke="#F9FAFB" stroke-linecap="round" />
+            <line x1="8" y1="34.4375" x2="17.5" y2="34.4375" stroke="#F9FAFB" stroke-linecap="round" />
+            <line x1="8" y1="41.6875" x2="17.5" y2="41.6875" stroke="#F9FAFB" stroke-linecap="round" />
+          </svg>
+
+          <div class="ml-3">
+            <div class="text-[#000000] text-sm font-medium">
+              File Resume Uploaded
+            </div>
+            <a [href]="url">
+              <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+                {{ filename }}
+              </div>
+            </a>
+          </div>
+          &nbsp;
+
+          <svg (click)="toggleUploadResume()" class="mt-5" width="8" height="15" viewBox="0 0 8 15" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13.5L7 7.5L1 1.5" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- <object [data]="url" width="100%" height="100%" type='application/pdf'>
+      <p>Sorry, the PDF couldn't be displayed :(</p>
+      <a [href]="url" target="_blank">Click Here</a>
+    </object> -->
+
+    <!-- Before Upload video resume -->
+    <div class="border-2 rounded-lg my-3 hidden" *ngIf="videoUpload">
+      <div class="p-3">
+        <div class="flex">
+          <div>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 11V19L20 15L13 11ZM25 7H7C5.9 7 5 7.9 5 9V21C5 22.1 5.9 23 7 23H12V25H20V23H25C26.1 23 27 22.1 27 21V9C27 7.9 26.1 7 25 7ZM25 21H7V9H25V21Z"
+                fill="#98A2B3" />
+              <rect x="0.25" y="0.25" width="31.5" height="31.5" rx="2.75" stroke="#98A2B3" stroke-width="0.5" />
+            </svg>
+          </div>
+          <div class="ml-3 text-[#000000] text-sm font-medium">
+            Take a video resume to Make a lasting impression and stand out from
+            the crowd
+          </div>
+        </div>
+        <div class="text-[#000000] text-xs font-normal py-2 justify-between">
+          Members who include a video Resume will be noticed and hired faster.
+        </div>
+        <div>
+          <button (click)="toggleUploadeVideo()"
+            class="text-[#667085] text-xs font-semibold border border-[#667085] rounded-full p-1 px-2">
+            Add Video Resume
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!-- After Upload video resume -->
+
+    <div class="mt-4  " *ngIf="videoAvail">
+      <div class="flex justify-between mb-2">
+        <h1 class="text-[#1D2939] font-semibold text-[0.875rem] ">Video Resume</h1>
+        <div (click)="toggleOfflineStatus()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+              stroke="#1D2939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+              stroke="#1D2939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+              stroke="#1D2939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="border border-[#EAECF0] rounded-lg shadow ">
+        <div class="relative">
+          <div>
+            <div class=" h-28 w-full static z-0">
+              <!-- <div class="bg-green-700 h-20 w-20">
+          video
+        </div> -->
+              <div class="opacity-80">
+                <video #videoPlayer [src]="videouri" width="500"></video>
+              </div>
+              <div class="absolute z-40 w-full grid place-content-center">
+                <div (click)="openFullscreen()" *ngIf="play">
+
+                  <svg class="-mt-20" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <circle opacity="0.5" cx="20" cy="20" r="20" fill="#98A2B3" />
+
+                    <path d="M15.3333 14L24.6667 20L15.3333 26V14Z" fill="#D9D9D9" />
+
+                  </svg>
+                </div>
+                <div (click)="pauseVideo()" *ngIf="pause">
+
+                  <svg class="-mt-20" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.5" cx="20" cy="20" r="20" fill="#98A2B3" />
+                    <path d="M18.6667 14.666H16V25.3327H18.6667V14.666Z" fill="white" />
+                    <path d="M24 14.666H21.3333V25.3327H24V14.666Z" fill="white" />
+                  </svg>
+
+                </div>
+
+              </div>
+            </div>
+            <div>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="mt-4  bg-green-100 border border-[#EAECF0] rounded-lg shadow">
+        <div class=" ml-4 mt-3">
+          <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19.5 15.6667V33L34.6667 24.3333L19.5 15.6667ZM45.5 7H6.50002C4.11669 7 2.16669 8.95 2.16669 11.3333V37.3333C2.16669 39.7167 4.11669 41.6667 6.50002 41.6667H17.3334V46H34.6667V41.6667H45.5C47.8834 41.6667 49.8334 39.7167 49.8334 37.3333V11.3333C49.8334 8.95 47.8834 7 45.5 7ZM45.5 37.3333H6.50002V11.3333H45.5V37.3333Z"
+              fill="#475467" />
+            <path
+              d="M26 12.3125C35.3438 12.3125 37.375 18.5281 37.375 22.0625C37.375 25.1906 36.9688 26.5312 36.9688 26.5312H15.0312C15.0312 26.5312 14.625 25.1906 14.625 22.0625C14.625 18.5281 16.6562 12.3125 26 12.3125Z"
+              fill="#594640" />
+            <path
+              d="M36.2375 24.9067C36.2375 24.9067 35.9125 23.566 35.75 20.7629C35.5469 17.716 31.3219 20.1535 26 20.1535C20.6781 20.1535 16.4531 17.716 16.25 20.7629C16.0875 23.566 15.7625 24.9067 15.7625 24.9067C13.1219 24.9067 13.1219 29.2129 15.925 29.2129C15.925 33.8442 21.7344 36.6879 26 36.6879C30.2656 36.6879 36.075 33.8442 36.075 29.2129C38.8781 29.2129 38.8781 24.9067 36.2375 24.9067Z"
+              fill="#FFE1BD" />
+            <path
+              d="M31.0781 28.5625C32.5365 28.5625 33.7188 27.3803 33.7188 25.9219C33.7188 24.4635 32.5365 23.2812 31.0781 23.2812C29.6197 23.2812 28.4375 24.4635 28.4375 25.9219C28.4375 27.3803 29.6197 28.5625 31.0781 28.5625Z"
+              fill="white" />
+            <path
+              d="M31.0781 27.75C32.0878 27.75 32.9062 26.9315 32.9062 25.9219C32.9062 24.9122 32.0878 24.0938 31.0781 24.0938C30.0685 24.0938 29.25 24.9122 29.25 25.9219C29.25 26.9315 30.0685 27.75 31.0781 27.75Z"
+              fill="#664E27" />
+            <path
+              d="M31.0781 26.5312C31.4147 26.5312 31.6875 26.2584 31.6875 25.9219C31.6875 25.5853 31.4147 25.3125 31.0781 25.3125C30.7416 25.3125 30.4688 25.5853 30.4688 25.9219C30.4688 26.2584 30.7416 26.5312 31.0781 26.5312Z"
+              fill="#231F20" />
+            <path
+              d="M20.9219 28.5625C22.3803 28.5625 23.5625 27.3803 23.5625 25.9219C23.5625 24.4635 22.3803 23.2812 20.9219 23.2812C19.4635 23.2812 18.2812 24.4635 18.2812 25.9219C18.2812 27.3803 19.4635 28.5625 20.9219 28.5625Z"
+              fill="white" />
+            <path
+              d="M20.9219 27.75C21.9315 27.75 22.75 26.9315 22.75 25.9219C22.75 24.9122 21.9315 24.0938 20.9219 24.0938C19.9122 24.0938 19.0938 24.9122 19.0938 25.9219C19.0938 26.9315 19.9122 27.75 20.9219 27.75Z"
+              fill="#664E27" />
+            <path
+              d="M20.9219 26.5312C21.2584 26.5312 21.5312 26.2584 21.5312 25.9219C21.5312 25.5853 21.2584 25.3125 20.9219 25.3125C20.5853 25.3125 20.3125 25.5853 20.3125 25.9219C20.3125 26.2584 20.5853 26.5312 20.9219 26.5312Z"
+              fill="#231F20" />
+            <path
+              d="M29.2907 31.0416C27.1782 32.5041 24.8219 32.5041 22.7094 31.0416C22.4657 30.8791 22.2219 31.1635 22.3844 31.4478C23.0344 32.5041 24.3344 33.4385 26 33.4385C27.6657 33.4385 28.9657 32.5041 29.6157 31.4478C29.7782 31.1635 29.5344 30.8791 29.2907 31.0416Z"
+              fill="#664E27" />
+          </svg>
+        </div>
+  
+        <div class="flex justify-between w-full">
+  
+          <div class=" mt-3 ml-3 mb-4 flex-row mr-[1rem] ">
+            <div class="flex justify-between">
+              <div class=" Jost text-gray-600 text-sm font-bold ">Video Profile Uploaded</div>
+  
+            </div>
+            <p class="mt-2.5 text-[0.75rem] ">{{finalName}}
+            </p>
+          </div>
+          <div class="m-4" (click)="toggleOfflineStatus()">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 13L7 7L1 1" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>  -->
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Pop Up of Delete Resume -->
+<div (click)="toggleUploadResume()" *ngIf="isPopupVisibleResume"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30"></div>
+<div
+  class="rounded-t-3xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full ease-out duration-700 blur-50 drop-shadow-lg"
+  [ngClass]="{ active: isPopupVisibleResume }" style="background: linear-gradient(167.98deg, #ffffff 0%, #ffffff 100%)">
+  <div class="px-3 py-3">
+    <hr class="border-2 border-[#000000] rounded-full w-14 mx-auto mb-2" />
+    <div>
+      <div routerLink="/onBoarding/uploadResume" class="flex justify-between"
+        style="background-color: rgb(255, 255, 255)">
+        <div class="p-3 flex">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17.5" fill="#F9FAFB" stroke="#F2F4F7" />
+            <g clip-path="url(#clip0_11382_37922)">
+              <path
+                d="M17.1666 11.334H11.3333C10.8913 11.334 10.4673 11.5096 10.1548 11.8221C9.84222 12.1347 9.66663 12.5586 9.66663 13.0007V24.6673C9.66663 25.1093 9.84222 25.5333 10.1548 25.8458C10.4673 26.1584 10.8913 26.334 11.3333 26.334H23C23.442 26.334 23.8659 26.1584 24.1785 25.8458C24.491 25.5333 24.6666 25.1093 24.6666 24.6673V18.834"
+                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M23.4166 10.0842C23.7481 9.75265 24.1978 9.56641 24.6666 9.56641C25.1355 9.56641 25.5851 9.75265 25.9166 10.0842C26.2481 10.4157 26.4344 10.8653 26.4344 11.3342C26.4344 11.803 26.2481 12.2527 25.9166 12.5842L18 20.5008L14.6666 21.3342L15.5 18.0008L23.4166 10.0842Z"
+                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_11382_37922">
+                <rect width="20" height="20" fill="white" transform="translate(8 8)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <div class="ml-3">
+            <div class="text-[#1D2939] text-sm font-medium">Edit Resume</div>
+            <div class="text-[#667085] text-xs font-normal py-2 justify-between">
+              {{ filename }}
+            </div>
+          </div>
+        </div>
+        <svg class="mt-8 mr-4" width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 13.5L7 7.5L1 1.5" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+    <hr class="w-auto ml-16 mr-4" style="border: 1px solid #d0d5dd" />
+    <div (click)="resumeDelete()">
+      <div class="flex justify-between" style="background-color: rgb(255, 255, 255)">
+        <div class="p-3 flex">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17.5" fill="#F9FAFB" stroke="#F2F4F7" />
+            <path d="M10.5 13H12.1667H25.5" stroke="#21A14B" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M23.8333 12.9993V24.666C23.8333 25.108 23.6577 25.532 23.3451 25.8445C23.0326 26.1571 22.6087 26.3327 22.1666 26.3327H13.8333C13.3913 26.3327 12.9673 26.1571 12.6548 25.8445C12.3422 25.532 12.1666 25.108 12.1666 24.666V12.9993M14.6666 12.9993V11.3327C14.6666 10.8907 14.8422 10.4667 15.1548 10.1542C15.4673 9.84161 15.8913 9.66602 16.3333 9.66602H19.6666C20.1087 9.66602 20.5326 9.84161 20.8451 10.1542C21.1577 10.4667 21.3333 10.8907 21.3333 11.3327V12.9993"
+              stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+          <div class="ml-3">
+            <div class="text-[#1D2939] text-sm font-medium">Delete Resume</div>
+            <div class="text-[#667085] text-xs font-normal py-2 justify-between">
+              {{ delete }}
+            </div>
+          </div>
+        </div>
+        <svg class="mt-8 mr-4" width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 13.5L7 7.5L1 1.5" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Uplode Video Popup -->
+<div (click)="toggleUploadeVideo()" *ngIf=" isPopupVisibleVideo"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+
+
+<div
+  class="rounded-t-3xl z-50 popup-container fixed overflow-hidden bottom-0 h-0 w-full  ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ 'active': isPopupVisibleVideo }"
+  style="background: linear-gradient(167.98deg, #00A2E0 0%, #30728C 100%);">
+  <div class="p-4 ">
+    <div class="flex justify-between items-center ">
+      <div class="grid place-content-center">
+        <img class="h-20 w-20" src="/assets/images/cameraicon.png" alt="">
+        <div class="text-white text-xs font-semibold text-center py-2 ">Camera</div>
+
+
+      </div>
+
+      <div (change)="selectFile($event)" class="grid place-content-center">
+        <img class=" relative h-20 w-20" src="/assets/images/galaryicon.png" alt="">
+        <input type="file" class="absolute w-20 h-20 rounded-full opacity-0">
+        <label class="relative text-white text-xs font-semibold text-center py-2 ">Gallery</label>
+      </div>
+      <div (click)="deleteVideoData()" class="grid place-content-center">
+        <img class="h-20 w-20 " src="/assets/images/deleteicon.png" alt="">
+        <div class="text-white text-xs font-semibold text-center py-2">Remove Video
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Uplode Video Popup end-->
+
+<div (click)="toggleOfflineStatus()" *ngIf=" isPopupOfflineStatus"
+  class="fixed w-full top-0 h-screen bg-black bg-opacity-25 z-30">
+</div>
+<div
+  class="rounded-t-3xl z-50 popup-container1 bg-white fixed overflow-hidden bottom-0 h-0 w-full  ease-out duration-700 drop-shadow-lg blur-50"
+  [ngClass]="{ 'active': isPopupOfflineStatus }">
+  <div class="flex justify-center mt-3">
+    <div class="w-14 h-1 bg-[#1D2939] rounded-lg"></div>
+  </div>
+  <div class="mx-4">
+    <div (click)="toggleOfflineStatus()" class="flex justify-between py-5">
+      <div class="flex">
+        <div (change)="selectFile($event)" class="mt-1">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17.5" fill="#F9FAFB" stroke="#F2F4F7" />
+            <g clip-path="url(#clip0_11382_35278)">
+              <path
+                d="M17.1667 11.3335H11.3334C10.8913 11.3335 10.4674 11.5091 10.1548 11.8217C9.84228 12.1342 9.66669 12.5581 9.66669 13.0002V24.6668C9.66669 25.1089 9.84228 25.5328 10.1548 25.8453C10.4674 26.1579 10.8913 26.3335 11.3334 26.3335H23C23.442 26.3335 23.866 26.1579 24.1785 25.8453C24.4911 25.5328 24.6667 25.1089 24.6667 24.6668V18.8335"
+                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M23.4167 10.0832C23.7482 9.75168 24.1978 9.56543 24.6667 9.56543C25.1355 9.56543 25.5852 9.75168 25.9167 10.0832C26.2482 10.4147 26.4345 10.8644 26.4345 11.3332C26.4345 11.802 26.2482 12.2517 25.9167 12.5832L18 20.4999L14.6667 21.3332L15.5 17.9999L23.4167 10.0832Z"
+                stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_11382_35278">
+                <rect width="20" height="20" fill="white" transform="translate(8 8)" />
+              </clipPath>
+            </defs>
+          </svg>
+
+
+        </div>
+        <div class="ml-3" (click)="toggleUploadeVideo()">
+          <div class="text-sm font-medium text-[#1D2939]">Edit Video Resume</div>
+          <div class="text-[#475467] text-xs font-normal">{{finalName}}
+          </div>
+        </div>
+      </div>
+      <div><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+    <div (click)="toggleOfflineStatus()" (click)="deleteVideoData()" class="flex justify-between pb-4">
+      <div class="flex">
+        <div class="mt-1">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17.5" fill="#F9FAFB" stroke="#F2F4F7" />
+            <path d="M10.5 13H12.1667H25.5" stroke="#21A14B" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M23.8334 12.9998V24.6665C23.8334 25.1085 23.6578 25.5325 23.3452 25.845C23.0326 26.1576 22.6087 26.3332 22.1667 26.3332H13.8334C13.3913 26.3332 12.9674 26.1576 12.6548 25.845C12.3423 25.5325 12.1667 25.1085 12.1667 24.6665V12.9998M14.6667 12.9998V11.3332C14.6667 10.8911 14.8423 10.4672 15.1548 10.1547C15.4674 9.8421 15.8913 9.6665 16.3334 9.6665H19.6667C20.1087 9.6665 20.5326 9.8421 20.8452 10.1547C21.1578 10.4672 21.3334 10.8911 21.3334 11.3332V12.9998"
+              stroke="#21A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+        </div>
+        <div class="ml-3">
+          <div class="text-sm font-medium text-[#1D2939]">Delete Video Resume</div>
+          <div class="text-[#475467] text-xs font-normal">Don't delete your resume; it can lead to great opportunities
+          </div>
+        </div>
+      </div>
+      <div><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

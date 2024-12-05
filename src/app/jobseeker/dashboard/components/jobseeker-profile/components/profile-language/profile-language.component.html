@@ -1,0 +1,71 @@
+<div class="mx-7">
+  <div class="flex justify-between">
+    <div class="flex">
+      <div><svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.9022 4.34687C15.9022 5.2614 15.4145 6.14393 14.5184 6.8227C13.6217 7.50184 12.3495 7.94374 10.913 7.94374C9.47652 7.94374 8.20433 7.50184 7.30767 6.8227C6.4115 6.14393 5.92389 5.2614 5.92389 4.34687C5.92389 3.43234 6.4115 2.54981 7.30767 1.87104C8.20433 1.1919 9.47652 0.75 10.913 0.75C12.3495 0.75 13.6217 1.1919 14.5184 1.87104C15.4145 2.54981 15.9022 3.43234 15.9022 4.34687Z"
+            stroke="#21A14B" stroke-width="1.5" />
+          <path
+            d="M17.6957 10.666H6.73913C4.82609 10.9294 1 12.0093 1 14.2217V16.5675C1 17.6721 1.89543 18.5675 3 18.5675H11.9565"
+            stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+          <g clip-path="url(#clip0_2177_17350)">
+            <path
+              d="M17 13.4082C16.6685 13.4082 16.3505 13.537 16.1161 13.7662C15.8817 13.9954 15.75 14.3063 15.75 14.6304V17.8897C15.75 18.2138 15.8817 18.5247 16.1161 18.7539C16.3505 18.9831 16.6685 19.1119 17 19.1119C17.3315 19.1119 17.6495 18.9831 17.8839 18.7539C18.1183 18.5247 18.25 18.2138 18.25 17.8897V14.6304C18.25 14.3063 18.1183 13.9954 17.8839 13.7662C17.6495 13.537 17.3315 13.4082 17 13.4082Z"
+              stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M19.9166 17.0742V17.889C19.9166 18.6454 19.6094 19.3708 19.0624 19.9056C18.5154 20.4404 17.7735 20.7409 17 20.7409C16.2264 20.7409 15.4846 20.4404 14.9376 19.9056C14.3906 19.3708 14.0833 18.6454 14.0833 17.889V17.0742"
+              stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17 20.7402V22.3699" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.3333 22.3711H18.6666" stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2177_17350">
+              <rect width="10" height="9.77778" fill="white" transform="translate(12 13)" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </div>
+      <div class="ml-3 text-lg font-semibold text-[#1D2939] rubik">Languages</div>
+    </div>
+    <div routerLink="/dashboard/profile/languages/add-edit-language">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1 22.142L3.57612 15.5867C3.63559 15.4354 3.73105 15.3009 3.85424 15.1948L20.2482 1.07523C20.6644 0.716811 21.2917 0.761103 21.6534 1.17444L24.3839 4.29509C24.7306 4.69129 24.7107 5.28843 24.3385 5.6607L18.7143 11.2849"
+          stroke="#667085" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M1 22.1423H6C6.21637 22.1423 6.4269 22.0721 6.6 21.9423L10.1429 19.2852" stroke="#667085"
+          stroke-width="1.5" stroke-linecap="round" />
+        <g clip-path="url(#clip0_4682_4956)">
+          <path
+            d="M18.1429 24.4266C21.2988 24.4266 23.8572 21.8682 23.8572 18.7123C23.8572 15.5564 21.2988 12.998 18.1429 12.998C14.987 12.998 12.4286 15.5564 12.4286 18.7123C12.4286 21.8682 14.987 24.4266 18.1429 24.4266Z"
+            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M18.1429 16.4277V20.9992" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M15.8572 18.7129H20.4286" stroke="#667085" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </g>
+        <path d="M17 4.42773L21 8.99916" stroke="#667085" stroke-width="1.5" stroke-linecap="round" />
+        <defs>
+          <clipPath id="clip0_4682_4956">
+            <rect width="13.7143" height="13.7143" fill="white" transform="translate(11.2858 11.8555)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="text-black text-sm font-semibold">English Fluency</div>
+    <div class="text-black text-sm font-medium my-1">{{storeFluency.englishFluency}} </div>
+    <div class="text-black text-xs font-normal">{{fluencyLevel}}</div>
+  </div>
+  <div class="my-3 w-full">
+    <div class="text-black font-medium">Other Languages</div>
+    <div class="flex w-full gap-2 py-2 mt-1">
+    <div class="flex w-1/3 gap-2 py-2 " *ngFor="let language of storeLanguages.slice(0,3)">
+     
+        <div class="bg-[#F2F4F7] text-[#475467] text-xs p-2 text-center rounded-lg w-full whitespace-nowrap">
+          {{language.languageName}}</div>
+      </div>
+    </div>
+  </div>
+</div>

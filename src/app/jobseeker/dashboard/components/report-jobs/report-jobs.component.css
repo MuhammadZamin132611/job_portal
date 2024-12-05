@@ -1,0 +1,34 @@
+.popup-container.active {
+
+    height: 85%;
+
+}
+
+.popup-container-date.active {
+    height: 50%;
+}
+
+
+.popup-container1 {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    overflow: hidden;
+    width: 0;
+    /* background-color: #83cd23; */
+    /* transition: width 1s ease-out; */
+    z-index: 999;
+}
+
+
+.border1{
+    border:1px solid  black
+}
+
+.popup-container1.active {
+    /* position: fixed; */
+    height: 200px;
+    width: 90%;
+    left: auto;
+    right: auto;
+}

@@ -1,0 +1,15 @@
+.popup-container.active {
+
+    height: 17%;
+    
+}
+.popup-container1.active {
+
+    height: 22%;
+    
+}
+
+#btn-back-to-top {
+    position: fixed;
+    display: none;
+  }

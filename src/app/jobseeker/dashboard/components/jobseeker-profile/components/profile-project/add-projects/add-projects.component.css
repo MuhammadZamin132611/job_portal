@@ -1,0 +1,16 @@
+.popup-container.active {
+
+    height: 85%;
+
+}
+
+.popup-container-date.active {
+    height: 50%;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-image: url('/assets/images/CalendarImage.svg');
+    height: 1rem;
+    width: 1rem;
+
+}

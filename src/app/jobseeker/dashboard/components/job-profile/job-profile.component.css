@@ -1,0 +1,138 @@
+.navtext {
+  color: #21A14B;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+#Job_Insights {
+  scroll-margin-top: 17.6rem;
+}
+
+#Job_Details {
+  margin-top: 17.5rem;
+  scroll-margin-top: 17.5rem;
+}
+
+#About_Company {
+  scroll-margin-top: 18.75rem;
+}
+
+#Salary_Insights {
+  scroll-margin-top: 18.43rem
+}
+
+
+.clip-semicircle {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.popup-container1 {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  overflow: hidden;
+  width: 0;
+  /* background-color: #83cd23; */
+  /* transition: width 1s ease-out; */
+  z-index: 999;
+}
+
+.popup-container1.active {
+  /* position: fixed; */
+  height: 200px;
+  width: 90%;
+  left: auto;
+  right: auto;
+}
+
+
+
+.gauge {
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+}
+
+
+
+.needle {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background-color: white!important;
+  clip-path: polygon(50% 0, 50% 0, 52% 100%, 48% 100%);
+  /* transform: rotate(28.8deg);  */
+  transform-origin: bottom center;
+  animation: rotate 2s ease-in-out;
+  
+
+}
+.center{
+  position: absolute;
+  width: 70%;
+  height: 30%;
+  background-color: white!important;
+  clip-path:circle(10%);
+  /* clip-path: polygon(50% 0, 50% 0, 52% 100%, 48% 100%); */
+  transform: rotate(90deg);
+  transform-origin: bottom center;
+  /* animation: rotate 2s ease-in-out; */
+
+
+  
+}
+.svg1{
+  position: absolute;
+  bottom: 70%;
+}
+
+@keyframes rotate {
+  0% {
+      background-color: var(--blue);
+      transform: rotate(-90deg);
+  }
+  80% { background-color: var(--blue);
+      transform: rotate(90deg);
+   }
+} 
+
+/* ////////////////////////////////////////// */
+
+.progress{
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 80px; height: 40px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+.bar{
+  position: absolute;
+  top: 0; left: 0;
+  width: 80px; height: 80px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 6px solid #eee;     /* half gray, */
+  border-bottom-color: #FF9807;  /* half azure */
+  border-right-color: #FF9807;
+}

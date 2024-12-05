@@ -1,0 +1,86 @@
+<div class="mx-7 my-2">
+  <div class="flex justify-between">
+    <div class="flex">
+      <div><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2177_17085)">
+            <path
+              d="M23.8801 17.0427V17.5381C23.8794 18.6992 23.4883 19.8291 22.7653 20.7591C22.0422 21.6891 21.0259 22.3694 19.8679 22.6987C18.7098 23.0279 17.4721 22.9883 16.3394 22.5859C15.2066 22.1835 14.2395 21.4398 13.5822 20.4657C12.9249 19.4916 12.6127 18.3394 12.6922 17.1807C12.7716 16.0221 13.2385 14.9192 14.0231 14.0365C14.8077 13.1538 15.868 12.5387 17.0459 12.2828C18.2238 12.0269 19.4562 12.144 20.5593 12.6165"
+              stroke="#21A14B" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M23.88 13.2305L18.28 18.6205L16.6 17.0051" stroke="#21A14B" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+          <path
+            d="M22.12 9.63246V6.81641C22.12 5.71184 21.2246 4.81641 20.12 4.81641H3C1.89543 4.81641 1 5.71184 1 6.81641V18.2278C1 19.3323 1.89543 20.2278 3 20.2278H10.12"
+            stroke="#21A14B" stroke-width="1.5" stroke-linejoin="round" />
+          <rect x="7.26001" y="0.5" width="8.6" height="3.81605" rx="0.5" stroke="#21A14B" />
+          <defs>
+            <clipPath id="clip0_2177_17085">
+              <rect width="13.44" height="12.9231" fill="white" transform="translate(11.5601 11.0762)" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="ml-3 text-lg font-semibold text-[#1D2939]">Job Preferences</div>
+    </div>
+    <div class="flex">
+      <button>
+        <div routerLink="/dashboard/profile/job-prefrence/add-job-prefrence"><svg width="24" height="24"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5 12H19" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+      <div routerLink="/dashboard/profile/job-prefrence/edit-job-prefrence" class="ml-3"><svg width="22" height="22"
+          viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16 2.0003C16.2626 1.73766 16.5744 1.52932 16.9176 1.38718C17.2608 1.24503 17.6286 1.17188 18 1.17188C18.3714 1.17187 18.7392 1.24503 19.0824 1.38718C19.4256 1.52932 19.7374 1.73766 20 2.0003C20.2626 2.26295 20.471 2.57475 20.6131 2.91791C20.7553 3.26107 20.8284 3.62887 20.8284 4.0003C20.8284 4.37174 20.7553 4.73953 20.6131 5.08269C20.471 5.42585 20.2626 5.73766 20 6.0003L6.5 19.5003L1 21.0003L2.5 15.5003L16 2.0003Z"
+            stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="my-3">
+    <div class="text-black font-medium">Perferred Location City</div>
+    <div class="flex flex-wrap w-full mt-1 gap-2">
+      <div class="" *ngIf="primaryL">
+        <button
+          class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{primaryL}}</button>
+      </div>
+      <div class="" *ngIf="secondryL">
+        <button
+          class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{secondryL}}</button>
+      </div>
+      <div class=""  *ngFor="let locations of getAllLocation.otherPreferedLocation">
+        <button
+          class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{locations}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="my-3">
+    <div class="text-black font-medium">Area Of Interest</div>
+    <div class="flex flex-wrap w-full mt-1 gap-2">
+      <div *ngFor="let area of getAllAreaofIntersets.slice(0,3)" class="">
+        <button
+          class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{area.areaOfInterestName}}</button>
+      </div>
+      <!-- <div class="">
+        <button
+          class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{getAllAreaofIntersets[1].areaOfInterestName}}</button>
+      </div>
+     <div class="">
+      <button
+        class="bg-[#F2F4F7] text-[#475467] text-sm py-1 px-4 w-full rounded-lg whitespace-nowrap">{{getAllAreaofIntersets[2].areaOfInterestName}}</button>
+    </div> -->
+    </div>
+  </div>
+  <div class="flex showall mt-2" routerLink="/dashboard/profile/job-prefrence/edit-job-prefrence">Show all Job
+    Preferences
+    <div class="ml-1"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.83331 8H13.1666" stroke="#344054" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.5 3.33398L13.1667 8.00065L8.5 12.6673" stroke="#344054" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+</div>

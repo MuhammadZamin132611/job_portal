@@ -1,0 +1,22 @@
+.popup-container.active {
+  height: 23%;
+}
+.popup-container.active1 {
+
+  height: 17%;
+  
+}
+.popup-container1.active {
+
+  height: 22%;
+  
+}
+video {
+  height: 112px; /* Set the desired height here */
+  
+}
+
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}

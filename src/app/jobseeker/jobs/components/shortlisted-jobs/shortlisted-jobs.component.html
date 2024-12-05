@@ -1,0 +1,238 @@
+<div class="h-screen bg-[#F3F4F6]">
+
+
+<div class="sticky z-30 top-0">
+    <app-common-header></app-common-header>
+    <div class="sticky top-0 z-50">
+        <div class="flex w-full px-5 -mt-14">
+            <!-- routerLink="/jobs" -->
+            <div (click)="goBack()" class="mt-2">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" fill="#F2F4F7" stroke="#EAECF0" />
+                    <path d="M20.2495 15H9.74951" stroke="#344054" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.9995 20.25L9.74951 15L14.9995 9.75" stroke="#344054" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="w-full mx-4">
+            
+            </div>
+            <div routerLink="/dashboard/profile">
+                <app-profile-image></app-profile-image>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="bg-white px-5 pt-5">
+        <div class="mt-2 flex justify-between">
+            <div class="text-[#1D2939] font-semibold text-md rubik">Jobs</div>
+            <!-- <div (click)="showFilter()" class="flex">
+                <div class="text-[#0175A2] text-xs font-medium">Apply Filter</div>
+                <div class="mt-1 ml-2">
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div *ngIf="showFilters" class="bg-white px-5">
+        <div x-data="app" class="pt-4">
+            <div class="-m-2 flex flex-wrap">
+                <div class="m-1">
+                    <input type="radio" name="filter" id="All" class="peer hidden" value="All" />
+                    <label for="All"
+                        class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-3 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                        All</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="filter" id="Recently Saved " class="peer hidden"
+                        value="Recently Saved " />
+                    <label for="Recently Saved "
+                        class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2.5 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                        Recently Saved</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="filter" id="Last 7 days" class="peer hidden" value="Last 7 days" />
+                    <label for="Last 7 days"
+                        class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2.5 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                        Last 7 days</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="filter" id="Last Month" class="peer hidden" value="Last Month" />
+                    <label for="Last Month"
+                        class="block cursor-pointer text-[0.625rem] text-[#667085] bg-[#F9FAFB] rounded-xl border border-[#F2F4F7] select-none px-2 py-1.5 text-center peer-checked:bg-[#F5FBFF] peer-checked:text-[#0175A2] peer-checked:border-[#0175A2] peer-checked:font-medium">
+                        Last Month</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="bg-white pl-3">
+        <div x-data="app" class="flex flex-nowrap ">
+            <div class=" flex flex-nowrap overflow-x-auto">
+                <div class=" mt-[0.8rem] pb-2 ">
+                    <ul class="flex gap-4">
+                        <li class="hover:text-green-700  text-xs  font-medium cursor-pointer"
+                        [routerLinkActive]="['Active']" 
+                        (click)="showShortlisted()" 
+                        [ngClass]="shortlisted?'block whitespace-nowrap cursor-pointer text-xs text-green-700 border-b-2 border-white select-none text-center text-[#0175A2] underline decoration-2 underline-offset-[10px]':'text-gray-500'"
+                        >Shortlisted Jobs ({{shortlistedCount}})</li>
+                        <li class="hover:text-green-700  text-xs  font-medium cursor-pointer"
+                        [routerLinkActive]="['Active']"
+                        (click)="showOffered()"
+                        [ngClass]="offered?'block whitespace-nowrap cursor-pointer text-xs text-green-700 border-b-2 border-white select-none text-center text-[#0175A2] underline decoration-2 underline-offset-[10px]':'text-gray-500'"
+                        >Offered Jobs ({{offeredCount}})</li>
+                    </ul>
+                    </div>
+                <!-- <div class="m-1">
+                    <input type="radio" name="applied" id="Applied Jobs" class="peer hidden" value="Applied Jobs" />
+                    <label [routerLinkActive]="['Active']" for="Applied Jobs" (click)="showShortlisted()"
+                        class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                        Applied Jobs ({{appliedCount}})</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="applied" id="Shortlisted Jobs" class="peer hidden"
+                        value="Shortlisted Jobs" />
+                    <label for="Shortlisted Jobs" routerLink="/jobs/shortlisted-jobs"
+                        class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                        Shortlisted Jobs ({{shortlistedJobCount}})</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="applied" id="Selected Jobs" class="peer hidden" value="Selected Jobs" />
+                    <label for="Selected Jobs" routerLink="/jobs/selected-jobs"
+                        class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-2 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                        Selected Jobs (5)</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" name="applied" id="Offered Jobs" class="peer hidden" value="Offered Jobs" />
+                    <label for="Offered Jobs" routerLink="/jobs/offered-jobs"
+                        class="block whitespace-nowrap cursor-pointer text-xs text-[#667085] border-b-2 border-white select-none px-3 py-1.5 text-center peer-checked:text-[#21A14B] peer-checked:border-[#21A14B] peer-checked:font-medium">
+                        Offered Jobs ({{offeredCount}})</label>
+                </div>  -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class=" py-5 pb-16">
+    
+    <div>
+        <div *ngIf="shortlistedJobCount === 0">
+            <div class="w-full">
+                <div class="flex justify-center mt-14">
+                    <div class="">
+                        <img src="assets/images/rafiki10.png" alt=" " />
+                        <p class="text-lg text-center">You Have Not Applied To Any Jobs Yet ! </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-14  p-5">
+                <button type="save" class="green_button">Explore Jobs For You
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- //*ngIf="shortlistedJobCount > 0" 
+    <div class="border rounded-lg p-4 mb-4 bg-white mx-4" *ngIf="shortlistedCount > 0">
+        <div class="flex justify-between" *ngFor="let data of shortlistedJobs">
+            <div class=" flex">
+                <div class="">
+                    <img src="assets/images/pic1.png" alt="">
+                </div>
+                <div class="ml-2">
+                    <div class="text-[#252525] font-semibold text-md text-[1.125rem]">
+                        {{data.jobTitle}}
+                    </div>
+                    <div class="text-gray-500 font text-xs font-medium">{{data.companyname}}</div>
+                    <div class="flex mt-1">
+                        <div class="mt-0.5">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.75 7.5C14.75 12.75 8 17.25 8 17.25C8 17.25 1.25 12.75 1.25 7.5C1.25 5.70979 1.96116 3.9929 3.22703 2.72703C4.4929 1.46116 6.20979 0.75 8 0.75C9.79021 0.75 11.5071 1.46116 12.773 2.72703C14.0388 3.9929 14.75 5.70979 14.75 7.5Z"
+                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M8 9.75C9.24264 9.75 10.25 8.74264 10.25 7.5C10.25 6.25736 9.24264 5.25 8 5.25C6.75736 5.25 5.75 6.25736 5.75 7.5C5.75 8.74264 6.75736 9.75 8 9.75Z"
+                                    stroke="#475467" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="ml-3 text-gray-500 text-sm font font-medium " *ngIf="location1;else message1">
+                            &nbsp; {{data.location}}
+                        </div>
+                        <ng-template class="ml-3 text-gray-500 text-sm font font-medium" #message1>
+                            &nbsp; NA
+                        </ng-template>
+                    </div>
+                    <div class="text-[#21A14B] pt-2 text-xs font-semibold">Application sent 
+            </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="ml-10 mt-2 mb-2">
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 11L6.5 6L1.5 1" stroke="#475467" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <hr class="h-0.5 my-3 bg-[#EAECF0]">
+        <div class="flex justify-between">
+            <div class="text-[#98A2B3] text-sm font-semibold">Recruiter actioned hours ago</div>
+            <div class="text-[#F79009] text-xs font-medium bg-[#FFFAEB] px-3 py-1 rounded-xl ">Shortlisted</div>
+        </div>
+    </div>
+</div> -->
+
+<div class=" py-5 pb-16" *ngIf="shortlisted">
+    <div *ngIf="shortlistedJobCount === 0">
+        <div class="w-full">
+            <div class="flex justify-center mt-14">
+                <div class="">
+                    <img src="assets/images/rafiki10.png" alt=" " />
+                    <p class="text-lg text-center">You Have Not Shortlisted To Any Jobs Yet ! </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-14  p-5">
+            <button type="save" class="green_button">Explore Jobs For You
+            </button>
+        </div>
+    </div>
+    <app-selected-jobs></app-selected-jobs>
+</div>
+
+<div class=" py-5 pb-16" *ngIf="offered">
+
+    <div *ngIf="offeredCount === 0">
+        <div class="w-full">
+            <div class="flex justify-center mt-14">
+                <div class="">
+                    <img src="assets/images/rafiki10.png" alt=" " />
+                    <p class="text-lg text-center">You Have Not Offered To Any Jobs Yet ! </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-14  p-5">
+            <button type="save" class="green_button">Explore Jobs For You
+            </button>
+        </div>
+    </div>
+
+    <app-offered-jobs></app-offered-jobs>
+</div>
+
+</div>
+
+
+<app-footer></app-footer>
